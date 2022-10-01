@@ -1,24 +1,32 @@
 .home {
-    display: flex;
     background-color: #0C0C31;
     height: 100vh;
     width: 100vw;
 }
 
+.main {
+    position: relative;
+    display: flex;
+    height: -webkit-fill-available;
+}
+
 .section1 {
+    position: absolute;
     display: flex;
     width: 66vw;
-    height:fill;
+    height: -webkit-fill-available;
     justify-content: center;
     align-items: center;
 }
 
 .section2 {
+    position: absolute;
     display: flex;
     width: 34vw;
-    height:fill;
+    height: -webkit-fill-available;
     justify-content: center;
     align-items: center;
+    left: 66vw;
 }
 
 .NMR {
@@ -28,4 +36,13 @@
 .play-button {
     height: 18vh;
     padding-top: 10vh;
+}
+
+.HIW {
+    font-family: 'Source Sans Pro', 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: #FFFCFC;
+    font-size: 13vw;
+    line-height: 95%;
+    opacity: 0;
 }
