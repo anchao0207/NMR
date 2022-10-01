@@ -15,6 +15,7 @@ export default function Home() {
   const startClick = () => {
     gsap.to(nmrRef.current, {opacity:0, duration: 1});
     gsap.to(hiwRef.current, {opacity:1, duration: 1, delay:1.5})
+    gsap.to(".play-button", {opacity:0,duration:1})
     gsap.to(hiwRef.current, {opacity:0, duration: 1, delay:3})
     
   };
