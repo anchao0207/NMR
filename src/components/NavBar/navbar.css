@@ -1,0 +1,42 @@
+.navBar{
+    position: sticky;
+    background-color: #010005;
+    width: 100vw;
+    height: 16.6vh;
+}
+
+.logo{
+    position: absolute;
+    width: 6.9vw;
+    height: 7.7vh;
+    left: 2.9vw;
+    top: 4.9vh;
+}
+
+.nmrFundamentals{
+    position: absolute;
+    left: 65.99vw;
+    top: 11.11vh;
+}
+
+.courseUsage{
+    position: absolute;
+    left: 80.1vw;
+    top: 11.11vh;
+}
+
+.facultyResearch{
+    position: absolute;
+    left: 90.26vw;
+    top: 11.11vh;
+}
+
+.navText{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.15vw;
+    line-height: 2.22vh;
+    color: #FFFFFF;
+}
+

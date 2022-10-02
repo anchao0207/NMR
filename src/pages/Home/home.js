@@ -1,10 +1,11 @@
+
 import React from "react";
 import "./home.css";
 import { useViewport } from "../../viewportContext";
 import { ReactComponent as NuclearMagneticResonance } from "./NuclearMagneticResonance.svg";
 import { ReactComponent as PlayButton } from "./playButton.svg";
 import { gsap, ScrollTrigger } from "gsap/all";
-
+import NavBar from "../../components/NavBar/navbar";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -20,6 +21,8 @@ export default function Home() {
     
   };
   return (
+    <>
+    <NavBar></NavBar>
     <div className="home">
       <div className="main">
         <div className="section1">
@@ -37,5 +40,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
