@@ -1,0 +1,38 @@
+.container{
+    background-color: #0C0C31;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.header{
+    flex: 50%;
+    color: #C3FA50;
+    font-size: 7rem;
+    display: flex;
+    position: fixed;
+    font-family: "Source Sans Pro";
+    font-weight: bold;
+    font-style: normal;
+    background-color: #0C0C31;
+    margin-top: 40vh;
+    margin-left: 30vh;
+    white-space: pre-wrap;
+    
+}
+
+.description{
+    flex: 1;
+    color: #FFFFFF;
+    font-size: 3.5rem;
+    display: flex;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    background-color: #0C0C31;
+    margin-top: 30vh;
+    margin-left: 98vh;
+    margin-right: 20vh;
+    margin-bottom: 20vh;
+    white-space: pre-wrap;
+}
