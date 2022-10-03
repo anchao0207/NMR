@@ -4,11 +4,6 @@ import { ReactComponent as NMRLogo } from "../../components/NavBar/NMR Logo.svg"
 export default function NavBar() {
     return (
         <>
-        <head>
-            <style>
-            @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-            </style>
-        </head>
         <div class = "navBar">
             <div className = "sectionLogo">
                 <NMRLogo className = "logo"/>
