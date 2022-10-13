@@ -1,0 +1,104 @@
+.navBar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #010005;
+    width: 100vw;
+    height: 16.6vh;
+}
+
+.sectionLogo{
+    position: absolute;
+    display: flex;
+    width: 12.7vw;
+    height: 16.6vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 6.9vw;
+    height: 7.7vh;
+}
+
+.sectionTitle{
+    position: absolute;
+    display: flex;
+    left: 12.7vw;
+    width: 53.3vw;
+    height: 16.6vh;
+}
+
+.sectionText1{
+    position: absolute;
+    display: flex;
+    left: 66vw;
+    width: 7vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.sectionText1{
+    position: absolute;
+    display: flex;
+    left: 66vw;
+    width: 14.1vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.sectionText2{
+    position: absolute;
+    display: flex;
+    left: 80.1vw;
+    width: 10.2vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.sectionText3{
+    position: absolute;
+    display: flex;
+    left: 90.3vw;
+    width: 9.7vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.navText{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.15vw;
+    line-height: 2.22vh;
+    color: #FFFFFF;
+}
+
+/* .nmrFundamentals{
+    position: absolute;
+    left: 65.99vw;
+    top: 11.11vh;
+} */
+
+/* .courseUsage{
+    position: absolute;
+    left: 80.1vw;
+    top: 11.11vh;
+} */
+
+/* .facultyResearch{
+    position: absolute;
+    left: 90.26vw;
+    top: 11.11vh;
+} */
+
+
+
