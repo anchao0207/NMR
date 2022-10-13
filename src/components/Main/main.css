@@ -39,14 +39,7 @@
     font-family: "Source Sans Pro";
     font-style: normal;
     overflow-y: scroll;
-<<<<<<< HEAD
-    scrollbar-width: auto;
-    text-align: left;
-    justify-content: center;
-    align-items: center;
-=======
     color: #FFFFFF;
     font-size: 3.5vw;
->>>>>>> develop
     white-space: pre-wrap;
 }
