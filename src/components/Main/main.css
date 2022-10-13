@@ -40,7 +40,7 @@
     font-family: "Source Sans Pro";
     font-style: normal;
     overflow-y: scroll;
-    scrollbar-width: big;
+    scrollbar-width: auto;
     text-align: left;
     justify-content: center;
     align-items: center;
