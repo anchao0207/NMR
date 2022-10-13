@@ -1,34 +1,76 @@
 .navBar{
-    position: sticky;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     background-color: #010005;
     width: 100vw;
     height: 16.6vh;
 }
 
-.logo{
+.sectionLogo{
     position: absolute;
+    display: flex;
+    width: 12.7vw;
+    height: 16.6vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
     width: 6.9vw;
     height: 7.7vh;
-    left: 2.9vw;
-    top: 4.9vh;
 }
 
-.nmrFundamentals{
+.sectionTitle{
     position: absolute;
-    left: 65.99vw;
-    top: 11.11vh;
+    display: flex;
+    left: 12.7vw;
+    width: 53.3vw;
+    height: 16.6vh;
 }
 
-.courseUsage{
+.sectionText1{
     position: absolute;
+    display: flex;
+    left: 66vw;
+    width: 7vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.sectionText1{
+    position: absolute;
+    display: flex;
+    left: 66vw;
+    width: 14.1vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.sectionText2{
+    position: absolute;
+    display: flex;
     left: 80.1vw;
-    top: 11.11vh;
+    width: 10.2vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
 }
 
-.facultyResearch{
+.sectionText3{
     position: absolute;
-    left: 90.26vw;
-    top: 11.11vh;
+    display: flex;
+    left: 90.3vw;
+    width: 9.7vw;
+    height: 15.6vh;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: end;
 }
 
 .navText{
@@ -39,4 +81,24 @@
     line-height: 2.22vh;
     color: #FFFFFF;
 }
+
+/* .nmrFundamentals{
+    position: absolute;
+    left: 65.99vw;
+    top: 11.11vh;
+} */
+
+/* .courseUsage{
+    position: absolute;
+    left: 80.1vw;
+    top: 11.11vh;
+} */
+
+/* .facultyResearch{
+    position: absolute;
+    left: 90.26vw;
+    top: 11.11vh;
+} */
+
+
 

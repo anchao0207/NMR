@@ -4,7 +4,7 @@
     width: 100vw;
 }
 
-.main {
+.main-body {
     position: relative;
     display: flex;
     height: -webkit-fill-available;
@@ -45,4 +45,10 @@
     font-size: 13vw;
     line-height: 95%;
     opacity: 0;
+    visibility: hidden;
+}
+
+.main-component{
+    opacity: 0;
+    visibility: hidden;
 }
