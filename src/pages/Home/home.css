@@ -1,7 +1,9 @@
 .home {
     background-color: #0C0C31;
-    height: 100vh;
+    margin-top: 16.6vh;
+    height: 83.4vh;
     width: 100vw;
+
 }
 
 .main-body {
@@ -34,6 +36,7 @@
 }
 
 .play-button {
+    position: absolute;
     height: 18vh;
     padding-top: 10vh;
 }
