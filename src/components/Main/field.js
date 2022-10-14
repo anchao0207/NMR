@@ -3,9 +3,9 @@ import "./main.css";
 
 const content = {
   heading: "The\nField",
-  description1: "When a sample is lowered into the magnet, the magnet field is distorted by the sample and several other factors.\n\nA spectrum from a distorted magnetic field will likewise be distorted.\n\nShimming the magnetic field will bring back to its correct shape. ",
-  link: "The shim coils ",
-  description2: "add a little bit of magnetic field where it's needed to make the magnetic field around the sample uniform. The instrument analyzes the sample while simultaneously adjusting the shim coils to acheive the uniform magnetic field.",
+  description1: "An optimum spectrum is collected in a uniform magnetic field. Though quite good, a magnetic field might not be uniform due to imperfections in the magnet and changes caused by the sample itself.\n\n",
+  link: "Shim coils ",
+  description2: "are small electromagnets that are able to add/subtract a little bit of magnetic field in various directions (the X, Y, and Z planes).  By “shimming”, the magnetic field is made uniform and the spectrum is optimized.",
 };
 
 const MainBody = (props) => {

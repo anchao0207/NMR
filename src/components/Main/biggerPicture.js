@@ -3,7 +3,7 @@ import "./main.css";
 
 const content = {
   heading: "The\nBigger\nPicture",
-  description: "Where MRI generates an image that physicians can use to make a medical diagnosis, NMR generates a spectrum that allows chemist determine the structure of a molecule.\n\nA chemist can ...",
+  description: "NMR spectroscopy is a powerful tool that can identify chemical compounds and measure many types of chemical reactions. It works best with small amounts (1 to 100 milligrams) of a pure, or mostly pure, compound.\n\nIt can be used to investigate mixtures in the right situations or combined with other methods (like High Pressure Liquid Chromatography) to expand its utility.\n\nNuclear Magnetic Resonance spectroscopy is a key technique in the discovery of new medicines and industrial processes.",
 };
 
 const MainBody = (props) => {

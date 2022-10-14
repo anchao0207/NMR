@@ -3,16 +3,14 @@ import "./main.css";
 
 const content = {
   heading: "The\nAcquisition",
-  description1:
-    "This is the part of the process that takes the most time.  Here we collect the data.\n\nAfter we tune the spectrometer to a particular nucleus, the sample is ",
-  link1:
-    "pulsed",
-  description2:
-    " with radio frequency to excite the nuclei to a high energy state.\n\nOnce the pulse has ended, the nuclei gradually relax back to the lower energy level, releasing an energy signal. This process is repeated a number of times, ranging from minutes to hours, which creates the ",
-  link2:
-    "Free Induction Decay (FID).",
+  description1: "This part of the process can take some time, depending on what information we need and what kind of sample we have. Here we collect the NMR data.\n\nAfter we tune the spectrometer to a particular nucleus and shim the magnetic field, the sample is pulsed with radio waves at the resonant frequency to initiate precession.\n\nAll these little magnets precessing together add up to create a bigger oscillating magnetic field. It is measured through magnetic induction (exactly like how the antenna of a radio picks up radio signals).\n\nOnce the pulse has ended, the nuclei initially precess together and this yields an NMR signal that is recorded in a computer.\n\nVery shortly after the pulse, the nuclei stop precessing together (stop being in phase). The nuclei get out of sync for two main reasons:",
+  description2: "The nuclei within a molecule are in slightly different magnetic environments and so precess at slightly different frequencies.\n\nFor example, consider the two different hydrogen environments in ",
+  link1: "methanol: one is attached to oxygen and the others are attached to carbon.\n\n",
   description3:
-    "\n\nEach different hydrogen in a molecule will have its own FID , based on its environment. These individual FIDs are displayed as a composite overall FID. You could think of this like a stack of colored paper all mixed together. The full stack is the composite FID. Each color represents a different kind of Hydrogen.\n\nThe number of scans depends on the type of experiment, the amount of sample you have, and the type of resolution you need."
+    "The nuclei gradually “relax” back to equilibrium.",
+  description4: "As the nuclei stop precessing in sync, the strength of the magnetic induction decreases.  One can observe this magnetic induction decay over time.  This is called the ",
+  link2: "Free Induction Decay (FID).\n\n",
+  description5: "If an FID signal is weak, the experiment can be repeated and added together in order to improve the signal to noise. The number of scans needed depends on the type of experiment, the amount of sample you have, and the problem you're trying to solve."
 };
 
 const MainBody = (props) => {
@@ -24,7 +22,12 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a>{props.link1}</a>{props.description2}<a>{props.link2}</a>{props.description3}
+            {props.description1}
+            <ol>
+              <li>{props.description2}<a className="link">{props.link1}</a></li>
+              <li>{props.description3}</li>
+            </ol>
+            {props.description4}<a className="link">{props.link2}</a>{props.description5}
             </p>
         </div>
       </div>
