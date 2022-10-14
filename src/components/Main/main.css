@@ -15,7 +15,7 @@
 
 .head-text{
     position: absolute;
-    left: 15vw;
+    left: 12vw;
     top: 31.11vh;
     color: #C3FA50;
     font-family: 'Source Sans Pro';
@@ -46,7 +46,7 @@
     font-family: 'Domine';
     font-style: normal;
     font-weight: 400;
-    overflow-y: scroll;
+    overflow-y: auto;
     color: #FFFFFF;
     font-size: 1.354vw;
     line-height: 4.074vh;
@@ -54,11 +54,16 @@
 }
 
 p{
+    margin: 0px;
     margin-right: 3.426vw;
 }
 
 a{
     color: #C3FA50;
+}
+
+.red{
+    color: #FF0D0D;
 }
 
 .link{

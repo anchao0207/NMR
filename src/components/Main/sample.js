@@ -4,7 +4,7 @@ import "./main.css";
 const content = {
   heading: "The\nSample",
   description1:
-    "f you’ve ever had an MRI, you were the sample.\n\nWith NMR, a sample is made of your compound of interest and a deuterated NMR solvent. Then, ",
+    "If you’ve ever had an MRI, you were the sample.\n\nWith NMR, a sample is made of your compound of interest and a deuterated NMR solvent. Then, ",
   link1:
     "the sample",
   description2:

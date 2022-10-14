@@ -10,12 +10,20 @@ import Magnet from "../../components/Main/magnet";
 import Temperature from "../../components/Main/temperature";
 import Sample from "../../components/Main/sample";
 import Pulse from "../../components/Main/pulse";
+import FourNuclei from "../../components/Main/fourNuclei";
+import Acquisition from "../../components/Main/acquisition";
+import Field from "../../components/Main/field";
+import Nuclei from "../../components/Main/nuclei";
+import HNuclei from "../../components/Main/hNuclei";
+import Transformation from "../../components/Main/transformation";
+import BiggerPicture from "../../components/Main/biggerPicture";
+import Spectrum from "../../components/Main/spectrum";
 
 export default function Home() {
   const { width, height } = useViewport();
   const nmrRef = React.useRef(null);
   const hiwRef = React.useRef(null);
-  const mcRef = React.useRef(null);
+  const techRef = React.useRef(null);
 
   const startClick = () => {
     var tl = gsap.timeline();
@@ -27,7 +35,7 @@ export default function Home() {
       .to(hiwRef.current, { visibility:'visible', opacity: 1, duration: 1, delay: 1 })
       .to(hiwRef.current, { opacity: 0, duration: 1, delay: 1 })
       .to(hiwRef.current, { visibility:'hidden'})
-      .to(mcRef.current, { visibility: 'visible', opacity:1, duration: 1, delay: 1 });
+      .to(techRef.current, { visibility: 'visible', opacity:1, duration: 1, delay: 1 });
   };
   return (
     <>
@@ -49,10 +57,13 @@ export default function Home() {
           <div className="section2">
             <PlayButton className="play-button" onClick={startClick} />
           </div>
-          {/* <div className="main-component" ref={mcRef}>
+          <div className="main-component" ref={techRef}>
             <Technology></Technology>
-          </div> */}
-          {/* <div className="main-component" ref={mcRef}>
+          </div>
+          <div>
+            
+          </div>
+          {/* <div className="main-component" ref={Ref}>
             <Magnet></Magnet>
           </div> */}
           {/* <div className="main-component" ref={mcRef}>
@@ -61,9 +72,33 @@ export default function Home() {
           {/* <div className="main-component" ref={mcRef}>
             <Sample></Sample>
           </div> */}
-          <div className="main-component" ref={mcRef}>
+          {/* <div className="main-component" ref={mcRef}>
+            <Field></Field>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
             <Pulse></Pulse>
-          </div>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <Nuclei></Nuclei>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <FourNuclei></FourNuclei>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <HNuclei></HNuclei>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <Acquisition></Acquisition>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <Transformation></Transformation>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <Spectrum></Spectrum>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <BiggerPicture></BiggerPicture>
+          </div> */}
         </div>
       </div>
     </>
