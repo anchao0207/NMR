@@ -5,7 +5,8 @@ import { ReactComponent as NuclearMagneticResonance } from "./NuclearMagneticRes
 import { ReactComponent as PlayButton } from "./playButton.svg";
 import { gsap, ScrollTrigger } from "gsap/all";
 import NavBar from "../../components/NavBar/navbar";
-import Main from "../../components/Main/main";
+import Technology from "../../components/Main/technology";
+import Magnet from "../../components/Main/magnet";
 
 export default function Home() {
   const { width, height } = useViewport();
@@ -45,8 +46,11 @@ export default function Home() {
           <div className="section2">
             <PlayButton className="play-button" onClick={startClick} />
           </div>
+          {/* <div className="main-component" ref={mcRef}>
+            <Technology></Technology>
+          </div> */}
           <div className="main-component" ref={mcRef}>
-            <Main></Main>
+            <Magnet></Magnet>
           </div>
         </div>
       </div>
