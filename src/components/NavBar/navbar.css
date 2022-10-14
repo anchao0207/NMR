@@ -1,5 +1,5 @@
 .navBar{
-    position: fixed;
+    position: sticky;
     top: 0px;
     left: 0px;
     background-color: #010005;

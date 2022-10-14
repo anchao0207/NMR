@@ -14,12 +14,15 @@
 
 .head-text{
     position: absolute;
+    left: 15vw;
+    top: 31.11vh;
     color: #C3FA50;
-    font-size: 7vw;
-    font-family: "Source Sans Pro";
-    font-weight: bold;
+    font-family: 'Source Sans Pro';
     font-style: normal;
-    white-space: pre-wrap;
+    font-weight: 600;
+    font-size: 6.25vw;
+    line-height: 10.56vh;  
+    white-space: pre-wrap; 
 }
 
 .description{
@@ -33,13 +36,32 @@
 }
 
 .decs-text{
-    height: 40vh;
-    width: 35vw;
+    height: 32.41vh;
+    width: 30vw;
+    position: absolute;
+    top: 32.77vh;
+    right: 9.53vw;
     display: flex;
-    font-family: "Source Sans Pro";
+    font-family: 'Domine';
     font-style: normal;
+    font-weight: 400;
     overflow-y: scroll;
     color: #FFFFFF;
-    font-size: 3.5vw;
+    font-size: 1.354vw;
+    line-height: 4.074vh;
     white-space: pre-wrap;
+}
+
+.link{
+    color: #C3FA50;
+    
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.link:active{
+    color: #FFFFFF;
+    text-decoration: underline;
 }
