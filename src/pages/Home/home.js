@@ -9,7 +9,7 @@ import Technology from "../../components/Main/technology";
 import Magnet from "../../components/Main/magnet";
 import Temperature from "../../components/Main/temperature";
 import Sample from "../../components/Main/sample";
-import Pulse from "../../components/Main/pulse";
+import Hnuclei from "../../components/Main/hNuclei";
 
 export default function Home() {
   const { width, height } = useViewport();
@@ -62,7 +62,7 @@ export default function Home() {
             <Sample></Sample>
           </div> */}
           <div className="main-component" ref={mcRef}>
-            <Pulse></Pulse>
+            <Hnuclei></Hnuclei>
           </div>
         </div>
       </div>
