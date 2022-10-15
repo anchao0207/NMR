@@ -67,6 +67,7 @@ a{
     color: #C3FA50;
 }
 
+
 .link{
     text-decoration: underline;
 }
@@ -74,6 +75,7 @@ a{
 .link:hover{
     color: #8fb83b;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .link:active{
