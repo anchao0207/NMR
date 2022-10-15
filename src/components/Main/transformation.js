@@ -3,7 +3,7 @@ import "./main.css";
 
 const content = {
   heading: "The\nTransformation",
-  description: "Where the acquisition could have taken anywhere from 1.5 minutes up to one hour or more, the transformation takes only seconds.\n\nThe FID acquired in acquisition holds a lot of data. But a chemist needs the composite FID broken down into a decipherable format that allows us to understand the chemical structure.\n\nThe NMR spectrometer converts the composite FID to a spectrum via a Fourier transformation that mathematically converts each individual FID (resulting from each hydrogen's resonance frequency) in a composite into a signal, which we see as peaks in an NMR spectrum.",
+  description: "While acquisitions can take anywhere from seconds to hours, the “transformation” takes only seconds.\n\nImagine a short burst of sound from an orchestra played through a speaker.  The oscillations of the speaker representing all those superimposed sounds are like the FID described above.\n\nBut when we listen to an orchestra, we can pick out different notes/frequencies even though all the notes are played at the same time.\n\nAnalogously, using math and a computer, we can convert all of the precessions (sounds) from the NMR acquisition into their corresponding frequencies (notes).\n\nThat type of math is called the Fourier Transform of the FID and with it we can see at what slightly different frequencies the nuclei are precessing and how many nuclei are precessing at each of these frequencies.\n\nFrom this information, chemists can  understand the sample's chemical structure.",
 };
 
 const MainBody = (props) => {
