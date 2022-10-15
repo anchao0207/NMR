@@ -4,7 +4,7 @@ import "./main.css";
 const content = {
   heading: "The\nTechnology",
   description:
-    "Have you ever had an MRI?\n\nNMR spectroscopy uses the same technology.\n\nA magnetic fields, radio waves, and particular nuclei to study environments at the atomic/molecular level\n\nMRI specifically looks at hydrogen nuclei in water moelcules in various bodily tissues to produce an image that doctor use to understand what's happening in the body.\n\nNMR spectroscopy uses the same technology that chemists use to produce an NMR spectrum to understand chemical structure.",
+    "Have you ever had an MRI?\n\nNMR spectroscopy uses the same technology.\n\nParticular nuclei, magnetic fields, and radio waves are combined to study the environments at the atomic/molecular level.\n\nAn MRI specifically looks at the hydrogen nuclei in water molecules in your bodily tissues to produce an image that doctors use to understand what’s happening in your body.\n\nNMR spectroscopy uses the same technology.  Chemists use an NMR spectrum to understand the chemical structure of a molecule.",
 };
 
 const MainBody = (props) => {

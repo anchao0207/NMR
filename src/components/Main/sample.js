@@ -6,9 +6,9 @@ const content = {
   description1:
     "If you’ve ever had an MRI, you were the sample.\n\nWith NMR, a sample is made of your compound of interest and a deuterated NMR solvent. Then, ",
   link1:
-    "the sample",
+    "the sample is lowered",
   description2:
-    " is lowered into the hollow center of the magnet where the magnetic field is strongest and most uniform.",
+    " into the hollow center of the magnet where the magnetic field is strongest and most uniform.",
 };
 
 const MainBody = (props) => {

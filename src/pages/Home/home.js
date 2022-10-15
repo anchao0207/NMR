@@ -119,7 +119,7 @@ export default function Home() {
             <text className="textPage">2/13</text>
           </div>
           <Forward className="forward" ref={forward2Ref}/>
-          
+
           {/* <div className="main-component" ref={mcRef}>
             <Temperature></Temperature>
           </div> */}
@@ -130,9 +130,6 @@ export default function Home() {
             <Field></Field>
           </div> */}
           {/* <div className="main-component" ref={mcRef}>
-            <Pulse></Pulse>
-          </div> */}
-          {/* <div className="main-component" ref={mcRef}>
             <Nuclei></Nuclei>
           </div> */}
           {/* <div className="main-component" ref={mcRef}>
@@ -140,6 +137,9 @@ export default function Home() {
           </div> */}
           {/* <div className="main-component" ref={mcRef}>
             <HNuclei></HNuclei>
+          </div> */}
+          {/* <div className="main-component" ref={mcRef}>
+            <Pulse></Pulse>
           </div> */}
           {/* <div className="main-component" ref={mcRef}>
             <Acquisition></Acquisition>

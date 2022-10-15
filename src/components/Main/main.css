@@ -43,7 +43,7 @@
     position: absolute;
     top: 32.77vh;
     right: 9.53vw;
-    display: flex;
+    display: block;
     font-family: 'Domine';
     font-style: normal;
     font-weight: 400;
@@ -55,16 +55,16 @@
     margin-left: 3.5vw;
 }
 
+sup{
+    font-size: 0.8vw;
+}
+
 p{
     margin-right: 3.426vw;
 }
 
 a{
     color: #C3FA50;
-}
-
-.red{
-    color: #FF0D0D;
 }
 
 .link{
@@ -100,4 +100,11 @@ a{
 /* Handle on hover */
 .decs-text::-webkit-scrollbar-thumb:hover {
     background: #858585;
+}
+.center{
+    text-align: center;
+}
+
+.padding{
+    padding-left: 1.5rem;
 }

@@ -20,7 +20,7 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a>{props.link1}</a>{props.description2}
+            {props.description1}<a className="link">{props.link1}</a>{props.description2}
             </p>
         </div>
       </div>

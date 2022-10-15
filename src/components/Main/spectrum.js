@@ -4,15 +4,11 @@ import "./main.css";
 const content = {
   heading: "The\nSpectrum",
   description1:
-    "In 1H NMR, the spectrum shows a plot of the frequency of the hydrogen signal vs. ",
+    "A plot of the precession frequencies verses their intensity is called an NMR spectrum.\n\nThe small variations in the precession frequency between the different nuclei in a molecule are called “chemical shift”, and it offers clues about the molecular structure. The range of chemical shift frequencies is typically ver small - so small that the amount of changes is measured in parts per million.\n\nA ",
   link1:
-    "the (______? magnet? operating?)",
+    "H NMR spectrum",
   description2:
-    " frequency of the spectrometer.\n\nAn experienced chemist can quickly take a look at the spectrum to identify  types of hydrogen present in a sample and how they are configured within a molecule.\n\nBecause NMR generates spectra that plot signal frequency vs. individual instrument frequency, it allows scientists using different NMR spectrometers ",
-  link2:
-    "(with different magnet strengths?)",
-  description3:
-    " to collect comparable data."
+    " is usually presented as Intensity vs. parts-per-million (PPM).\n\nWe see the spectrum as a graphical representation of lines that allow a trained scientist to “see” a chemical structure.\n\nOften more than one type of NMR spectrum is needed to identify a chemical compound. There are many different types of NMR experiments."
 };
 
 const MainBody = (props) => {
@@ -24,7 +20,9 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a className="red">{props.link1}</a>{props.description2}<a className="red">{props.link2}</a>{props.description3}
+            {props.description1}
+            <a className="link"><sup>1</sup>{props.link1}</a>
+            {props.description2}
             </p>
         </div>
       </div>

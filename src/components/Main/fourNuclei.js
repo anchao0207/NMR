@@ -4,21 +4,21 @@ import "./main.css";
 const content = {
   heading: "The Four\nStandard\nNuclei",
   description1:
-    "Depending on the nucleus of interest you’ve selected, the resonant frequency varies. This difference in radio pulse frequency can be seen in the four standard NMR-active nuclei:\n\n            ",
+    "Depending on the nucleus of interest you’ve selected, the magnetic moment varies and thus the resonant frequency varies.\n\nThe four standard NMR-active nuclei are isotopes of hydrogen, carbon, fluorine, and phosphorus.\n\n  ",
   link1:
-    "1H",
+    "H",
   description2:
-    ",      ",
+    "              ",
   link2:
-    "13C",
+    "C",
   description3:
-    ",      ",
+    "              ",
   link3:
-    "19F",
+    "F",
   description4:
-    ",      ",
+    "              ",
   link4:
-    "31P",
+    "P",
 };
 
 const MainBody = (props) => {
@@ -30,7 +30,7 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a>{props.link1}</a>{props.description2}<a>{props.link2}</a>{props.description3}<a>{props.link3}</a>{props.description4}<a>{props.link4}</a>
+            {props.description1}<sup>1</sup>{props.link1}{props.description2}<sup>13</sup>{props.link2}{props.description3}<sup>19</sup>{props.link3}{props.description4}<sup>31</sup>{props.link4}
             </p>
         </div>
       </div>
