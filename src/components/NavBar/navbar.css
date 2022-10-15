@@ -82,6 +82,14 @@
     color: #FFFFFF;
 }
 
+.navLink{
+    text-decoration: none;
+}
+
+#t1, #t2, #t3, #t4, #t5, #t6{
+    color: #C3FA50;
+}
+
 /* .nmrFundamentals{
     position: absolute;
     left: 65.99vw;

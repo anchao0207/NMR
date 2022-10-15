@@ -8,6 +8,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import { ViewportProvider } from "./viewportContext";
+import NMRFundamentals from "./pages/NMRFundamentals/nmrFundamentals";
+import CourseUsage from "./pages/CourseUsage/courseUsage";
+import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
 
 export default function App() {
   return (
@@ -15,6 +18,9 @@ export default function App() {
       <Router>
         <Routes>
           <Route exact path={"/"} element={<Home />} />
+          <Route exact path={"/NMRFundamentals"} element={<NMRFundamentals />} />
+          <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
+          <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Routes>
       </Router>
