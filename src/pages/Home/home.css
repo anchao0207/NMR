@@ -55,3 +55,44 @@
     opacity: 0;
     visibility: hidden;
 }
+
+.back{
+    width: 9.375vw;
+    height: 11.11vh;
+    position: absolute;
+    left: 57.5vw;
+    bottom: 1.851vh;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.page{
+    width: 12.5vw;
+    height: 11.11vh;
+    position: absolute;
+    left: 66.875vw;
+    bottom: 1.851vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.textPage{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.147vw;
+    color: #C4C4C4;
+}
+
+.forward{
+    width: 9.375vw;
+    height: 11.11vh;
+    position: absolute;
+    left: 79.405vw;
+    bottom: 1.296vh;
+    opacity: 0;
+    visibility: hidden;
+}

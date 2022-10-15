@@ -16,9 +16,9 @@ export default function NavBar() {
             <div className = "sectionText1">
                 <div class = "nmrFundamentals">
                     <a href="http://localhost:3000/NMRFundamentals" className="navLink">
-                    <span className = "navText">NMR</span>
+                    <span className = "navText" id = "t1">NMR</span>
                     <br></br>
-                    <span className = "navText">Fundamentals</span>
+                    <span className = "navText" id = "t2">Fundamentals</span>
                     </a>
                 </div>
             </div>

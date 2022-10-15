@@ -27,6 +27,7 @@
 }
 
 .description{
+    padding-left: 5vw;
     position: relative;
     display: flex;
     width: 40vw;
@@ -51,10 +52,10 @@
     font-size: 1.354vw;
     line-height: 4.074vh;
     white-space: pre-wrap;
+    margin-left: 3.5vw;
 }
 
 p{
-    margin: 0px;
     margin-right: 3.426vw;
 }
 
