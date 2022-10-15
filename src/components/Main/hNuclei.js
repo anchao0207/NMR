@@ -17,7 +17,7 @@ const MainBody = (props) => {
   return (
     <div className="container">
       <div className="header">
-        <div className="head-text">{props.heading1}<sup>{props.suptext}</sup>{props.heading2}</div>
+        <div className="head-text">{props.heading1}<sup className="head-sup">{props.suptext}</sup>{props.heading2}</div>
       </div>
       <div className="description">
         <div className="decs-text">
