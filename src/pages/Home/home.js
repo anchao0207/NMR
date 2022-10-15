@@ -103,7 +103,7 @@ export default function Home() {
           </div>
 
           <div className="main-component" ref={techRef}>
-            <BiggerPicture></BiggerPicture>
+            <Technology></Technology>
           </div>
           <Back className="back" ref={back1Ref} onClick={back1Click}/>
           <div className="page" ref={text1Ref}>
