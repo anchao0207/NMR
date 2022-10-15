@@ -58,7 +58,7 @@ export default function Home() {
             <PlayButton className="play-button" onClick={startClick} />
           </div>
           <div className="main-component" ref={techRef}>
-            <Technology></Technology>
+            <BiggerPicture></BiggerPicture>
           </div>
           <div>
             
