@@ -1,6 +1,4 @@
 import React from "react";
-import five from 'johnny-five';
-// import Raspi from 'raspi-io';
 import "./home.css";
 import { useViewport } from "../../viewportContext";
 import { ReactComponent as NuclearMagneticResonance } from "./NuclearMagneticResonance.svg";
@@ -22,7 +20,7 @@ import HNuclei from "../../components/Main/hNuclei";
 import Transformation from "../../components/Main/transformation";
 import BiggerPicture from "../../components/Main/biggerPicture";
 import Spectrum from "../../components/Main/spectrum";
-const Raspi = require('raspi-io').RaspiIO;
+
 
 export default function Home() {
   const { width, height } = useViewport();
@@ -85,9 +83,9 @@ export default function Home() {
   const transRef = React.useRef(null);
 
   //for light setup
-  const board = new five.Board({
-    io: new Raspi()
-  });
+  // const board = new five.Board({
+  //   io: new Raspi()
+  // });
 
   const startClick = () => {
     var tl1 = gsap.timeline();
