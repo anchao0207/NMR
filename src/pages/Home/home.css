@@ -51,6 +51,25 @@
     visibility: hidden;
 }
 
+.HIWTitle{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.604vw;
+    line-height: 44.444vh;
+    color: #C3FA50;
+    position: absolute;
+    display: flex;
+    left: 12.7vw;
+    width: 53.3vw;
+    height: 16.6vh;
+    align-items: flex-end;
+    padding-left: 5.146vw;
+    padding-bottom: 2.871vh;
+    opacity: 0;
+    visibility: hidden;
+}
+
 .main-component{
     opacity: 0;
     visibility: hidden;

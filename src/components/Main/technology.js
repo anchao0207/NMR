@@ -14,7 +14,7 @@ const MainBody = (props) => {
         <div className="head-text">{props.heading}</div>
       </div>
       <div className="description">
-        <div className="decs-text">{props.description}</div>
+        <div className="decs-text"><p>{props.description}</p></div>
       </div>
     </div>
   );
