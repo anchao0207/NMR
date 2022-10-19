@@ -621,8 +621,8 @@ export default function Home() {
             <text className="textPage">13/13</text>
           </div>
           <Forward className="forward" ref={forward13bRef}/>
-          <a className="forward" ref={forward13aRef} href="http://localhost:3000/NMRFundamentals/">
-          </a>
+          {/* <a className="forward" ref={forward13aRef} href="http://localhost:3000/NMRFundamentals/">
+          </a> */}
         </div>
       </div>
     </>

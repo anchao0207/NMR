@@ -19,9 +19,12 @@ export default function NMRFundamentals() {
                 </div>
                 <div className="section2">
                     <Stack gap={3}>
-                        {content.map((o) => (
-                            <button>{o}</button>
-                        ))}
+                        {content.map((o) => {
+                            if(o === "How it Works") 
+                                return <a href="http://localhost:3000/"><button>{o}</button></a>
+                            
+                            return <a href="http://localhost:3000/StillDeveloping/"><button>{o}</button></a>
+                        })}
                     </Stack>
                 </div>
             </div>
