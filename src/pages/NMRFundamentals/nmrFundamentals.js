@@ -16,8 +16,10 @@ export default function NMRFundamentals() {
             let path = "http://localhost:3000/";
             navigate(path);
         }
-        path = "http://localhost:3000/StillDeveloping/";
-        navigate(path);
+        else {
+            let path = "http://localhost:3000/StillDeveloping/";
+            navigate(path);
+        }
     }
 
     return (

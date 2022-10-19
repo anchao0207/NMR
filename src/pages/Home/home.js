@@ -84,12 +84,14 @@ export default function Home() {
   const startClick = () => {
     var tl1= gsap.timeline();
     tl1.add("start")
-      .to(nmrRef.current, { visibility:'hidden', opacity: 0, duration: 0.5 }, "start")
-      .to(playRef.current, { visibility:'hidden', opacity: 0, duration: 0.5 }, "start")
+      .to(nmrRef.current, { opacity: 0, duration: 0.5 }, "start")
+      .to(playRef.current, { opacity: 0, duration: 0.5 }, "start")
+      .to(nmrRef.current, { visibility:'hidden'},"hide")
+      .to(playRef.current, { visibility:'hidden'},"hide")
       .to(hiwRef.current, { visibility:'visible', opacity: 1, duration: 1.5})
       .to(hiwRef.current, { opacity: 0, duration: 0.5})
-      .to(hiwRef.current, { visibility:'hidden'})
-      .add("second")
+      .to(hiwRef.current, { visibility:'hidden'},"hide")
+      // .add("second")
       .to(titleRef.current, { visibility: 'visible', opacity:1, duration: 0.5}, "second")
       .to(techRef.current, { visibility: 'visible', opacity:1, duration: 0.5}, "second")
       .to(back1Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second") 
@@ -102,28 +104,37 @@ export default function Home() {
   const back1Click = () => {
     var tl2 = gsap.timeline();
     tl2.add("start")
-      .to(back1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(techRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(titleRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(nmrRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(playRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+    .to(back1Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+    .to(forward1Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+    .to(techRef.current, {  opacity: 0, duration: 0.5 }, "start")
+    .to(text1Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+    .to(titleRef.current, {  opacity: 0, duration: 0.5 }, "start")
+    .to(back1Ref.current, { visibility:'hidden' })
+    .to(forward1Ref.current, { visibility:'hidden' })
+    .to(techRef.current, { visibility:'hidden' })
+    .to(text1Ref.current, { visibility:'hidden'},"hide")
+    .to(titleRef.current, { visibility:'hidden'},"hide")
+    // .add("second")
+      .to(nmrRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(playRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward1Click = () => {
     var tl3 = gsap.timeline();
     tl3.add("start")
-      .to(back1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(techRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(magnetRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back2Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward2Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text2Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back1Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward1Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(techRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text1Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back1Ref.current, { visibility:'hidden'},"hide")
+      .to(forward1Ref.current, { visibility:'hidden'},"hide")
+      .to(techRef.current, { visibility:'hidden'},"hide")
+      .to(text1Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(magnetRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back2Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward2Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text2Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // MAGNET PAGE NAVIGATION
@@ -131,29 +142,37 @@ export default function Home() {
   const back2Click = () => {
     var tl4 = gsap.timeline();
     tl4.add("start")
-      .to(back2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(magnetRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(techRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back1Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward1Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text1Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back2Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward2Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(magnetRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text2Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back2Ref.current, { visibility:'hidden'},"hide")
+      .to(forward2Ref.current, { visibility:'hidden'},"hide")
+      .to(magnetRef.current, { visibility:'hidden'},"hide")
+      .to(text2Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(techRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back1Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward1Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text1Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward2Click = () => {
     var tl5 = gsap.timeline();
     tl5.add("start")
-      .to(back2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(magnetRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(tempRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back3Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward3Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text3Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back2Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward2Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(magnetRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text2Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back2Ref.current, { visibility:'hidden'},"hide")
+      .to(forward2Ref.current, { visibility:'hidden'},"hide")
+      .to(magnetRef.current, { visibility:'hidden'},"hide")
+      .to(text2Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(tempRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back3Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward3Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text3Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // TEMPERATURE PAGE NAVIGATION
@@ -161,30 +180,38 @@ export default function Home() {
   const back3Click = () => {
     var tl6 = gsap.timeline();
     tl6.add("start")
-      .to(back3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(tempRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(magnetRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back2Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward2Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text2Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back3Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward3Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(tempRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text3Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back3Ref.current, { visibility:'hidden'},"hide")
+      .to(forward3Ref.current, { visibility:'hidden'},"hide")
+      .to(tempRef.current, { visibility:'hidden'},"hide")
+      .to(text3Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(magnetRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back2Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward2Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text2Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
       
   };
 
   const forward3Click = () => {
     var tl7 = gsap.timeline();
     tl7.add("start")
-      .to(back3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(tempRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(sampleRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back4Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward4Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text4Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back3Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward3Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(tempRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text3Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back3Ref.current, { visibility:'hidden'},"hide")
+      .to(forward3Ref.current, { visibility:'hidden'},"hide")
+      .to(tempRef.current, { visibility:'hidden'},"hide")
+      .to(text3Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(sampleRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back4Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward4Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text4Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
       
   };
 
@@ -193,29 +220,37 @@ export default function Home() {
   const back4Click = () => {
     var tl8 = gsap.timeline();
     tl8.add("start")
-      .to(back4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(sampleRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(tempRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back3Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward3Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text3Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back4Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward4Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(sampleRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text4Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back4Ref.current, { visibility:'hidden'},"hide")
+      .to(forward4Ref.current, { visibility:'hidden'},"hide")
+      .to(sampleRef.current, { visibility:'hidden'},"hide")
+      .to(text4Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(tempRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back3Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward3Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text3Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
   
   const forward4Click = () => {
     var tl9 = gsap.timeline();
     tl9.add("start")
-      .to(back4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(sampleRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(fieldRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back5Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward5Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text5Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back4Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward4Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(sampleRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text4Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back4Ref.current, { visibility:'hidden'},"hide")
+      .to(forward4Ref.current, { visibility:'hidden'},"hide")
+      .to(sampleRef.current, { visibility:'hidden'},"hide")
+      .to(text4Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(fieldRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back5Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward5Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text5Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   }
 
   // FIELD PAGE NAVIGATION
@@ -223,249 +258,318 @@ export default function Home() {
   const back5Click = () => {
     var tl10 = gsap.timeline();
     tl10.add("start")
-      .to(back5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(fieldRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(sampleRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back4Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward4Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text4Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back5Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward5Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(fieldRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text5Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back5Ref.current, { visibility:'hidden'},"hide")
+      .to(forward5Ref.current, { visibility:'hidden'},"hide")
+      .to(fieldRef.current, { visibility:'hidden'},"hide")
+      .to(text5Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(sampleRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back4Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward4Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text4Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward5Click = () => {
     var tl11 = gsap.timeline();
     tl11.add("start")
-      .to(back5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(fieldRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(nucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back6Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward6Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text6Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back5Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward5Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(fieldRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text5Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back5Ref.current, { visibility:'hidden'},"hide")
+      .to(forward5Ref.current, { visibility:'hidden'},"hide")
+      .to(fieldRef.current, { visibility:'hidden'},"hide")
+      .to(text5Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(nucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back6Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward6Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text6Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // NUCLEI PAGE NAVIGATION
   const back6Click = () => {
     var tl12 = gsap.timeline();
     tl12.add("start")
-      .to(back6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(nucleiRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(fieldRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back5Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward5Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text5Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back6Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward6Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(nucleiRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text6Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back6Ref.current, { visibility:'hidden'},"hide")
+      .to(forward6Ref.current, { visibility:'hidden'},"hide")
+      .to(nucleiRef.current, { visibility:'hidden'},"hide")
+      .to(text6Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(fieldRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back5Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward5Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text5Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward6Click = () => {
     var tl13 = gsap.timeline();
     tl13.add("start")
-      .to(back6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(nucleiRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(fourNRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back7Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward7Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text7Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back6Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward6Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(nucleiRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text6Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back6Ref.current, { visibility:'hidden'},"hide")
+      .to(forward6Ref.current, { visibility:'hidden'},"hide")
+      .to(nucleiRef.current, { visibility:'hidden'},"hide")
+      .to(text6Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(fourNRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back7Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward7Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text7Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // FOUR NUCLEI PAGE NAVIGATION
   const back7Click = () => {
     var tl14 = gsap.timeline();
     tl14.add("start")
-      .to(back7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(fourNRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(nucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back6Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward6Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text6Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back7Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward7Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(fourNRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text7Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back7Ref.current, { visibility:'hidden'},"hide")
+      .to(forward7Ref.current, { visibility:'hidden'},"hide")
+      .to(fourNRef.current, { visibility:'hidden'},"hide")
+      .to(text7Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(nucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back6Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward6Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text6Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward7Click = () => {
     var tl15 = gsap.timeline();
     tl15.add("start")
-      .to(back7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(fourNRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(hNucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back8Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward8Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text8Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back7Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward7Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(fourNRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text7Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back7Ref.current, { visibility:'hidden'},"hide")
+      .to(forward7Ref.current, { visibility:'hidden'},"hide")
+      .to(fourNRef.current, { visibility:'hidden'},"hide")
+      .to(text7Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(hNucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back8Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward8Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text8Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // 1H NUCLEI PAGE NAVIGATION
   const back8Click = () => {
     var tl16 = gsap.timeline();
     tl16.add("start")
-      .to(back8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(hNucleiRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(fourNRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back7Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward7Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text7Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back8Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward8Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(hNucleiRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text8Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back8Ref.current, { visibility:'hidden'},"hide")
+      .to(forward8Ref.current, { visibility:'hidden'},"hide")
+      .to(hNucleiRef.current, { visibility:'hidden'},"hide")
+      .to(text8Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(fourNRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back7Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward7Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text7Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward8Click = () => {
     var tl17 = gsap.timeline();
     tl17.add("start")
-      .to(back8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(hNucleiRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(pulseRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back9Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward9Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text9Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back8Ref.current, { opacity: 0, duration: 0.5 }, "start")
+      .to(forward8Ref.current, { opacity: 0, duration: 0.5 }, "start")
+      .to(hNucleiRef.current, { opacity: 0, duration: 0.5 }, "start")
+      .to(text8Ref.current, { opacity: 0, duration: 0.5 }, "start")
+      .to(back8Ref.current, { visibility:'hidden'},"hide")
+      .to(forward8Ref.current, { visibility:'hidden'},"hide")
+      .to(hNucleiRef.current, { visibility:'hidden'},"hide")
+      .to(text8Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(pulseRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back9Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward9Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text9Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // PULSE PAGE NAVIGATION
   const back9Click = () => {
     var tl18 = gsap.timeline();
     tl18.add("start")
-      .to(back9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(pulseRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(hNucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back8Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward8Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text8Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back9Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward9Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(pulseRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text9Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back9Ref.current, { visibility:'hidden'},"hide")
+      .to(forward9Ref.current, { visibility:'hidden'},"hide")
+      .to(pulseRef.current, { visibility:'hidden'},"hide")
+      .to(text9Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(hNucleiRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back8Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward8Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text8Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward9Click = () => {
     var tl19 = gsap.timeline();
     tl19.add("start")
-      .to(back9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(pulseRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(acquiRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back10Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward10Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text10Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back9Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward9Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(pulseRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text9Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back9Ref.current, { visibility:'hidden'},"hide")
+      .to(forward9Ref.current, { visibility:'hidden'},"hide")
+      .to(pulseRef.current, { visibility:'hidden'},"hide")
+      .to(text9Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(acquiRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back10Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward10Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text10Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // ACQUISITION PAGE NAVIGATION
   const back10Click = () => {
     var tl20 = gsap.timeline();
     tl20.add("start")
-      .to(back10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(acquiRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(pulseRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back9Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward9Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text9Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back10Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward10Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(acquiRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text10Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back10Ref.current, { visibility:'hidden'},"hide")
+      .to(forward10Ref.current, { visibility:'hidden'},"hide")
+      .to(acquiRef.current, { visibility:'hidden'},"hide")
+      .to(text10Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(pulseRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back9Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward9Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text9Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward10Click = () => {
     var tl21 = gsap.timeline();
     tl21.add("start")
-      .to(back10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(acquiRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(transRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back11Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward11Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text11Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back10Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward10Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(acquiRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text10Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back10Ref.current, { visibility:'hidden'},"hide")
+      .to(forward10Ref.current, { visibility:'hidden'},"hide")
+      .to(acquiRef.current, { visibility:'hidden'},"hide")
+      .to(text10Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(transRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back11Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward11Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text11Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // TRANSFORMATION PAGE NAVIGATION
   const back11Click = () => {
     var tl22 = gsap.timeline();
     tl22.add("start")
-      .to(back11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(transRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(acquiRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back10Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward10Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text10Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back11Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward11Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(transRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text11Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back11Ref.current, { visibility:'hidden'},"hide")
+      .to(forward11Ref.current, { visibility:'hidden'},"hide")
+      .to(transRef.current, { visibility:'hidden'},"hide")
+      .to(text11Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(acquiRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back10Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward10Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text10Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward11Click = () => {
     var tl23 = gsap.timeline();
     tl23.add("start")
-      .to(back11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(transRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(spectrumRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back12Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward12Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text12Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back11Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward11Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(transRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text11Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back11Ref.current, { visibility:'hidden'},"hide")
+      .to(forward11Ref.current, { visibility:'hidden'},"hide")
+      .to(transRef.current, { visibility:'hidden'},"hide")
+      .to(text11Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(spectrumRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back12Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward12Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text12Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // SPECTRUM PAGE NAVIGATION
   const back12Click = () => {
     var tl24 = gsap.timeline();
     tl24.add("start")
-      .to(back12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(spectrumRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(transRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back11Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward11Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text11Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back12Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward12Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(spectrumRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text12Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back12Ref.current, { visibility:'hidden'},"hide")
+      .to(forward12Ref.current, { visibility:'hidden'},"hide")
+      .to(spectrumRef.current, { visibility:'hidden'},"hide")
+      .to(text12Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(transRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back11Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward11Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text11Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   const forward12Click = () => {
     var tl25 = gsap.timeline();
     tl25.add("start")
-      .to(back12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(spectrumRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(pictureRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back13Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward13aRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward13bRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text13Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back12Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward12Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(spectrumRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text12Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back12Ref.current, { visibility:'hidden'},"hide")
+      .to(forward12Ref.current, { visibility:'hidden'},"hide")
+      .to(spectrumRef.current, { visibility:'hidden'},"hide")
+      .to(text12Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(pictureRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back13Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward13aRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward13bRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text13Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   // BIGGER PICTURE PAGE NAVIGATION
   const back13Click = () => {
     var tl26 = gsap.timeline();
     tl26.add("start")
-      .to(back13Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward13aRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(forward13bRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(pictureRef.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .to(text13Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
-      .add("second")
-      .to(spectrumRef.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(back12Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(forward12Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second")
-      .to(text12Ref.current, {visibility: 'visible', opacity:1, duration: 0.1}, "second");
+      .to(back13Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward13aRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(forward13bRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(pictureRef.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(text13Ref.current, {  opacity: 0, duration: 0.5 }, "start")
+      .to(back13Ref.current, { visibility:'hidden'},"hide")
+      .to(forward13aRef.current, { visibility:'hidden'},"hide")
+      .to(forward13bRef.current, { visibility:'hidden'},"hide")
+      .to(pictureRef.current, { visibility:'hidden'},"hide")
+      .to(text13Ref.current, { visibility:'hidden'},"hide")
+      // .add("second")
+      .to(spectrumRef.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(back12Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(forward12Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second")
+      .to(text12Ref.current, {visibility: 'visible', opacity:1, duration: 0.5}, "second");
   };
 
   return (
