@@ -20,6 +20,7 @@ import HNuclei from "../../components/Main/hNuclei";
 import Transformation from "../../components/Main/transformation";
 import BiggerPicture from "../../components/Main/biggerPicture";
 import Spectrum from "../../components/Main/spectrum";
+import axios from "axios";
 
 
 export default function Home() {
@@ -82,12 +83,17 @@ export default function Home() {
   const pictureRef = React.useRef(null);
   const transRef = React.useRef(null);
 
-  //for light setup
-  // const board = new five.Board({
-  //   io: new Raspi()
-  // });
+
+  const lightOff = () => {
+    console.log("trigger off")
+    axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    })
+  }
 
   const startClick = () => {
+
     var tl1 = gsap.timeline();
     tl1.add("start")
       .to(nmrRef.current, { visibility:'hidden', opacity: 0, duration: 0.5 }, "start")
@@ -106,6 +112,10 @@ export default function Home() {
   // TECHNOLGY PAGE NAVIGATION
 
   const back1Click = () => {
+    lightOff();
+
+    lightOff();
+
     var tl2 = gsap.timeline();
     tl2.add("start")
       .to(back1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -119,6 +129,10 @@ export default function Home() {
   };
 
   const forward1Click = () => {
+    lightOff();
+
+    lightOff();
+
     var tl3 = gsap.timeline();
     tl3.add("start")
       .to(back1Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -135,6 +149,8 @@ export default function Home() {
   // MAGNET PAGE NAVIGATION
 
   const back2Click = () => {
+    lightOff();
+
     var tl4 = gsap.timeline();
     tl4.add("start")
       .to(back2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -149,6 +165,8 @@ export default function Home() {
   };
 
   const forward2Click = () => {
+    lightOff();
+
     var tl5 = gsap.timeline();
     tl5.add("start")
       .to(back2Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -165,6 +183,8 @@ export default function Home() {
   // TEMPERATURE PAGE NAVIGATION
 
   const back3Click = () => {
+    lightOff();
+
     var tl6 = gsap.timeline();
     tl6.add("start")
       .to(back3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -180,6 +200,8 @@ export default function Home() {
   };
 
   const forward3Click = () => {
+    lightOff();
+
     var tl7 = gsap.timeline();
     tl7.add("start")
       .to(back3Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -197,6 +219,8 @@ export default function Home() {
   // SAMPLE PAGE NAVIGATION 
 
   const back4Click = () => {
+    lightOff();
+
     var tl8 = gsap.timeline();
     tl8.add("start")
       .to(back4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -211,6 +235,8 @@ export default function Home() {
   };
   
   const forward4Click = () => {
+    lightOff();
+
     var tl9 = gsap.timeline();
     tl9.add("start")
       .to(back4Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -227,6 +253,8 @@ export default function Home() {
   // FIELD PAGE NAVIGATION
 
   const back5Click = () => {
+    lightOff();
+
     var tl10 = gsap.timeline();
     tl10.add("start")
       .to(back5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -241,6 +269,8 @@ export default function Home() {
   };
 
   const forward5Click = () => {
+    lightOff();
+
     var tl11 = gsap.timeline();
     tl11.add("start")
       .to(back5Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -256,6 +286,8 @@ export default function Home() {
 
   // NUCLEI PAGE NAVIGATION
   const back6Click = () => {
+    lightOff();
+
     var tl12 = gsap.timeline();
     tl12.add("start")
       .to(back6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -270,6 +302,8 @@ export default function Home() {
   };
 
   const forward6Click = () => {
+    lightOff();
+
     var tl13 = gsap.timeline();
     tl13.add("start")
       .to(back6Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -285,6 +319,8 @@ export default function Home() {
 
   // FOUR NUCLEI PAGE NAVIGATION
   const back7Click = () => {
+    lightOff();
+
     var tl14 = gsap.timeline();
     tl14.add("start")
       .to(back7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -299,6 +335,8 @@ export default function Home() {
   };
 
   const forward7Click = () => {
+    lightOff();
+
     var tl15 = gsap.timeline();
     tl15.add("start")
       .to(back7Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -314,6 +352,8 @@ export default function Home() {
 
   // 1H NUCLEI PAGE NAVIGATION
   const back8Click = () => {
+    lightOff();
+
     var tl16 = gsap.timeline();
     tl16.add("start")
       .to(back8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -328,6 +368,8 @@ export default function Home() {
   };
 
   const forward8Click = () => {
+    lightOff();
+
     var tl17 = gsap.timeline();
     tl17.add("start")
       .to(back8Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -343,6 +385,8 @@ export default function Home() {
 
   // PULSE PAGE NAVIGATION
   const back9Click = () => {
+    lightOff();
+
     var tl18 = gsap.timeline();
     tl18.add("start")
       .to(back9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -357,6 +401,8 @@ export default function Home() {
   };
 
   const forward9Click = () => {
+    lightOff();
+
     var tl19 = gsap.timeline();
     tl19.add("start")
       .to(back9Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -372,6 +418,8 @@ export default function Home() {
 
   // ACQUISITION PAGE NAVIGATION
   const back10Click = () => {
+    lightOff();
+
     var tl20 = gsap.timeline();
     tl20.add("start")
       .to(back10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -386,6 +434,8 @@ export default function Home() {
   };
 
   const forward10Click = () => {
+    lightOff();
+
     var tl21 = gsap.timeline();
     tl21.add("start")
       .to(back10Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -401,6 +451,8 @@ export default function Home() {
 
   // TRANSFORMATION PAGE NAVIGATION
   const back11Click = () => {
+    lightOff();
+
     var tl22 = gsap.timeline();
     tl22.add("start")
       .to(back11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -415,6 +467,8 @@ export default function Home() {
   };
 
   const forward11Click = () => {
+    lightOff();
+
     var tl23 = gsap.timeline();
     tl23.add("start")
       .to(back11Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -430,6 +484,8 @@ export default function Home() {
 
   // SPECTRUM PAGE NAVIGATION
   const back12Click = () => {
+    lightOff();
+
     var tl24 = gsap.timeline();
     tl24.add("start")
       .to(back12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -444,6 +500,8 @@ export default function Home() {
   };
 
   const forward12Click = () => {
+    lightOff();
+
     var tl25 = gsap.timeline();
     tl25.add("start")
       .to(back12Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -460,6 +518,8 @@ export default function Home() {
 
   // BIGGER PICTURE PAGE NAVIGATION
   const back13Click = () => {
+    lightOff();
+
     var tl26 = gsap.timeline();
     tl26.add("start")
       .to(back13Ref.current, { visibility:'hidden', opacity: 0, duration: 0.1 }, "start")
@@ -504,7 +564,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back1Ref} onClick={back1Click} />
           <div className="page" ref={text1Ref}>
-            <text className="textPage">1/13</text>
+            <span className="textPage">1/13</span>
           </div>
           <Forward className="forward" ref={forward1Ref} onClick={forward1Click} />
 
@@ -514,7 +574,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back2Ref} onClick={back2Click}/>
           <div className="page" ref={text2Ref}>
-            <text className="textPage">2/13</text>
+            <span className="textPage">2/13</span>
           </div>
           <Forward className="forward" ref={forward2Ref} onClick={forward2Click}/>
 
@@ -524,7 +584,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back3Ref} onClick={back3Click}/>
           <div className="page" ref={text3Ref}>
-            <text className="textPage">3/13</text>
+            <span className="textPage">3/13</span>
           </div>
           <Forward className="forward" ref={forward3Ref} onClick={forward3Click}/>
 
@@ -534,7 +594,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back4Ref} onClick={back4Click}/>
           <div className="page" ref={text4Ref}>
-            <text className="textPage">4/13</text>
+            <span className="textPage">4/13</span>
           </div>
           <Forward className="forward" ref={forward4Ref} onClick={forward4Click}/>
 
@@ -544,7 +604,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back5Ref} onClick={back5Click}/>
           <div className="page" ref={text5Ref}>
-            <text className="textPage">5/13</text>
+            <span className="textPage">5/13</span>
           </div>
           <Forward className="forward" ref={forward5Ref} onClick={forward5Click}/>
 
@@ -554,7 +614,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back6Ref} onClick={back6Click}/>
           <div className="page" ref={text6Ref}>
-            <text className="textPage">6/13</text>
+            <span className="textPage">6/13</span>
           </div>
           <Forward className="forward" ref={forward6Ref} onClick={forward6Click}/>
 
@@ -564,7 +624,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back7Ref} onClick={back7Click}/>
           <div className="page" ref={text7Ref}>
-            <text className="textPage">7/13</text>
+            <span className="textPage">7/13</span>
           </div>
           <Forward className="forward" ref={forward7Ref} onClick={forward7Click}/>
 
@@ -574,7 +634,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back8Ref} onClick={back8Click}/>
           <div className="page" ref={text8Ref}>
-            <text className="textPage">8/13</text>
+            <span className="textPage">8/13</span>
           </div>
           <Forward className="forward" ref={forward8Ref} onClick={forward8Click}/>
 
@@ -584,7 +644,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back9Ref} onClick={back9Click}/>
           <div className="page" ref={text9Ref}>
-            <text className="textPage">9/13</text>
+            <span className="textPage">9/13</span>
           </div>
           <Forward className="forward" ref={forward9Ref} onClick={forward9Click}/>
 
@@ -594,7 +654,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back10Ref} onClick={back10Click}/>
           <div className="page" ref={text10Ref}>
-            <text className="textPage">10/13</text>
+            <span className="textPage">10/13</span>
           </div>
           <Forward className="forward" ref={forward10Ref} onClick={forward10Click}/>
 
@@ -604,7 +664,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back11Ref} onClick={back11Click}/>
           <div className="page" ref={text11Ref}>
-            <text className="textPage">11/13</text>
+            <span className="textPage">11/13</span>
           </div>
           <Forward className="forward" ref={forward11Ref} onClick={forward11Click}/>
 
@@ -614,7 +674,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back12Ref} onClick={back12Click}/>
           <div className="page" ref={text12Ref}>
-            <text className="textPage">12/13</text>
+            <span className="textPage">12/13</span>
           </div>
           <Forward className="forward" ref={forward12Ref} onClick={forward12Click}/>
 
@@ -624,7 +684,7 @@ export default function Home() {
           </div>
           <Back className="back" ref={back13Ref} onClick={back13Click}/>
           <div className="page" ref={text13Ref}>
-            <text className="textPage">13/13</text>
+            <span className="textPage">13/13</span>
           </div>
           <Forward className="forward" ref={forward13bRef}/>
           <a className="forward" ref={forward13aRef} href="http://localhost:3000/NMRFundamentals/">

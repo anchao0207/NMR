@@ -1,18 +1,22 @@
 from math import fabs
 from flask import Flask
 from flask import url_for, jsonify, render_template
-from rpi_ws281x import Color
-import board
-import neopixel
+from flask_cors import CORS
+# from rpi_ws281x import Color
+# import board
+# import neopixel
 import os
 import signal
 import subprocess
 import time
 import sys
 
-num_pixels = 238
+num_pixels = 294
+
 
 app = Flask(__name__)
+CORS(app)
+
 pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.1, auto_write=False)
 
 # for i in range (30):
@@ -28,16 +32,105 @@ pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.1, auto_write=F
 # pixels.fill((0,0,0))
 # pixels.show()
 
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
+@app.route('/off', methods=['POST'])
+def off():
+    print("Lights off")
+    pixels.fill((0,0,0))
+    return "Off"
 
 @app.route('/magnet', methods=['POST'])
 def magnet():
-    print('bla')
-    pixels.fill((0,0,0))
-    for i in range (190,238):
+    print('posted')
+    for i in range (30):
         pixels[i]=(225,0,0)
     for i in range (30,60):
         pixels[i]=(225,0,0)
     pixels.show()
+
+    return "magnet"
+
+@app.route('/temperature-heli', methods=['POST'])
+def temperature():
+    for i in range (117,156):
+        pixels[i]=(225,0,0)
+    pixels.show()
+
+    return "temperature-heli"
+
+@app.route('/temperature-nitro', methods=['POST'])
+def temperature():
+    for i in range (60,117):
+        pixels[i]=(225,0,0)
+    pixels.show()
+
+    return "temperature-nitro"
+
+@app.route('/temperature-mylar', methods=['POST'])
+def temperature():
+    for i in range (30):
+        pixels[i]=(225,0,0)
+    for i in range (30,60):
+        pixels[i]=(225,0,0)
+    pixels.show()
+
+    return "temperature-mylar"
+
+@app.route('/sample', methods=['POST'])
+def sample():
+    for i in range (190,237):
+        pixels[i]=(225,0,0)
+    pixels.show()
+
+    return "sample"
+
+@app.route('/field', methods=['POST'])
+def field():
+    #need to figure out the right light
+    for i in range (190,237):
+        pixels[i]=(225,0,0)
+    pixels.show()
+
+    return "field"
+
+@app.route('/pulseH', methods=['POST'])
+def pulse():
+    #need to check the light to see if it right or not
+    for i in range (237,294):
+        pixels[i]=(225,0,0)
+    pixels.show()
+
+    return "pulse"
+
+@app.route('/pulseC', methods=['POST'])
+def pulse():
+    #need to check the light to see if it right or not
+    for i in range (237,294):
+        pixels[i]=(225,225,0)
+    pixels.show()
+    
+    return "pulse"
+
+@app.route('/pulseF', methods=['POST'])
+def pulse():
+    #need to check the light to see if it right or not
+    for i in range (237,294):
+        pixels[i]=(0,225,0)
+    pixels.show()
+    
+    return "pulse"
+
+@app.route('/pulseP', methods=['POST'])
+def pulse():
+    #need to check the light to see if it right or not
+    for i in range (237,294):
+        pixels[i]=(0,225,225)
+    pixels.show()
+    
+    return "pulse"
 
 
 # proc = ''
@@ -63,12 +156,6 @@ def magnet():
 #                             last_updated=dir_last_updated('static'))
 
 
-# @app.route('/off', methods=['POST'])
-# def off():
-#     procOff()
-#     print("Lights off")
-#     pixels.fill((0,0,0))
-#     return "Off"
 	
 # @app.route('/magnet', methods=['POST'])
 # def magnet():

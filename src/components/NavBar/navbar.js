@@ -4,7 +4,7 @@ import { ReactComponent as NMRLogo } from "../../components/NavBar/NMR Logo.svg"
 export default function NavBar() {
     return (
         <>
-        <div class = "navBar">
+        <div className = "navBar">
             <div className = "sectionLogo">
                 <a href="http://localhost:3000/">
                     <NMRLogo className = "logo" />
@@ -14,7 +14,7 @@ export default function NavBar() {
             <div className = "sectionTitle"></div>
 
             <div className = "sectionText1">
-                <div class = "nmrFundamentals">
+                <div className = "nmrFundamentals">
                     <a href="http://localhost:3000/NMRFundamentals" className="navLink">
                     <span className = "navText">NMR</span>
                     <br></br>
@@ -34,7 +34,7 @@ export default function NavBar() {
             </div>
 
             <div className = "sectionText3">
-                <div class = "facultyResearch">
+                <div className = "facultyResearch">
                     <a href="http://localhost:3000/FacultyResearch" className="navLink">
                     <span className = "navText">Faculty</span>
                     <br></br>

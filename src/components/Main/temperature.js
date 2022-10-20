@@ -1,5 +1,7 @@
 import React from "react";
 import "./main.css";
+import axios from "axios"
+import { Link } from "react-router-dom";
 
 const content = {
   heading: "The\nTemperature",
@@ -19,6 +21,30 @@ const content = {
     ", to help keep the magnet cold.\n\nBasically, the entire metal can is like a Yeti - an excellent thermos!"
 };
 
+const onHeliClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/temperature-heli",
+  })
+  e.preventDefault();
+}
+const onNitroClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/temperature-nitro",
+  })
+  e.preventDefault();
+}
+const onMylarClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/temperature-mylar",
+  })
+  e.preventDefault();
+}
+
+
+
 const MainBody = (props) => {
   return (
     <div className="container">
@@ -28,7 +54,13 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a className="link">{props.link1}</a>{props.description2}<a className="link">{props.link2}</a>{props.description3}<a className="link">{props.link3}</a>{props.description4}
+              {props.description1}
+              <Link className="link" onClick={onHeliClick}>{props.link1}</Link>
+              {props.description2}
+              <Link className="link" onClick={onNitroClick}>{props.link2}</Link>
+              {props.description3}
+              <Link className="link" onClick={onMylarClick}>{props.link3}</Link>
+              {props.description4}
             </p>
         </div>
       </div>

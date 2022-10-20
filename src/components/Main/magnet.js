@@ -1,6 +1,7 @@
 import React from "react";
 import "./main.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const content = {
   heading: "The\nMagnet",
@@ -12,11 +13,12 @@ const content = {
     "\n\nAs long as it is kept sufficiently cold, the electricity flowing in the superconducting wire (and the magnetic field it creates) will continue forever. No batteries or external power required!\n\nThe magnet field strength of this instrument is 6.3 tesla. That’s about 200,000 times more powerful than the magnetic field of the earth!",
 };
 
-const onMagnetClick = () => {
+const onMagnetClick = (e) => {
   axios({
     method: "POST",
-    url: "http://127.0.0.1:8080/magnet",
+    url: "http://localhost:8080/magnet",
   })
+  e.preventDefault();
 }
 
 const MainBody = (props) => {
@@ -29,9 +31,9 @@ const MainBody = (props) => {
         <div className="decs-text">
           <p>
             {props.description1}
-            <button className="link" onclick={onMagnetClick}>
+            <Link  className="link" onClick={onMagnetClick}>
               {props.link1}
-            </button>
+            </Link>
             {props.description2}
           </p>
         </div>
