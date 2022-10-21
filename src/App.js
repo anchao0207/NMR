@@ -11,6 +11,7 @@ import { ViewportProvider } from "./viewportContext";
 import NMRFundamentals from "./pages/NMRFundamentals/nmrFundamentals";
 import CourseUsage from "./pages/CourseUsage/courseUsage";
 import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
+import StillDeveloping from "./pages/StillDeveloping/stillDeveloping";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route exact path={"/NMRFundamentals"} element={<NMRFundamentals />} />
           <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
           <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
+          <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Routes>
       </Router>

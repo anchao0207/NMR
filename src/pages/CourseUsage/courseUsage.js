@@ -4,11 +4,18 @@ import { useViewport } from "../../viewportContext";
 import { ReactComponent as NuclearMagneticResonance } from "../Home/NuclearMagneticResonance.svg";
 import NavBar from "../../components/NavBar/navbar2";
 import Stack from 'react-bootstrap/Stack';
+import { useNavigate } from "react-router-dom";
 
 export default function NMRFundamentals() {
     const { width, height } = useViewport();
     const content = ["General\nChemistry", "Organic\nChemistry", "Physical\nChemistry", "Biomechanical\nInstrumentation", "Advanced\nSynthesis", "Advanced\nSynthesis"];
     
+    let navigate = useNavigate();
+    const handleClick = (name) => {
+        let path = "http://localhost:3000/StillDeveloping/";
+        navigate(path);
+    }
+
     return (
         <>
         <div className="home">
@@ -20,7 +27,9 @@ export default function NMRFundamentals() {
                 <div className="section2" id="course">
                     <Stack gap={3}>
                         {content.map((o) => (
-                            <button>{o}</button>
+                            <a href="http://localhost:3000/StillDeveloping/">
+                                <button onClick={handleClick(o)}>{o}</button>
+                            </a>
                         ))}
                     </Stack>
                 </div>
