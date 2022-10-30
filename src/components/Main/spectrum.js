@@ -74,15 +74,119 @@ const MainBody = (props) => {
     tallerRef.current.style.visibility = 'hidden';
   }
 
+  const ppmClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'visible';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const methanolClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'visible';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const methanol1HClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'visible';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const methanol3HClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'visible';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const spectrumClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'visible';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const twoClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'visible';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const shotterClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'visible';
+    tallerRef.current.style.visibility = 'hidden';
+  }
+
+  const tallerClick = () => {
+    headingRef.current.style.visibility = 'hidden';
+    intensityRef.current.style.visibility = 'hidden';
+    ppmRef.current.style.visibility = 'hidden';
+    methanolRef.current.style.visibility = 'hidden';
+    methanol1HRef.current.style.visibility = 'hidden';
+    methanol3HRef.current.style.visibility = 'hidden';
+    spectrumRef.current.style.visibility = 'hidden';
+    twoRef.current.style.visibility = 'hidden';
+    shotterRef.current.style.visibility = 'hidden';
+    tallerRef.current.style.visibility = 'visible';
+  }
+
   return (
     <div className="container">
       <div className="header">
         <div className="head-text" ref={headingRef}>{props.heading}</div>
         <Intensity width="50vw" height="75vh" className="pop-up" ref={intensityRef}></Intensity>
         <PPM width="50vw" height="75vh" className="pop-up" ref={ppmRef}></PPM>
-        <Methanol className="pop-up" ref={methanolRef}></Methanol>
-        <Methanol1H className="pop-up" ref={methanol1HRef}></Methanol1H>
-        <Methanol3H className="pop-up" ref={methanol3HRef}></Methanol3H>
+        <Methanol width="50vw" height="70vh" className="pop-up" ref={methanolRef}></Methanol>
+        <Methanol1H width="50vw" height="70vh" className="pop-up" ref={methanol1HRef}></Methanol1H>
+        <Methanol3H width="50vw" height="70vh" className="pop-up" ref={methanol3HRef}></Methanol3H>
         <Methanol1HSpectrum width="50vw" height="75vh" className="pop-up" ref={spectrumRef}></Methanol1HSpectrum>
         <TwoPeaks width="50vw" height="75vh" className="pop-up" ref={twoRef}></TwoPeaks>
         <ShorterPeak width="50vw" height="75vh" className="pop-up" ref={shotterRef}></ShorterPeak>
@@ -92,19 +196,19 @@ const MainBody = (props) => {
         <div className="decs-text">
             <p>
             {props.description1}
-            <a className="link" onClick={intensityClick}>{props.link1}</a> vs. <Link className="link">{props.link2}</Link>
+            <a className="link" onClick={intensityClick}>{props.link1}</a> vs. <a className="link" onClick={ppmClick}>{props.link2}</a>
             {props.description2}
-            <Link className="link">{props.link3}</Link>
+            <a className="link" onClick={methanolClick}>{props.link3}</a>
             {props.description3}
-            <Link className="link">{props.link4}</Link>
+            <a className="link" onClick={methanol1HClick}>{props.link4}</a>
             {props.description4}
-            <Link className="link">{props.link5}</Link>
+            <a className="link" onClick={methanol3HClick}>{props.link5}</a>
             {props.description5}
-            <a className="link"><sup>1</sup>{props.link6}</a> we see <a className="link">{props.link7}</a>
+            <a className="link" onClick={spectrumClick}><sup>1</sup>{props.link6}</a> we see <a className="link" onClick={twoClick}>{props.link7}</a>
             {props.description6}
-            <a className="link">{props.link8}</a>
+            <a className="link" onClick={shotterClick}>{props.link8}</a>
             {props.description7}
-            <a className="link">{props.link9}</a>
+            <a className="link" onClick={tallerClick}>{props.link9}</a>
             {props.description8}
             </p>
         </div>
