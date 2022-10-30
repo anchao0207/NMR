@@ -4,8 +4,8 @@ import "./main.css";
 const content = {
   heading: "The\nField",
   description1: "An optimum spectrum is collected in a uniform magnetic field. Though quite good, a magnetic field might not be uniform due to imperfections in the magnet and changes caused by the sample itself.\n\n",
-  link: "Shim coils ",
-  description2: "are small electromagnets that are able to add/subtract a little bit of magnetic field in various directions (the X, Y, and Z planes).  By “shimming”, the magnetic field is made uniform and the spectrum is optimized.",
+  link: "Shim coils",
+  description2: " are small electromagnets that are able to add/subtract a little bit of magnetic field in various directions (the X, Y, and Z planes).  By “shimming”, the magnetic field is made uniform and the spectrum is optimized.",
 };
 
 const MainBody = (props) => {

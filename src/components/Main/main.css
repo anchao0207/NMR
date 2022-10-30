@@ -114,3 +114,10 @@ a{
 .padding{
     padding-left: 1.5rem;
 }
+
+.pop-up{
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    bottom: 0;
+}
