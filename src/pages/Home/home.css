@@ -51,7 +51,7 @@
     visibility: hidden;
 }
 
-.HIWTitle{
+.HIWTitle {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -70,13 +70,13 @@
     visibility: hidden;
 }
 
-.main-component{
+.main-component {
     opacity: 0;
     visibility: hidden;
     position: absolute;
 }
 
-.back{
+.back {
     width: 9.375vw;
     height: 11.11vh;
     position: absolute;
@@ -86,7 +86,7 @@
     visibility: hidden;
 }
 
-.page{
+.page {
     width: 12.5vw;
     height: 11.11vh;
     position: absolute;
@@ -99,7 +99,7 @@
     visibility: hidden;
 }
 
-.textPage{
+.textPage {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -107,7 +107,7 @@
     color: #C4C4C4;
 }
 
-.forward{
+.forward {
     width: 9.375vw;
     height: 11.11vh;
     position: absolute;
