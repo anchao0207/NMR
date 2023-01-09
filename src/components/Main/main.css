@@ -55,6 +55,22 @@
     margin-left: 3.5vw;
 }
 
+/* within the decs-text */
+.subHeading{
+    height: 20.41vh;
+    width: 30vw;
+    position: absolute;
+    right: 9.53vw;
+    top: 10.11vh;
+    color: #FFFFFF;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.11vw;
+    line-height: 4.074vh;  
+    white-space: pre-wrap;
+}
+
 sup{
     font-size: 0.8vw;
 }
