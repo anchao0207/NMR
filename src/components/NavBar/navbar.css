@@ -29,21 +29,11 @@
     height: 16.6vh;
 }
 
-.sectionText1{
-    position: absolute;
-    display: flex;
-    left: 66vw;
-    width: 7vw;
-    height: 15.6vh;
-    margin-bottom: 1vh;
-    justify-content: center;
-    align-items: flex-end;
-}
 
 .sectionText1{
     position: absolute;
     display: flex;
-    left: 66vw;
+    left: 60vw;
     width: 14.1vw;
     height: 15.6vh;
     margin-bottom: 1vh;
@@ -54,7 +44,7 @@
 .sectionText2{
     position: absolute;
     display: flex;
-    left: 80.1vw;
+    left: 74.5vw;
     width: 10.2vw;
     height: 15.6vh;
     margin-bottom: 1vh;
@@ -65,7 +55,7 @@
 .sectionText3{
     position: absolute;
     display: flex;
-    left: 90.3vw;
+    left: 86vw;
     width: 9.7vw;
     height: 15.6vh;
     margin-bottom: 1vh;
