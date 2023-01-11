@@ -54,11 +54,55 @@
     overflow-y: auto;
 }
 
+.invi{
+    opacity: 0;
+    visibility: hidden;
+}
+
 sup{
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
     font-size: 4vw;
+}
+
+a{
+    color: #C3FA50;
+}
+
+li {
+    font-size: 2vw;
+    list-style-position: outside;
+}
+
+ol li { 
+    padding:0 0 0 2vw;
+}
+
+li:not(:last-child) { 
+    margin: 5.5vh 0;  
+ }
+
+.spectrum-main-link-text{
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+
+.spectrum-main-link{
+    text-decoration: underline;
+}
+
+.spectrum-main-link:hover{
+    color: #8fb83b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.spectrum-main-link:active{
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 
 /* Scroll bar custom */

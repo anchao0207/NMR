@@ -9,6 +9,7 @@ export default function InterpretingSpectrum() {
     desc2:
       "An NMR spectrum doesn’t actually allow us to see a chemical structure, but a trained scientist can elucidate a chemical structure from NMR spectral data.",
   };
+
   return (
     <>
       <div className="spectrum-main-title">{content.heading}</div>
