@@ -1,4 +1,4 @@
-.home {
+.researchHome {
     background-color: #0C0C31;
     margin-top: 16.6vh;
     height: 83.4vh;
@@ -7,7 +7,7 @@
 }
 
 .main-body {
-    position: relative;
+    position: absolute;
     display: flex;
     height: -webkit-fill-available;
 }
@@ -39,3 +39,4 @@
     font-size: 1.771vw;
     line-height: 3.519vh;
 }
+

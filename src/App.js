@@ -13,6 +13,11 @@ import CourseUsage from "./pages/CourseUsage/courseUsage";
 import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
 import NMRSpectrum from "./pages/NMRSpectrum/nmrSpectrum";
 import StillDeveloping from "./pages/StillDeveloping/stillDeveloping";
+import Faculty1Soil from "./components/FacultyResearch/faculty1Soil";
+import Faculty2Phospho from "./components/FacultyResearch/faculty2Phospho";
+import Faculty2Asym from "./components/FacultyResearch/faculty2Asym";
+import Faculty2Main from "./components/FacultyResearch/faculty2Main";
+import Faculty3Green from "./components/FacultyResearch/faculty3Green";
 
 export default function App() {
   return (
@@ -25,6 +30,11 @@ export default function App() {
           <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
           <Route exact path={"/NMRSpectrum"} element={<NMRSpectrum />} />
           <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
+          <Route exact path={"/Faculty1Soil"} element={<Faculty1Soil />} />
+          <Route exact path={"/Faculty2Asym"} element={<Faculty2Asym />} />
+          <Route exact path={"/Faculty2Phospho"} element={<Faculty2Phospho />} />
+          <Route exact path={"/Faculty2Main"} element={<Faculty2Main />} />
+          <Route exact path={"/Faculty3Green"} element={<Faculty3Green />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Routes>
       </Router>

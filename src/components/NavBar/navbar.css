@@ -63,6 +63,19 @@
     align-items: flex-end;
 }
 
+.sectionText4{
+    position: absolute;
+    left: 18vw;
+    width: 30vw;
+    top: 8vh;
+    height: 18vh;
+    font-size: 3vw;
+    color:#C3FA50;
+    margin-bottom: 1vh;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .navText{
     font-family: 'Source Sans Pro';
     font-style: normal;

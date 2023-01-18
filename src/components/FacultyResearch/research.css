@@ -1,0 +1,104 @@
+.screen {
+    background-color: #0C0C31;
+    margin-top: 16.6vh;
+    height: 83.4vh;
+    width: 100vw;
+
+}
+.head-text{
+    position: absolute;
+    width: 30vw;
+    left: 14vw;
+    top: 31.11vh;
+    color: #C3FA50;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5.25vw;
+    line-height: 10.56vh;  
+    white-space: pre-wrap; 
+}
+.main-body {
+    position: absolute;
+    display: flex;
+    height: -webkit-fill-available;
+}
+.description{
+    right:0vw; 
+    position: absolute;
+    display: flex;
+    width: 40vw;
+    height: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    white-space: pre-wrap;
+}
+
+.imageSection {
+    position: absolute;
+    display: flex;
+    width: 30vw;
+    height: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+}
+
+.decs-text{
+    height: 32.41vh;
+    width: 30vw;
+    position: relative;
+    top: 10.77vh;
+    right: 2vw;
+    display: flex;
+    font-family: 'Domine';
+    font-style: normal;
+    font-weight: 400;
+    overflow-y: auto;
+    color: #FFFFFF;
+    font-size: 1.354vw;
+    line-height: 4.074vh;
+    white-space: pre-wrap;
+    /* margin-right: 2vw; */
+}
+/* Track */
+.decs-text::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #A4A4A4;
+    background: #0C0C31;
+}
+.decs-text::-webkit-scrollbar-thumb {
+    background: #A4A4A4;
+}
+
+.subHeading{
+    /* height: 20.41vh; */
+    width: 32vw;
+    position: absolute;
+    right: 3.6vw;
+    top: 15vh;
+    color: #FFFFFF;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.11vw;
+    line-height: 4.074vh;  
+    white-space: pre-wrap;
+}
+.back {
+    width: 9.375vw;
+    height: 11.11vh;
+    position: absolute;
+    left: 60vw;
+    bottom: 1.851vh;
+    visibility: visible;
+    opacity: initial;
+
+}
+.forward {
+    width: 9.375vw;
+    height: 11.11vh;
+    position: absolute;
+    left: 85vw;
+    bottom: 1.296vh;
+    visibility: visible;
+    opacity: initial;
+}
