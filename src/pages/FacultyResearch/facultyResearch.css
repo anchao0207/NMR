@@ -6,13 +6,13 @@
 
 }
 
-.main-body {
+.bodySection {
     position: absolute;
     display: flex;
     height: -webkit-fill-available;
 }
 
-.section1 {
+.leftSection {
     position: absolute;
     display: flex;
     width: 66vw;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.section2 {
+.rightSection {
     position: absolute;
     display: flex;
     width: 34vw;
@@ -30,13 +30,3 @@
     align-items: center;
     left: 66vw;
 }
-
-#note{
-    color: #FFFFFF;
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.771vw;
-    line-height: 3.519vh;
-}
-

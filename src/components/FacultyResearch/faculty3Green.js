@@ -15,24 +15,24 @@ const MainBody = (props) => {
     const backRef = React.useRef(null);
     const forwardRef = React.useRef(null);
     return(
-        <div className="home">
+        <div className="screen">
             <NavBar3></NavBar3>
-            <div className="main-body" >
+            <div className="bodySection" >
                 <ResearchGreen width="60vw" height="82vh" ref={greenRef}> </ResearchGreen>
             </div>
-            <div className="description">
-                <div className = "subHeading" >
+            <div className="descriptionSection">
+                <div className = "headerSection" >
                     <p> {props.description1}</p>
                 </div>
-                <div className="decs-text">
+                <div className="decs-textSection">
                     <p>{props.description2}</p>
                 </div>
             </div>
             <a href="http://localhost:3000/FacultyResearch/">
-                <Back className="back" ref={backRef}></Back>
+                <Back className="backArrow" ref={backRef}></Back>
             </a>
             <a href="http://localhost:3000/FacultyResearch/">
-                <Forward className="forward" ref={forwardRef}></Forward>
+                <Forward className="forwardArrow" ref={forwardRef}></Forward>
             </a>
         </div>
     );
