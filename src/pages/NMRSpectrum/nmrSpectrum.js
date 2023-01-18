@@ -17,23 +17,29 @@ export default function NMRSpectrum() {
   const forwardRef2 = React.useRef(null);
   const backwardRef2 = React.useRef(null);
   const backwardRef3 = React.useRef(null);
+  const backwardRef4 = React.useRef(null);
+  const mainRef = React.useRef();
+  React.useEffect(()=>{
+    gsap.fromTo(mainRef.current, {opacity: 0}, {opacity: 1, duration: 1, ease: "slow(0.7, 0.7, false)"});
+
+  },[mainRef])
 
   const forwardClick1 = () => {
     var tl = gsap.timeline();
-    tl.to(spectrumRef.current, { opacity: 0, duration: 0.5 })
+    tl.to(spectrumRef.current, { opacity: 0, duration: 0.25 })
       .to(spectrumRef.current, { visibility: "hidden" })
       .to(
         spectroscopyRef.current,
         {
           visibility: "visible",
           opacity: 1,
-          duration: 0.5,
+          duration: 0.25,
         },
         "show"
       )
       .to(
         backwardRef2.current,
-        { visibility: "visible", opacity: 1, duration: 0.5 },
+        { visibility: "visible", opacity: 1, duration: 0.25 },
         "show"
       )
       .to(forwardRef1.current, { visibility: "hidden" }, "change")
@@ -45,31 +51,31 @@ export default function NMRSpectrum() {
   };
   const backwardClick1 = () => {
     var tl = gsap.timeline();
-    tl.to(spectroscopyRef.current, { opacity: 0, duration: 0.5 }, "hide")
-      .to(backwardRef2.current, { opacity: 0, duration: 0.5 }, "hide")
+    tl.to(spectroscopyRef.current, { opacity: 0, duration: 0.25 }, "hide")
+      .to(backwardRef2.current, { opacity: 0, duration: 0.25 }, "hide")
       .to(spectroscopyRef.current, { visibility: "hidden" })
       .to(spectrumRef.current, {
         visibility: "visible",
         opacity: 1,
-        duration: 0.5,
+        duration: 0.25,
       })
       .to(forwardRef1.current, {
         visibility: "visible",
         opacity: 1,
-        duration: 0.5,
+        duration: 0.25,
       })
       .to(forwardRef2.current, { visibility: "hidden" })
       .to(backwardRef2.current, { visibility: "hidden" }, "hide");
   };
   const forwardClick2 = () => {
     var tl = gsap.timeline();
-    tl.to(spectroscopyRef.current, { opacity: 0, duration: 0.5 }, "hide")
-      .to(forwardRef2.current, { opacity: 0, duration: 0.5 }, "hide")
+    tl.to(spectroscopyRef.current, { opacity: 0, duration: 0.25 }, "hide")
+      .to(forwardRef2.current, { opacity: 0, duration: 0.25 }, "hide")
       .to(spectroscopyRef.current, { visibility: "hidden" })
       .to(aspectsRef.current, {
         visibility: "visible",
         opacity: 1,
-        duration: 0.5,
+        duration: 0.25,
       })
 
       .to(forwardRef2.current, { visibility: "hidden" }, "hide")
@@ -82,14 +88,14 @@ export default function NMRSpectrum() {
   };
   const backwardClick2 = () => {
     var tl = gsap.timeline();
-    tl.to(aspectsRef.current, { opacity: 0, duration: 0.5 })
+    tl.to(aspectsRef.current, { opacity: 0, duration: 0.25 })
       .to(aspectsRef.current, { visibility: "hidden" })
       .to(
         spectroscopyRef.current,
         {
           visibility: "visible",
           opacity: 1,
-          duration: 0.5,
+          duration: 0.25,
         },
         "show"
       )
@@ -98,12 +104,21 @@ export default function NMRSpectrum() {
         {
           visibility: "visible",
           opacity: 1,
-          duration: 0.5,
+          duration: 0.25,
         },
         "show"
       )
       .to(backwardRef3.current, { visibility: "hidden" }, "change")
       .to(backwardRef2.current, { visibility: "visible" }, "change");
+  };
+  const backwardClick3 = () => {
+    var tl = gsap.timeline();
+    tl
+    .to(".symmetry", {opacity:0, duration:0.25})
+    .to(".symmetry", {visibility:"hidden"})
+    .to(".aspect",{visibility:"visible", opacity:1,duration:0.25})
+    .to(backwardRef3.current,{visibility:"visible"})
+    .to(backwardRef4.current, { visibility:"hidden" })
   };
 
   return (
@@ -112,7 +127,7 @@ export default function NMRSpectrum() {
       <div className="spectrumTitle" ref={titleRef}>
         <span>Interpreting NMR Spectrum</span>
       </div>
-      <div className="spectrum-main">
+      <div className="spectrum-main" ref={mainRef}>
         <div ref={spectrumRef}>
           <InterpretingSpectrum />
         </div>
@@ -139,8 +154,13 @@ export default function NMRSpectrum() {
         ></Back>
         <Back
           ref={backwardRef3}
-          className="spectrum-back invi"
+          className="spectrum-back invi back3"
           onClick={backwardClick2}
+        ></Back>
+        <Back
+          ref={backwardRef4}
+          className="spectrum-back invi back4"
+          onClick={backwardClick3}
         ></Back>
       </div>
     </div>
