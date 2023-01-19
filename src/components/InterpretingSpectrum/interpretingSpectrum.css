@@ -11,13 +11,21 @@
     white-space: pre-wrap;
 }
 
+.spectrum-main-svg{
+    position: absolute;
+    width: 60vw;
+    max-height: 83vh;
+    object-fit: fill;
+    visibility: hidden;
+    opacity: 0;
+}
 
 .spectrum-main-desc {
     height: 47vh;
     width: 24.45vw;
     position: absolute;
     top: 20vh;
-    left:60vw;
+    left: 60vw;
     display: block;
     white-space: pre-wrap;
     margin-left: 3.5vw;
@@ -33,6 +41,7 @@
     font-size: 2.3vw;
     line-height: 2.43vw;
 }
+
 .spectrum-main-desc1 {
     position: relative;
     font-family: 'Source Sans Pro';
@@ -41,6 +50,7 @@
     font-size: 2.3vw;
     line-height: 2.43vw;
 }
+
 .spectrum-main-desc2 {
     position: absolute;
     max-height: 26vh;
@@ -54,53 +64,69 @@
     overflow-y: auto;
 }
 
-.invi{
+.invi {
     opacity: 0;
     visibility: hidden;
 }
+.center{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.center-space {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
 
-sup{
+.padding{
+    padding: 0 2vw;
+}
+
+.sup {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
     font-size: 4vw;
 }
 
-a{
+a {
     color: #C3FA50;
 }
 
-li {
+.list {
     font-size: 2vw;
     list-style-position: outside;
 }
 
-ol li { 
-    padding:0 0 0 2vw;
+ol .list {
+    padding: 0 0 0 2vw;
 }
 
-li:not(:last-child) { 
-    margin: 5.5vh 0;  
- }
+.list:not(:last-child) {
+    margin: 5.5vh 0;
+}
 
-.spectrum-main-link-text{
+.spectrum-main-link-text {
     font-family: 'Domine';
     font-style: normal;
     font-weight: 400;
     font-size: 1.5vw;
 }
 
-.spectrum-main-link{
+.spectrum-main-link {
     text-decoration: underline;
 }
 
-.spectrum-main-link:hover{
+.spectrum-main-link:hover {
     color: #8fb83b;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.spectrum-main-link:active{
+.spectrum-main-link:active {
     color: #FFFFFF;
     text-decoration: underline;
 }
@@ -110,18 +136,18 @@ li:not(:last-child) {
 .spectrum-main-desc2::-webkit-scrollbar {
     width: 1.67vw;
 }
-  
+
 /* Track */
 .spectrum-main-desc2::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px #A4A4A4;
     background: #0C0C31;
 }
-  
+
 /* Handle */
 .spectrum-main-desc2::-webkit-scrollbar-thumb {
     background: #A4A4A4;
 }
-  
+
 /* Handle on hover */
 .spectrum-main-desc2::-webkit-scrollbar-thumb:hover {
     background: #858585;
