@@ -1,6 +1,7 @@
 import React from "react";
 import "./interpretingSpectrum.css";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
 import { ReactComponent as Ethanol } from "../../assets/Ethanol Spectrum.svg";
 import { ReactComponent as EthanolCH2 } from "../../assets/Ethanol - CH2 peak.svg";
 import { ReactComponent as EthanolOH } from "../../assets/Ethanol - OH peak.svg";
@@ -14,8 +15,6 @@ import { ReactComponent as AllDiff } from "../..//assets/All Different.svg";
 import { ReactComponent as Diethyl } from "../..//assets/Diethyl Ether.svg";
 import { ReactComponent as DiethylCH2 } from "../..//assets/Diethyl Ether CH2.svg";
 import { ReactComponent as DiethylCH3 } from "../..//assets/Diethyl Ether CH3.svg";
-
-import { gsap } from "gsap";
 
 export default function Symmetry() {
   const content = {
@@ -84,7 +83,6 @@ export default function Symmetry() {
   const diethylRef = React.useRef();
   const diethylCH2Ref = React.useRef();
   const diethylCH3Ref = React.useRef();
-  const link1Ref = React.useRef();
 
   React.useEffect(() => {
     /**
@@ -406,7 +404,6 @@ export default function Symmetry() {
           <Link
             className="spectrum-main-link spectrum-main-link-text"
             onClick={onLink1Click}
-            ref={link1Ref}
           >
             {content.link1}
           </Link>{" "}

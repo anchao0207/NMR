@@ -114,8 +114,8 @@ export default function NMRSpectrum() {
   const backwardClick3 = () => {
     var tl = gsap.timeline();
     tl
-    .to(".symmetry", {opacity:0, duration:0.25})
-    .to(".symmetry", {visibility:"hidden"})
+    .to(".basic", {opacity:0, duration:0.25})
+    .to(".basic", {visibility:"hidden"})
     .to(".aspect",{visibility:"visible", opacity:1,duration:0.25})
     .to(backwardRef3.current,{visibility:"visible"})
     .to(backwardRef4.current, { visibility:"hidden" })
