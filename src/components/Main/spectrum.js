@@ -24,7 +24,7 @@ const content = {
   link3:
     "Methanol",
   description3:
-    ", we know that it’s composed of ",
+    ", we know that it's composed of ",
   link4: 
     "a single hydrogen",
   description4:
