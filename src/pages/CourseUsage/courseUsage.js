@@ -8,13 +8,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function NMRFundamentals() {
     const { width, height } = useViewport();
-    const content = ["General\nChemistry", "Organic\nChemistry", "Physical\nChemistry", "Biomechanical\nInstrumentation", "Advanced\nSynthesis", "Advanced\nSynthesis"];
+    // const content = ["General\nChemistry", "Organic\nChemistry", "Physical\nChemistry", "Biomechanical\nInstrumentation", "Advanced\nSynthesis", "Advanced\nSynthesis"];
     
-    let navigate = useNavigate();
-    const handleClick = (name) => {
-        let path = "http://localhost:3000/StillDeveloping/";
-        navigate(path);
-    }
+    // let navigate = useNavigate();
+    // const handleClick = (name) => {
+    //     let path = "http://localhost:3000/StillDeveloping/";
+    //     navigate(path);
+    // }
 
     return (
         <>
@@ -26,11 +26,19 @@ export default function NMRFundamentals() {
                 </div>
                 <div className="section2" id="course">
                     <Stack gap={3}>
-                        {content.map((o) => (
-                            <a href="http://localhost:3000/StillDeveloping/">
-                                <button onClick={handleClick(o)}>{o}</button>
-                            </a>
-                        ))}
+                        <a href="http://localhost:3000/GeneralChemistry/">
+                            <button>General<br></br>Chemistry</button>
+                            {/* <button onClick={handleClick(o)}>{o}</button> */}
+                        </a>
+                        <a href="http://localhost:3000/StillDeveloping/">
+                            <button>Organic<br></br>Chemistry</button>
+                        </a>
+                        <a href="http://localhost:3000/StillDeveloping/">
+                            <button>Biochemical<br></br>Instrumentation</button>
+                        </a>
+                        <a href="http://localhost:3000/StillDeveloping/">
+                            <button>Advanced<br></br>Synthesis</button>
+                        </a>
                     </Stack>
                 </div>
             </div>

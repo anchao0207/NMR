@@ -31,13 +31,9 @@
     left: 66vw;
 }
 
-#course{
-    align-items: start;
-}
-
 button{
     margin-left: 15%;
-    margin-top: 3.3vh;
+    margin-top: 3.615vh;
     width: 21.354vw;
     height: 10vh;
     background: #232328;

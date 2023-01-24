@@ -12,6 +12,7 @@ import NMRFundamentals from "./pages/NMRFundamentals/nmrFundamentals";
 import CourseUsage from "./pages/CourseUsage/courseUsage";
 import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
 import StillDeveloping from "./pages/StillDeveloping/stillDeveloping";
+import GeneralChemistry from "./pages/GeneralChemistry/generalChemistry";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
           <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
           <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
+          <Route exact path={"/GeneralChemistry"} element={<GeneralChemistry />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Routes>
       </Router>
