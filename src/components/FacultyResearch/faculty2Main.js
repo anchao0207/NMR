@@ -15,11 +15,11 @@ const MainBody = (props) => {
             </div>
             <div className="descriptionSection">
                 <Stack>
-                    <a href="http://localhost:3000/Faculty2Asym/">
+                    <a href="/Faculty2Asym/">
                         <button>Asymmetric Synthesis</button>
                     </a>
                    
-                    <a href="http://localhost:3000/Faculty2Phospho/">
+                    <a href="/Faculty2Phospho/">
                         <button>Synthesis of phosphorous derivatives</button>
                     </a>
                 </Stack>

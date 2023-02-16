@@ -19,13 +19,13 @@ export default function FacultyResearch() {
                 </div>
                 <div className="rightSection">
                     <Stack gap={3}>
-                        <a href="http://localhost:3000/Faculty1Soil/">
+                        <a href="/Faculty1Soil/">
                                 <button>Katie Adelsberger</button>
                         </a>
-                        <a href="http://localhost:3000/Faculty2Main/">
+                        <a href="/Faculty2Main/">
                                 <button>Diana Cermak</button>
                         </a>
-                        <a href="http://localhost:3000/Faculty3Green/">
+                        <a href="/Faculty3Green/">
                                 <button>Helen Hoyt</button>
                         </a>
                     </Stack>

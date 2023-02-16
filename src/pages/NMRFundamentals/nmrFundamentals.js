@@ -13,11 +13,11 @@ export default function NMRFundamentals() {
     let navigate = useNavigate();
     const handleClick = (e) => {
         if(e = "How it Works"){
-            let path = "http://localhost:3000/";
+            let path = "/";
             navigate(path);
         }
         else {
-            let path = "http://localhost:3000/StillDeveloping/";
+            let path = "/StillDeveloping/";
             navigate(path);
         }
     }

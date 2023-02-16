@@ -28,10 +28,10 @@ const MainBody = (props) => {
                     <p>{props.description2}</p>
                 </div>
             </div>
-            <a href="http://localhost:3000/FacultyResearch/">
+            <a href="/FacultyResearch/">
                 <Back className="backArrow" ref={backRef}></Back>
             </a>
-            <a href="http://localhost:3000/FacultyResearch/">
+            <a href="/FacultyResearch/">
                 <Forward className="forwardArrow" ref={forwardRef}></Forward>
             </a>
         </div>

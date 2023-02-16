@@ -12,7 +12,7 @@ export default function NMRFundamentals() {
     
     let navigate = useNavigate();
     const handleClick = (name) => {
-        let path = "http://localhost:3000/StillDeveloping/";
+        let path = "/StillDeveloping/";
         navigate(path);
     }
 
@@ -27,7 +27,7 @@ export default function NMRFundamentals() {
                 <div className="section2" id="course">
                     <Stack gap={3}>
                         {content.map((o) => (
-                            <a href="http://localhost:3000/StillDeveloping/">
+                            <a href="/StillDeveloping/">
                                 <button onClick={handleClick(o)}>{o}</button>
                             </a>
                         ))}

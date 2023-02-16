@@ -6,7 +6,7 @@ export default function NavBar() {
         <>
         <div class = "navBar">
             <div className = "sectionLogo">
-                <a href="http://localhost:3000/">
+                <a href="/">
                     <NMRLogo className = "logo" />
                 </a>
             </div>
@@ -15,7 +15,7 @@ export default function NavBar() {
 
             <div className = "sectionText1">
                 <div class = "nmrFundamentals">
-                    <a href="http://localhost:3000/NMRFundamentals" className="navLink">
+                    <a href="/NMRFundamentals" className="navLink">
                     <span className = "navText" id = "t1">NMR</span>
                     <br></br>
                     <span className = "navText" id = "t2">Fundamentals</span>
@@ -25,7 +25,7 @@ export default function NavBar() {
 
             <div className = "sectionText2">
                 <div className = "courseUsage">
-                    <a href="http://localhost:3000/CourseUsage" className="navLink">
+                    <a href="/CourseUsage" className="navLink">
                     <span className = "navText">Course</span>
                     <br></br>
                     <span className = "navText">Usage</span>
@@ -35,7 +35,7 @@ export default function NavBar() {
 
             <div className = "sectionText3">
                 <div class = "facultyResearch">
-                    <a href="http://localhost:3000/FacultyResearch" className="navLink">
+                    <a href="/FacultyResearch" className="navLink">
                     <span className = "navText">Faculty</span>
                     <br></br>
                     <span className = "navText">Research</span>

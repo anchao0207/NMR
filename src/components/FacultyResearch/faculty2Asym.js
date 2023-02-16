@@ -29,10 +29,10 @@ const MainBody = (props) => {
                 </div>
             </div>
             
-            <a href="http://localhost:3000/Faculty2Main/">
+            <a href="/Faculty2Main/">
                 <BackArrow className="backArrow" ref={backRef}></BackArrow>
             </a>
-            <a href="http://localhost:3000/FacultyResearch/">
+            <a href="/FacultyResearch/">
                 <ForwardArrow className="forwardArrow" ref={forwardRef}></ForwardArrow>
             </a>
         </div>
