@@ -5,7 +5,7 @@ import { ReactComponent as NuclearMagneticResonance } from "./NuclearMagneticRes
 import { ReactComponent as PlayButton } from "./playButton.svg";
 import { ReactComponent as Back } from "./backArrow.svg";
 import { ReactComponent as Forward } from "./forwardArrow.svg";
-import { gsap, ScrollTrigger } from "gsap/all";
+import { gsap } from "gsap/all";
 import NavBar from "../../components/NavBar/navbar1";
 import Technology from "../../components/Main/technology";
 import Magnet from "../../components/Main/magnet";
@@ -24,7 +24,7 @@ import axios from "axios";
 
 
 export default function Home() {
-  const { width, height } = useViewport();
+  // const { width, height } = useViewport();
   const playRef = React.useRef(null);
   const nmrRef = React.useRef(null);
   const hiwRef = React.useRef(null);
@@ -790,9 +790,9 @@ export default function Home() {
           <div className="page" ref={text13Ref}>
             <span className="textPage">13/13</span>
           </div>
-          <Forward className="forward" ref={forward13bRef}/>
-          {/* <a className="forward" ref={forward13aRef} href="http://localhost:3000/NMRFundamentals/">
-          </a> */}
+          <a className="forward" ref={forward13aRef} href="http://localhost:3000/NMRFundamentals/">
+            <Forward className="forward" ref={forward13bRef}/>
+          </a>
         </div>
       </div>
     </>

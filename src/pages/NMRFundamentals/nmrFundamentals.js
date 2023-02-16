@@ -35,9 +35,11 @@ export default function NMRFundamentals() {
                         {content.map((o) => {
                             // <button onClick={handleClick(o)}>{o}</button>
                             if(o === "How it Works") 
-                                return <a href="http://localhost:3000/"><button>{o}</button></a>
+                                return <a href="/"><button>{o}</button></a>
+                            if(o === "Intepreting\nNMR Spectrum") 
+                                return <a href="/NMRSpectrum"><button>{o}</button></a>
                             
-                            return <a href="http://localhost:3000/StillDeveloping/"><button>{o}</button></a>
+                            return <a href="/StillDeveloping/"><button>{o}</button></a>
                         })}
                     </Stack>
                 </div>
