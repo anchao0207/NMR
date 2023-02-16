@@ -31,23 +31,6 @@
     visibility: visible; */
 }
 
-button{
-    margin-left: 15%;
-    margin-top: 3.615vh;
-    width: 21.354vw;
-    height: 10vh;
-    background: #232328;
-    box-shadow: 10px 10px #08081D;
-    border-color: #232328;
-    white-space: pre-wrap;
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    color: #FFFFFF;
-    font-size: 1.771vw;
-    line-height: 3.519vh;
-}
-
 .back3a1{
     width: 9.375vw;
     height: 11.11vh;
