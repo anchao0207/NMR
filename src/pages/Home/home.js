@@ -1,6 +1,5 @@
 import React from "react";
 import "./home.css";
-import { useViewport } from "../../viewportContext";
 import { ReactComponent as NuclearMagneticResonance } from "./NuclearMagneticResonance.svg";
 import { ReactComponent as PlayButton } from "./playButton.svg";
 import { ReactComponent as Back } from "./backArrow.svg";
@@ -23,6 +22,7 @@ import Spectrum from "../../components/Main/spectrum";
 
 export default function Home() {
   // const { width, height } = useViewport();
+  const mainRef = React.useRef(null);
   const playRef = React.useRef(null);
   const nmrRef = React.useRef(null);
   const hiwRef = React.useRef(null);
@@ -80,6 +80,10 @@ export default function Home() {
   const spectrumRef = React.useRef(null);
   const pictureRef = React.useRef(null);
   const transRef = React.useRef(null);
+
+  React.useEffect(()=>{
+    gsap.to(mainRef.current, {opacity: 1, duration: 1});
+  },[mainRef])
 
   const startClick = () => {
     var tl1= gsap.timeline();
@@ -579,7 +583,7 @@ export default function Home() {
         <div className="HIWTitle" ref={titleRef}>
           <span>How it Works</span>
         </div>
-        <div className="main-body">
+        <div className="main-body" ref={mainRef}>
           <div className="section1">
             <NuclearMagneticResonance ref={nmrRef} className="NMR" />
           </div>

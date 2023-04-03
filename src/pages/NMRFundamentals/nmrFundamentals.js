@@ -1,45 +1,35 @@
 import React from "react";
 import "./nmrFundamentals.css";
-import { useViewport } from "../../viewportContext";
 import { ReactComponent as NuclearMagneticResonance } from "../Home/NuclearMagneticResonance.svg";
 import NavBar from "../../components/NavBar/navbar1";
 import Stack from 'react-bootstrap/Stack';
-import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap/all";
+import { Link } from "react-router-dom";
+
 
 export default function NMRFundamentals() {
-    const { width, height } = useViewport();
     const content = ["How it Works", "NMR\nInstrumentation", "Intepreting\nNMR Spectrum"];
-    
-    let navigate = useNavigate();
-    const handleClick = (e) => {
-        if(e = "How it Works"){
-            let path = "/";
-            navigate(path);
-        }
-        else {
-            let path = "/StillDeveloping/";
-            navigate(path);
-        }
-    }
+    const mainRef = React.useRef(null);
+    React.useEffect(() => {
+        gsap.to(mainRef.current, {opacity: 1, duration: 1});
+      });
 
     return (
         <>
         <div className="home">
             <NavBar></NavBar>
-            <div className="main-body">
+            <div className="main-body" ref={mainRef}>
                 <div className="section1">
                     <NuclearMagneticResonance className="NMR" />
                 </div>
                 <div className="section2">
                     <Stack gap={3}>
                         {content.map((o) => {
-                            // <button onClick={handleClick(o)}>{o}</button>
                             if(o === "How it Works") 
-                                return <a href="/"><button>{o}</button></a>
+                                return <Link to="/"><button>{o}</button></Link>
                             if(o === "Intepreting\nNMR Spectrum") 
-                                return <a href="/NMRSpectrum"><button>{o}</button></a>
-                            
-                            return <a href="/StillDeveloping/"><button>{o}</button></a>
+                                return <Link to="/NMRSpectrum"><button>{o}</button></Link>          
+                            return <Link to="/NMRInstrumentation/"><button>{o}</button></Link>
                         })}
                     </Stack>
                 </div>

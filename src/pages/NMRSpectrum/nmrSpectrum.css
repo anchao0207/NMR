@@ -19,14 +19,13 @@
     height: 16.6vh;
     align-items: flex-end;
     padding-bottom: 2.871vh;
-    /* opacity: 0; 
-    visibility: hidden; */
 }
 
 .spectrum-main{
     width: 100%;
     height: -webkit-fill-available;
     position: absolute;
+    opacity: 0;
 }
 
 .spectrum-back {

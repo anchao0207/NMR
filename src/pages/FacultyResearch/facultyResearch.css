@@ -6,11 +6,11 @@
 
 }
 
-.bodySection {
+/* .bodySection {
     position: absolute;
     display: flex;
     height: -webkit-fill-available;
-}
+} */
 
 .leftSection {
     position: absolute;

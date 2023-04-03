@@ -10,7 +10,10 @@ export default function HSpectroscopy() {
   };
   return (
     <>
-      <div className="spectrum-main-title"><sup className="sup">1</sup>{content.heading}</div>
+      <div className="spectrum-main-title">
+        <sup className="sup">1</sup>
+        {content.heading}
+      </div>
 
       <div className="spectrum-main-desc">
         <div className="spectrum-main-desc1">{content.desc1}</div>

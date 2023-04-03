@@ -12,6 +12,7 @@ import NMRFundamentals from "./pages/NMRFundamentals/nmrFundamentals";
 import CourseUsage from "./pages/CourseUsage/courseUsage";
 import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
 import NMRSpectrum from "./pages/NMRSpectrum/nmrSpectrum";
+import NMRInstrumentation from "./pages/NMRInstrumentation/nmrInstrumentation";
 import StillDeveloping from "./pages/StillDeveloping/stillDeveloping";
 import Faculty1Soil from "./components/FacultyResearch/faculty1Soil";
 import Faculty2Phospho from "./components/FacultyResearch/faculty2Phospho";
@@ -29,6 +30,7 @@ export default function App() {
           <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
           <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
           <Route exact path={"/NMRSpectrum"} element={<NMRSpectrum />} />
+          <Route exact path={"/NMRInstrumentation"} element={<NMRInstrumentation />} />
           <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
           <Route exact path={"/Faculty1Soil"} element={<Faculty1Soil />} />
           <Route exact path={"/Faculty2Asym"} element={<Faculty2Asym />} />

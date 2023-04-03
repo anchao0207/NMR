@@ -7,6 +7,7 @@ import HSpectroscopy from "../../components/InterpretingSpectrum/HSpectroscopy";
 import BasicAspects from "../../components/InterpretingSpectrum/BasicAspects";
 import { ReactComponent as Back } from "../Home/backArrow.svg";
 import { ReactComponent as Forward } from "../Home/forwardArrow.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function NMRSpectrum() {
   const titleRef = React.useRef(null);
@@ -19,10 +20,18 @@ export default function NMRSpectrum() {
   const backwardRef3 = React.useRef(null);
   const backwardRef4 = React.useRef(null);
   const mainRef = React.useRef();
-  React.useEffect(()=>{
-    gsap.fromTo(mainRef.current, {opacity: 0}, {opacity: 1, duration: 1, ease: "slow(0.7, 0.7, false)"});
 
+  let navigate = useNavigate();
+
+
+  React.useEffect(()=>{
+    gsap.to(mainRef.current, {opacity: 1, duration: 1});
   },[mainRef])
+
+  const backwardClick = () => {
+    let path = "/NMRFundamentals/";
+    navigate(path);
+  };
 
   const forwardClick1 = () => {
     var tl = gsap.timeline();
@@ -147,6 +156,11 @@ export default function NMRSpectrum() {
           className="spectrum-forward invi"
           onClick={forwardClick2}
         ></Forward>
+        <Back
+          ref={backwardRef4}
+          className="spectrum-back  "
+          onClick={backwardClick}
+        ></Back>
         <Back
           ref={backwardRef2}
           className="spectrum-back invi"
