@@ -3,7 +3,7 @@ import NavBar from "../../components/NavBar/navbar";
 import "./nmrInstrumentation.css";
 import { useNavigate } from "react-router-dom";
 import SizeMatter from "../../components/Instrumentation/SizeMatter";
-import { ReactComponent as Back } from "../Home/backArrow.svg";
+import { ReactComponent as Back } from "../../assets/backArrow.svg";
 import { gsap } from "gsap/all";
 
 

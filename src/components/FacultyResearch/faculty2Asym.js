@@ -1,8 +1,8 @@
 import React from "react";
 import "./research.css";
 import NavBar4 from "../NavBar/navbar";
-import { ReactComponent as BackArrow } from "../../pages/Home/backArrow.svg";
-import { ReactComponent as ForwardArrow } from "../../pages/Home/forwardArrow.svg";
+import { ReactComponent as Back } from "../../assets/backArrow.svg";
+import { ReactComponent as Forward } from "../../assets/forwardArrow.svg";
 import { ReactComponent as ResearchCamphor } from "../FacultyResearch/Camphor People.svg";
 
 const content = {
@@ -30,10 +30,10 @@ const MainBody = (props) => {
             </div>
             
             <a href="/Faculty2Main/">
-                <BackArrow className="backArrow" ref={backRef}></BackArrow>
+                <Back className="backArrow" ref={backRef}></Back>
             </a>
             <a href="/FacultyResearch/">
-                <ForwardArrow className="forwardArrow" ref={forwardRef}></ForwardArrow>
+                <Forward className="forwardArrow" ref={forwardRef}></Forward>
             </a>
         </div>
     );

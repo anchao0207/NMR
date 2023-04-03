@@ -1,9 +1,9 @@
 import React from "react";
 import "./research.css";
 import { ReactComponent as ResearchGreen } from "../../components/FacultyResearch/Research Catalyst.svg";
-import { ReactComponent as Back } from "../../pages/Home/backArrow.svg";
-import { ReactComponent as Forward } from "../../pages/Home/forwardArrow.svg";
-import NavBar3 from "../NavBar/navbar";
+import { ReactComponent as Back } from "../../assets/backArrow.svg";
+import { ReactComponent as Forward } from "../../assets/forwardArrow.svg";
+import NavBar from "../NavBar/navbar";
 
 const content = {
     description1: "Green\n\nChemistry",
@@ -16,7 +16,7 @@ const MainBody = (props) => {
     const forwardRef = React.useRef(null);
     return(
         <div className="screen">
-            <NavBar3></NavBar3>
+            <NavBar></NavBar>
             <div className="bodySection" >
                 <ResearchGreen width="60vw" height="82vh" ref={greenRef}> </ResearchGreen>
             </div>

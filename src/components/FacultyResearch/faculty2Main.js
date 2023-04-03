@@ -1,6 +1,6 @@
 import React from "react";
 import "./research.css";
-import NavBar3 from "../NavBar/navbar";
+import NavBar from "../NavBar/navbar";
 import Stack from 'react-bootstrap/Stack';
 
 const content = {header: "Dr. Diana Cermak"};
@@ -8,7 +8,7 @@ const content = {header: "Dr. Diana Cermak"};
 const MainBody = (props) => {
     return(
         <div className="screen">
-            <NavBar3></NavBar3>
+            <NavBar></NavBar>
             <div className="bodySection" >
                 <div className = "headingSection">{props.header}</div>
             </div>

@@ -1,9 +1,21 @@
+.fal-main-title{
+    position: absolute;
+    left: 15vw;
+    top: 31.11vh;
+    color: #C3FA50;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 6.25vw;
+    line-height: 10.56vh;
+    white-space: pre-wrap;
+}
+
 .screen {
     background-color: #0C0C31;
     margin-top: 16.6vh;
     height: 83.4vh;
     width: 100vw;
-
 }
 
 .bodySection{

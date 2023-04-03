@@ -2,8 +2,8 @@ import React from "react";
 import "./home.css";
 import { ReactComponent as NuclearMagneticResonance } from "./NuclearMagneticResonance.svg";
 import { ReactComponent as PlayButton } from "./playButton.svg";
-import { ReactComponent as Back } from "./backArrow.svg";
-import { ReactComponent as Forward } from "./forwardArrow.svg";
+import { ReactComponent as Back } from "../../assets/backArrow.svg";
+import { ReactComponent as Forward } from "../../assets/forwardArrow.svg";
 import { gsap } from "gsap/all";
 import NavBar from "../../components/NavBar/navbar";
 import Technology from "../../components/Main/technology";
@@ -21,7 +21,6 @@ import BiggerPicture from "../../components/Main/biggerPicture";
 import Spectrum from "../../components/Main/spectrum";
 
 export default function Home() {
-  // const { width, height } = useViewport();
   const mainRef = React.useRef(null);
   const playRef = React.useRef(null);
   const nmrRef = React.useRef(null);

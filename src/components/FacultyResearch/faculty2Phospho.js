@@ -1,8 +1,8 @@
 import React from "react";
 import "./research.css";
-import NavBar4 from "../NavBar/navbar"
-import { ReactComponent as BackArrow } from "../../pages/Home/backArrow.svg";
-import { ReactComponent as ForwardArrow } from "../../pages/Home/forwardArrow.svg";
+import NavBar from "../NavBar/navbar"
+import { ReactComponent as Back } from "../../assets/backArrow.svg";
+import { ReactComponent as Forward } from "../../assets/forwardArrow.svg";
 import { ReactComponent as ResearchPhosphorus } from "../../components/FacultyResearch/Ligand Synthesis FeBr2.svg";
 
 const content = {
@@ -16,7 +16,7 @@ const MainBody = (props) => {
     const forwardRef = React.useRef(null);
     return(
         <div className="screen">
-            <NavBar4></NavBar4>
+            <NavBar></NavBar>
             <div className="bodySection" >
                 <ResearchPhosphorus width="65vw" height="82vh" ref={crystalRef}> </ResearchPhosphorus>
             </div>
@@ -29,10 +29,10 @@ const MainBody = (props) => {
                 </div>
             </div>
             <a href="/Faculty2Main/">
-                <BackArrow className="backArrow" ref={backRef}></BackArrow>
+                <Back className="backArrow" ref={backRef}></Back>
             </a>
             <a href="/FacultyResearch/">
-                <ForwardArrow className="forwardArrow" ref={forwardRef}></ForwardArrow>
+                <Forward className="forwardArrow" ref={forwardRef}></Forward>
             </a>
         </div>
     );

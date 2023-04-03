@@ -5,10 +5,11 @@ import NavBar from "../../components/NavBar/navbar";
 import Stack from 'react-bootstrap/Stack';
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap/all";
+import { Link } from "react-router-dom";
 
 
 export default function NMRFundamentals() {
-    const content = ["General\nChemistry", "Organic\nChemistry", "Physical\nChemistry", "Biomechanical\nInstrumentation", "Advanced\nSynthesis", "Advanced\nSynthesis"];
+    const content = ["General\nChemistry", "Organic\nChemistry", "Biomechanical\nInstrumentation", "Advanced\nSynthesis"];
     const mainRef = React.useRef(null)
     let navigate = useNavigate();
 
@@ -29,12 +30,12 @@ export default function NMRFundamentals() {
                 <div className="section1">
                     <NuclearMagneticResonance className="NMR" />
                 </div>
-                <div className="section2" id="course">
+                <div className="section2">
                     <Stack gap={3}>
                         {content.map((o) => (
-                            <a href="/StillDeveloping/">
+                            <Link to="/StillDeveloping/">
                                 <button onClick={handleClick(o)}>{o}</button>
-                            </a>
+                            </Link>
                         ))}
                     </Stack>
                 </div>

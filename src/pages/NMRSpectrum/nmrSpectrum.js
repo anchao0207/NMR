@@ -5,8 +5,8 @@ import "./nmrSpectrum.css";
 import InterpretingSpectrum from "../../components/InterpretingSpectrum/InterpretingSpectrum";
 import HSpectroscopy from "../../components/InterpretingSpectrum/HSpectroscopy";
 import BasicAspects from "../../components/InterpretingSpectrum/BasicAspects";
-import { ReactComponent as Back } from "../Home/backArrow.svg";
-import { ReactComponent as Forward } from "../Home/forwardArrow.svg";
+import { ReactComponent as Back } from "../../assets/backArrow.svg";
+import { ReactComponent as Forward } from "../../assets/forwardArrow.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function NMRSpectrum() {
