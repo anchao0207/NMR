@@ -3,7 +3,7 @@ import "./research.css";
 import { ReactComponent as ResearchGreen } from "../../components/FacultyResearch/Research Catalyst.svg";
 import { ReactComponent as Back } from "../../pages/Home/backArrow.svg";
 import { ReactComponent as Forward } from "../../pages/Home/forwardArrow.svg";
-import NavBar3 from "../NavBar/navbar3";
+import NavBar3 from "../NavBar/navbar";
 
 const content = {
     description1: "Green\n\nChemistry",

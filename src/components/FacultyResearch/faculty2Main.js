@@ -1,7 +1,6 @@
 import React from "react";
 import "./research.css";
-import { useViewport } from "../../viewportContext";
-import NavBar3 from "../NavBar/navbar3";
+import NavBar3 from "../NavBar/navbar";
 import Stack from 'react-bootstrap/Stack';
 
 const content = {header: "Dr. Diana Cermak"};

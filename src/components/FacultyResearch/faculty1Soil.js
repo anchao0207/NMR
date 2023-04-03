@@ -1,6 +1,6 @@
 import React from "react";
 import "./research.css";
-import NavBar5 from "../NavBar/navbar5";
+import NavBar5 from "../NavBar/navbar";
 import { ReactComponent as Back } from "../../pages/Home/backArrow.svg";
 import { ReactComponent as Forward } from "../../pages/Home/forwardArrow.svg";
 import { ReactComponent as Soil } from "../FacultyResearch/soilImage.svg";

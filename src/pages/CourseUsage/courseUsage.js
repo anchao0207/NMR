@@ -1,7 +1,7 @@
 import React from "react";
 import "./courseUsage.css";
 import { ReactComponent as NuclearMagneticResonance } from "../Home/NuclearMagneticResonance.svg";
-import NavBar from "../../components/NavBar/navbar2";
+import NavBar from "../../components/NavBar/navbar";
 import Stack from 'react-bootstrap/Stack';
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap/all";

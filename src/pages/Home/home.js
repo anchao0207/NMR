@@ -5,7 +5,7 @@ import { ReactComponent as PlayButton } from "./playButton.svg";
 import { ReactComponent as Back } from "./backArrow.svg";
 import { ReactComponent as Forward } from "./forwardArrow.svg";
 import { gsap } from "gsap/all";
-import NavBar from "../../components/NavBar/navbar1";
+import NavBar from "../../components/NavBar/navbar";
 import Technology from "../../components/Main/technology";
 import Magnet from "../../components/Main/magnet";
 import Temperature from "../../components/Main/temperature";

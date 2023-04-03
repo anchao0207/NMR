@@ -84,22 +84,31 @@ export default function Symmetry() {
   const diethylCH2Ref = React.useRef();
   const diethylCH3Ref = React.useRef();
 
+  const [playAnimation, setPlayAnimation] = React.useState(false);
+
   React.useEffect(() => {
     /**
      * Alert if clicked on outside of element
      */
     function handleClickOutside(event) {
-      if (current && !current.contains(event.target) && !(event.target.className==="spectrum-main-link-text" || event.target.className==="spectrum-main-link spectrum-main-link-text")) {
-        console.log(event.target.className)
+      if (playAnimation) return;
+
+      if (
+        current &&
+        !current.contains(event.target) &&
+        !(
+          event.target.className === "spectrum-main-link-text" ||
+          event.target.className ===
+            "spectrum-main-link spectrum-main-link-text"
+        )
+      ) {
         var tl = gsap.timeline();
-        tl
-        .to(current, { opacity: 0, duration: 0.25 })
-          .to(symRef.current, {
-            opacity: 1,
-            duration: 0.25,
-          });
-          setCurrent(undefined)
-        }
+        tl.to(current, { opacity: 0, duration: 0.25 }).to(symRef.current, {
+          opacity: 1,
+          duration: 0.25,
+        });
+        setCurrent(undefined);
+      }
     }
     // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
@@ -107,91 +116,132 @@ export default function Symmetry() {
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [current]);
+  }, [current, playAnimation]);
 
-  //   return <div ref={wrapperRef}>{props.children}</div>;
-  // }
-
-  // OutsideAlerter.propTypes = {
-  //   children: PropTypes.element.isRequired
-  // };
-
-  const onLink1Click = (e) => {
+  const onLink1Click = async (e) => {
     e.preventDefault();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation1();
+    setPlayAnimation(false);
+  };
 
-    var tl = gsap.timeline();
-    tl.to(symRef.current, { opacity: 0 });
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    }).to(current, { visibility: "hidden" });
-    tl.to(ethanolRef.current, {
-      visibility: "visible",
-      opacity: 1,
-      duration: 0.25,
+  const animation1 = () => {
+    return new Promise((resolve) => {
+      var tl = gsap.timeline();
+      tl.to(symRef.current, { opacity: 0 });
+      tl.to(current, {
+        opacity: 0,
+        duration: 0.25,
+      }).to(current, { visibility: "hidden" });
+      tl.to(ethanolRef.current, {
+        visibility: "visible",
+        opacity: 1,
+        duration: 0.25,
+        onComplete: resolve,
+      });
+      setCurrent(ethanolRef.current);
     });
-    setCurrent(ethanolRef.current);
   };
-  const onLink2Click = (e) => {
+
+  const onLink2Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation2();
+    setPlayAnimation(false);
+  };
 
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
+  const animation2 = () => {
+    return new Promise((resolve) => {
+      var tl = gsap.timeline();
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
 
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    })
-      .to(current, { visibility: "hidden" })
-      .to(ethanolCH2Ref.current, {
-        visibility: "visible",
-        opacity: 1,
+      tl.to(current, {
+        opacity: 0,
         duration: 0.25,
-      });
-    setCurrent(ethanolCH2Ref.current);
+      })
+        .to(current, { visibility: "hidden" })
+        .to(ethanolCH2Ref.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete: resolve,
+        });
+      setCurrent(ethanolCH2Ref.current);
+    });
   };
-  const onLink3Click = (e) => {
+  const onLink3Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation3();
+    setPlayAnimation(false);
+  };
+  const animation3 = () => {
+    return new Promise((resolve) => {
+      var tl = gsap.timeline();
 
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
 
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    })
-      .to(current, { visibility: "hidden" })
-      .to(ethanolOHRef.current, {
-        visibility: "visible",
-        opacity: 1,
+      tl.to(current, {
+        opacity: 0,
         duration: 0.25,
-      });
-    setCurrent(ethanolOHRef.current);
+      })
+        .to(current, { visibility: "hidden" })
+        .to(ethanolOHRef.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete: resolve
+        });
+      setCurrent(ethanolOHRef.current);
+    });
   };
-  const onLink4Click = (e) => {
+
+  const onLink4Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation4();
+    setPlayAnimation(false);
+  };
 
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
+  const animation4 = () =>{
+    return new Promise((resolve)=> {
+      var tl = gsap.timeline();
 
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    })
-      .to(current, { visibility: "hidden" })
-      .to(ethanolCH3Ref.current, {
-        visibility: "visible",
-        opacity: 1,
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
+  
+      tl.to(current, {
+        opacity: 0,
         duration: 0.25,
-      });
-    setCurrent(ethanolCH3Ref.current);
-  };
-  const onLink5Click = (e) => {
+      })
+        .to(current, { visibility: "hidden" })
+        .to(ethanolCH3Ref.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete: resolve
+        });
+      setCurrent(ethanolCH3Ref.current);
+    })
+  }
+
+  const onLink5Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation5();
+    setPlayAnimation(false);
+  };
+
+  const animation5 = () =>{
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
 
     //change this later
     tl.to(symRef.current, { opacity: 0 });
@@ -205,12 +255,23 @@ export default function Symmetry() {
         visibility: "visible",
         opacity: 1,
         duration: 0.25,
+        onComplete: resolve
       });
     setCurrent(ethanolMolRef.current);
-  };
-  const onLink6Click = (e) => {
+    })
+  }
+
+  const onLink6Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation6();
+    setPlayAnimation(false);
+  };
+
+  const animation6 = () => {
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
 
     //change this later
     tl.to(symRef.current, { opacity: 0 });
@@ -224,91 +285,144 @@ export default function Symmetry() {
         visibility: "visible",
         opacity: 1,
         duration: 0.25,
+        onComplete: resolve
       });
     setCurrent(CH2MolRef.current);
-  };
-  const onLink7Click = (e) => {
-    e.preventDefault();
-    var tl = gsap.timeline();
-
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
-
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
     })
-      .to(current, { visibility: "hidden" })
-      .to(CH3MolRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      });
-    setCurrent(CH3MolRef.current);
-  };
-  const onLink8Click = (e) => {
+  }
+
+  const onLink7Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
-
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
-
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    })
-      .to(current, { visibility: "hidden" })
-      .to(CHDiffRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      });
-    setCurrent(CHDiffRef.current);
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation7();
+    setPlayAnimation(false);
   };
-  const onLink9Click = (e) => {
+
+  const animation7 = () => {
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
+
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
+  
+      tl.to(current, {
+        opacity: 0,
+        duration: 0.25,
+      })
+        .to(current, { visibility: "hidden" })
+        .to(CH3MolRef.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete: resolve
+        });
+      setCurrent(CH3MolRef.current);
+    })
+  }
+
+  const onLink8Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
-
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
-
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    })
-      .to(current, { visibility: "hidden" })
-      .to(OHDiffRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      });
-    setCurrent(OHDiffRef.current);
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation8();
+    setPlayAnimation(false);
   };
+
+  const animation8 = () => {
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
+
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
+  
+      tl.to(current, {
+        opacity: 0,
+        duration: 0.25,
+      })
+        .to(current, { visibility: "hidden" })
+        .to(CHDiffRef.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete:resolve
+        });
+      setCurrent(CHDiffRef.current);
+    })
+  }
+
+  const onLink9Click = async (e) => {
+    e.preventDefault();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation9();
+    setPlayAnimation(false);
+  };
+
+  const animation9 = () => {
+    return new Promise ((resolve)=> {
+      var tl = gsap.timeline();
+
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
+  
+      tl.to(current, {
+        opacity: 0,
+        duration: 0.25,
+      })
+        .to(current, { visibility: "hidden" })
+        .to(OHDiffRef.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete:resolve
+        });
+      setCurrent(OHDiffRef.current);
+    })
+  }
 
   //Link10 is the same as Link1Click
 
-  const onLink11Click = (e) => {
+  const onLink11Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
-
-    //change this later
-    tl.to(symRef.current, { opacity: 0 });
-
-    tl.to(current, {
-      opacity: 0,
-      duration: 0.25,
-    })
-      .to(current, { visibility: "hidden" })
-      .to(AllDiffRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      });
-    setCurrent(AllDiffRef.current);
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation11();
+    setPlayAnimation(false);
   };
-  const onLink12Click = (e) => {
+
+  const animation11 = () =>{
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
+
+      //change this later
+      tl.to(symRef.current, { opacity: 0 });
+  
+      tl.to(current, {
+        opacity: 0,
+        duration: 0.25,
+      })
+        .to(current, { visibility: "hidden" })
+        .to(AllDiffRef.current, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.25,
+          onComplete: resolve
+        });
+      setCurrent(AllDiffRef.current);
+    })
+  }
+  const onLink12Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation12();
+    setPlayAnimation(false);
+  };
+
+  const animation12=()=>{
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
 
     //change this later
     tl.to(symRef.current, { opacity: 0 });
@@ -322,12 +436,23 @@ export default function Symmetry() {
         visibility: "visible",
         opacity: 1,
         duration: 0.25,
+        onComplete:resolve
       });
     setCurrent(diethylRef.current);
-  };
-  const onLink13Click = (e) => {
+    })
+  }
+
+  const onLink13Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation13();
+    setPlayAnimation(false);
+  };
+
+  const animation13 = () =>{
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
 
     //change this later
     tl.to(symRef.current, { opacity: 0 });
@@ -341,12 +466,22 @@ export default function Symmetry() {
         visibility: "visible",
         opacity: 1,
         duration: 0.25,
+        onComplete:resolve
       });
     setCurrent(diethylCH2Ref.current);
-  };
-  const onLink14Click = (e) => {
+    })
+  }
+  const onLink14Click = async (e) => {
     e.preventDefault();
-    var tl = gsap.timeline();
+    if (playAnimation) return;
+    setPlayAnimation(true);
+    await animation14();
+    setPlayAnimation(false);
+  };
+
+  const animation14 = () =>{
+    return new Promise((resolve)=>{
+      var tl = gsap.timeline();
 
     //change this later
     tl.to(symRef.current, { opacity: 0 });
@@ -360,9 +495,11 @@ export default function Symmetry() {
         visibility: "visible",
         opacity: 1,
         duration: 0.25,
+        onComplete:resolve
       });
     setCurrent(diethylCH3Ref.current);
-  };
+    })
+  }
 
   return (
     <>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./research.css";
-import NavBar4 from "../NavBar/navbar4";
+import NavBar4 from "../NavBar/navbar";
 import { ReactComponent as BackArrow } from "../../pages/Home/backArrow.svg";
 import { ReactComponent as ForwardArrow } from "../../pages/Home/forwardArrow.svg";
 import { ReactComponent as ResearchCamphor } from "../FacultyResearch/Camphor People.svg";
