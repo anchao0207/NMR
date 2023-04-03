@@ -1,0 +1,30 @@
+.instrumentation{
+    background-color: #0C0C31;
+    margin-top: 16.6vh;
+    height: 83.4vh;
+    width: 100vw;
+}
+
+.instrumentationTitle {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.604vw;
+    line-height: 44.444vh;
+    color: #C3FA50;
+    position: absolute;
+    display: flex;
+    left: 15vw;
+    width: 53.3vw;
+    height: 16.6vh;
+    align-items: flex-end;
+    padding-bottom: 2.871vh;
+}
+
+.instrumentation-main{
+    width: 100%;
+    height: -webkit-fill-available;
+    position: absolute;
+    opacity: 0;
+}
+
