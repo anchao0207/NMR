@@ -27,7 +27,7 @@ export default function NMRInstrumentation() {
   return (
     <div className="instrumentation">
       <NavBar></NavBar>
-      <div className="instrumentationTitle" ref={titleRef}>
+      <div className="navTitle" ref={titleRef}>
         <span>NMR Instrumentation</span>
       </div>
       <div className="instrumentation-main" ref={mainRef}>

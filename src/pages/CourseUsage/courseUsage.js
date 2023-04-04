@@ -2,45 +2,45 @@ import React from "react";
 import "./courseUsage.css";
 import { ReactComponent as NuclearMagneticResonance } from "../Home/NuclearMagneticResonance.svg";
 import NavBar from "../../components/NavBar/navbar";
-import Stack from 'react-bootstrap/Stack';
-import { useNavigate } from "react-router-dom";
+import Stack from "react-bootstrap/Stack";
 import { gsap } from "gsap/all";
 import { Link } from "react-router-dom";
 
-
 export default function NMRFundamentals() {
-    const content = ["General\nChemistry", "Organic\nChemistry", "Biomechanical\nInstrumentation", "Advanced\nSynthesis"];
-    const mainRef = React.useRef(null)
-    let navigate = useNavigate();
+  const mainRef = React.useRef(null);
 
-    React.useEffect(()=>{
-        gsap.to(mainRef.current, {opacity: 1, duration: 1});
-      },[mainRef])
+  React.useEffect(() => {
+    gsap.to(mainRef.current, { opacity: 1, duration: 1 });
+  }, [mainRef]);
 
-    const handleClick = (name) => {
-        let path = "/StillDeveloping/";
-        navigate(path);
-    }
+  return (
+    <>
+      <div className="home">
+        <NavBar></NavBar>
+        <div className="main-body" ref={mainRef}>
+          <div className="navTitle">Course Usage</div>
 
-    return (
-        <>
-        <div className="home">
-            <NavBar></NavBar>
-            <div className="main-body" ref={mainRef}>
-                <div className="section1">
-                    <NuclearMagneticResonance className="NMR" />
-                </div>
-                <div className="section2">
-                    <Stack gap={3}>
-                        {content.map((o) => (
-                            <Link to="/StillDeveloping/">
-                                <button onClick={handleClick(o)}>{o}</button>
-                            </Link>
-                        ))}
-                    </Stack>
-                </div>
-            </div>
+          <div className="section1">
+            <NuclearMagneticResonance className="NMR" />
+          </div>
+          <div className="section2">
+            <Stack gap={3}>
+              <Link to="/GeneralChemistry">
+                <button>General Chemistry</button>
+              </Link>
+              <Link to="/OrganicChemistry">
+                <button>Organic Chemistry</button>
+              </Link>
+              <Link to="/BiologicalInstrumentation">
+                <button>Biological Instrumentation</button>
+              </Link>
+              <Link to="/AdvancedSynthesis">
+                <button>Advanced Synthesis</button>
+              </Link>
+            </Stack>
+          </div>
         </div>
-        </>
-    );
+      </div>
+    </>
+  );
 }

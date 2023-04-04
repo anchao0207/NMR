@@ -133,7 +133,7 @@ export default function NMRSpectrum() {
   return (
     <div className="spectrum">
       <NavBar></NavBar>
-      <div className="spectrumTitle" ref={titleRef}>
+      <div className="navTitle" ref={titleRef}>
         <span>Interpreting NMR Spectrum</span>
       </div>
       <div className="spectrum-main" ref={mainRef}>

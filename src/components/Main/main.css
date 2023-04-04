@@ -1,19 +1,20 @@
-.container{
+.container {
     position: relative;
     display: flex;
     height: 83.4vh;
     width: 100vw;
 }
-.header{
+
+.header {
     position: relative;
     display: flex;
     width: 60vw;
     height: -webkit-fill-available;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
-.head-text{
+.head-text {
     position: absolute;
     left: 12vw;
     top: 31.11vh;
@@ -22,27 +23,27 @@
     font-style: normal;
     font-weight: 600;
     font-size: 6.25vw;
-    line-height: 10.56vh;  
-    white-space: pre-wrap; 
-}
-
-.description{
-    padding-left: 5vw;
-    position: relative;
-    display: flex;
-    width: 40vw;
-    height: -webkit-fill-available;
-    justify-content: center;
-    align-items: center;
+    line-height: 10.56vh;
     white-space: pre-wrap;
 }
 
-.decs-text{
+.description {
+    padding-left: 8vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: -webkit-fill-available;
+    justify-content: center;
+    /* align-items: center; */
+    white-space: pre-wrap;
+}
+
+.decs-text {
     height: 32.41vh;
-    width: 30vw;
-    position: absolute;
-    top: 32.77vh;
-    right: 9.53vw;
+    width: 24.45vw;
+    position: relative;
+    top: 3vh;
     display: block;
     font-family: 'Domine';
     font-style: normal;
@@ -52,53 +53,53 @@
     font-size: 1.354vw;
     line-height: 4.074vh;
     white-space: pre-wrap;
-    margin-left: 3.5vw;
+}
+
+.image {
+    position: absolute;
+    max-height: -webkit-fill-available;;
 }
 
 /* within the decs-text */
-.subHeading{
-    height: 20.41vh;
-    width: 30vw;
-    position: absolute;
-    right: 9.53vw;
-    top: 10.11vh;
+.sub-heading {
     color: #FFFFFF;
+    position: relative;
+    padding-bottom: 3vh;
     font-family: 'Source Sans Pro';
     font-style: normal;
-    font-weight: 500;
-    font-size: 2.11vw;
-    line-height: 4.074vh;  
-    white-space: pre-wrap;
+    font-weight: 400;
+    font-size: 2.3vw;
+    line-height: 2.43vw;
 }
 
-sup{
+sup {
     font-size: 0.8vw;
 }
 
-.head-sup{
+.head-sup {
     font-size: 3.5vw;
 }
 
-p{
+p {
     margin-right: 3.426vw;
 }
 
-a{
+a {
     color: #C3FA50;
 }
 
 
-.link{
+.link {
     text-decoration: underline;
 }
 
-.link:hover{
+.link:hover {
     color: #8fb83b;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.link:active{
+.link:active {
     color: #FFFFFF;
     text-decoration: underline;
 }
@@ -107,31 +108,32 @@ a{
 .decs-text::-webkit-scrollbar {
     width: 1.67vw;
 }
-  
+
 /* Track */
 .decs-text::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px #A4A4A4;
     background: #0C0C31;
 }
-  
+
 /* Handle */
 .decs-text::-webkit-scrollbar-thumb {
     background: #A4A4A4;
 }
-  
+
 /* Handle on hover */
 .decs-text::-webkit-scrollbar-thumb:hover {
     background: #858585;
 }
-.center{
+
+.center {
     text-align: center;
 }
 
-.padding{
+.padding {
     padding-left: 1.5rem;
 }
 
-.pop-up{
+.pop-up {
     position: absolute;
     visibility: hidden;
     left: 0;

@@ -3,7 +3,6 @@
     margin-top: 16.6vh;
     height: 83.4vh;
     width: 100vw;
-
 }
 
 .main-body {
@@ -21,15 +20,6 @@
     align-items: center;
 }
 
-.section2 {
-    position: absolute;
-    display: flex;
-    width: 34vw;
-    height: -webkit-fill-available;
-    justify-content: center;
-    align-items: center;
-    left: 66vw;
-}
 
 #note{
     color: #FFFFFF;
