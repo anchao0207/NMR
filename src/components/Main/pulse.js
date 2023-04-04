@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios"
 import "./main.css";
 
 const content = {
@@ -15,6 +16,35 @@ const content = {
     "P {109 MHz}"
 };
 
+const onHClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/pulseH",
+  })
+  e.preventDefault();
+}
+const onCClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/pulseC",
+  })
+  e.preventDefault();
+}
+const onFClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/pulseF",
+  })
+  e.preventDefault();
+}
+const onPClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/pulseP",
+  })
+  e.preventDefault();
+}
+
 const MainBody = (props) => {
   return (
     <div className="container">
@@ -28,10 +58,10 @@ const MainBody = (props) => {
             </p>
             <div className="center">
               <p>
-                <a className="link"><sup>1</sup>{props.link1}</a>
-                <a className="link"><sup>13</sup>{props.link2}</a>
-                <a className="link"><sup>19</sup>{props.link3}</a>
-                <a className="link"><sup>31</sup>{props.link2}</a>
+                <a className="link" onClick={onHClick}><sup>1</sup>{props.link1}</a>
+                <a className="link" onClick={onCClick}><sup>13</sup>{props.link2}</a>
+                <a className="link" onClick={onFClick}><sup>19</sup>{props.link3}</a>
+                <a className="link" onClick={onPClick}><sup>31</sup>{props.link2}</a>
               </p>
             </div>
         </div>
