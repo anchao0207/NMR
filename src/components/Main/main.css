@@ -6,7 +6,6 @@
 }
 
 .header {
-    position: relative;
     display: flex;
     width: 60vw;
     height: -webkit-fill-available;
@@ -16,7 +15,7 @@
 
 .head-text {
     position: absolute;
-    left: 12vw;
+    left: 17vw;
     top: 31.11vh;
     color: #C3FA50;
     font-family: 'Source Sans Pro';
@@ -28,20 +27,19 @@
 }
 
 .description {
-    padding-left: 8vw;
-    position: relative;
+    position: absolute;
     display: flex;
+    left: 65vw;
     flex-direction: column;
-    width: 40vw;
+    width: 35vw;
     height: -webkit-fill-available;
     justify-content: center;
-    /* align-items: center; */
     white-space: pre-wrap;
 }
 
 .decs-text {
-    height: 32.41vh;
-    width: 24.45vw;
+    height: 18.3vw;
+    width: 24.5vw;
     position: relative;
     top: 3vh;
     display: block;

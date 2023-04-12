@@ -33,33 +33,30 @@
 .sectionText1{
     position: absolute;
     display: flex;
-    left: 60vw;
+    left: 65vw;
     width: 14.1vw;
     height: 15.6vh;
     margin-bottom: 1vh;
-    justify-content: center;
     align-items: flex-end;
 }
 
 .sectionText2{
     position: absolute;
     display: flex;
-    left: 74.5vw;
+    left: 79.5vw;
     width: 10.2vw;
     height: 15.6vh;
     margin-bottom: 1vh;
-    justify-content: center;
     align-items: flex-end;
 }
 
 .sectionText3{
     position: absolute;
     display: flex;
-    left: 86vw;
+    left: 91vw;
     width: 9.7vw;
     height: 15.6vh;
     margin-bottom: 1vh;
-    justify-content: center;
     align-items: flex-end;
 }
 
@@ -72,7 +69,6 @@
     font-size: 3vw;
     color:#C3FA50;
     margin-bottom: 1vh;
-    justify-content: center;
     align-items: flex-end;
 }
 
@@ -92,24 +88,5 @@
 #t1, #t2, #t3, #t4, #t5, #t6{
     color: #C3FA50;
 }
-
-/* .nmrFundamentals{
-    position: absolute;
-    left: 65.99vw;
-    top: 11.11vh;
-} */
-
-/* .courseUsage{
-    position: absolute;
-    left: 80.1vw;
-    top: 11.11vh;
-} */
-
-/* .facultyResearch{
-    position: absolute;
-    left: 90.26vw;
-    top: 11.11vh;
-} */
-
 
 

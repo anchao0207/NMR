@@ -59,11 +59,10 @@
     color: #C3FA50;
     position: absolute;
     display: flex;
-    left: 12.7vw;
+    left: 17vw;
     width: 53.3vw;
     height: 16.6vh;
     align-items: flex-end;
-    padding-left: 5.146vw;
     padding-bottom: 2.871vh;
     opacity: 0;
     visibility: hidden;
@@ -75,25 +74,12 @@
     position: absolute;
 }
 
-.back {
-    width: 9.375vw;
-    height: 11.11vh;
-    position: absolute;
-    left: 57.5vw;
-    bottom: 1.851vh;
-    opacity: 0;
-    visibility: hidden;
-}
+
 
 .page {
-    width: 12.5vw;
-    height: 11.11vh;
     position: absolute;
-    left: 66.875vw;
-    bottom: 1.851vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 75vw;
+    bottom: 40px;
     opacity: 0;
     visibility: hidden;
 }
@@ -107,11 +93,19 @@
 }
 
 .forward {
-    width: 9.375vw;
-    height: 11.11vh;
+    width: 2.5vw;
     position: absolute;
-    left: 79.405vw;
-    bottom: 1.296vh;
+    left: 85vw;
+    bottom: 40px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back {
+    width: 2vw;
+    position: absolute;
+    left: 65vw;
+    bottom: 40px;
     opacity: 0;
     visibility: hidden;
 }

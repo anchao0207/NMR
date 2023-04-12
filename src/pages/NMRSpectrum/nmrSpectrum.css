@@ -13,21 +13,19 @@
 }
 
 .spectrum-back {
-    width: 9.375vw;
-    height: 11.11vh;
+    width: 2vw;
     position: absolute;
-    left: 60vw;
-    bottom: 1.851vh;
+    left: 65vw;
+    bottom: 40px;
     /* opacity: 0;
     visibility: hidden; */
 }
 
 .spectrum-forward {
-    width: 9.375vw;
-    height: 11.11vh;
+    width: 2.5vw;
     position: absolute;
-    left: 79.405vw;
-    bottom: 1.296vh;
+    left: 85vw;
+    bottom: 40px;
     /* opacity: 0;
     visibility: hidden; */
 }
