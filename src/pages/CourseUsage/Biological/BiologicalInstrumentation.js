@@ -29,22 +29,24 @@ export default function BiologicalInstrumentation() {
     <div className="home">
       <NavBar></NavBar>
       <div className="main-body" ref={mainRef}>
-      <div className="navTitle">Biological Instrumentation</div>
+        <div className="navTitle">Biological Instrumentation</div>
         {MainBody(content)}
-        <div className="section2">
 
-        <Stack gap={3}>
+        <Stack gap={3} className="section2">
           <Link to="/YeastFermentation">
             <button>Yeast Fermentation</button>
           </Link>
           <Link to="/NucleotideProtonation">
-            <button>Nucleotide Protonation<br/>State and Metal Binding</button>
+            <button>
+              Nucleotide Protonation
+              <br />
+              State and Metal Binding
+            </button>
           </Link>
           <Link to="/RateConstant">
             <button>Rate Constant for Proton Exchange in Thiamine</button>
           </Link>
         </Stack>
-        </div>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>
     </div>

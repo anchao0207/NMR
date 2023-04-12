@@ -23,22 +23,22 @@ export default function NMRFundamentals() {
           <div className="section1">
             <NuclearMagneticResonance className="NMR" />
           </div>
-          <div className="section2">
-            <Stack gap={3}>
+          {/* <div className="section2"> */}
+            <Stack gap={3} className="section2">
               <Link to="/GeneralChemistry">
-                <button>General Chemistry</button>
+                <button>General<br/> Chemistry</button>
               </Link>
               <Link to="/OrganicChemistry">
-                <button>Organic Chemistry</button>
+                <button>Organic<br/> Chemistry</button>
               </Link>
               <Link to="/BiologicalInstrumentation">
-                <button>Biological Instrumentation</button>
+                <button>Biological<br/> Instrumentation</button>
               </Link>
               <Link to="/AdvancedSynthesis">
-                <button>Advanced Synthesis</button>
+                <button>Advanced<br/> Synthesis</button>
               </Link>
             </Stack>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>

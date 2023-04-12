@@ -1,4 +1,5 @@
 .navBar{
+    display: flex;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -8,10 +9,10 @@
 }
 
 .sectionLogo{
-    position: absolute;
+    position: relative;
     display: flex;
-    width: 12.7vw;
-    height: 16.6vh;
+    width: 13vw;
+    /* height: 16.6vh; */
     justify-content: center;
     align-items: center;
 }
@@ -21,48 +22,56 @@
     height: 7.7vh;
 }
 
+
 .sectionTitle{
-    position: absolute;
+    position: relative;
     display: flex;
-    left: 12.7vw;
-    width: 53.3vw;
-    height: 16.6vh;
+    width: 52vw;
+    /* height: 16.6vh; */
 }
 
-
-.sectionText1{
-    position: absolute;
+.sectionNavigation{
     display: flex;
-    left: 65vw;
-    width: 14.1vw;
-    height: 15.6vh;
+    position: relative;
+    width: 35vw;
+    justify-content:space-between;
+    align-items: left;
+}
+
+.sectionText{
+    position: relative;
+    display: flex;
+    padding-right: 4vw;
+    margin-bottom: 1vh;
+    align-items: flex-end;
+}
+
+/* .sectionText1{
+    position: relative;
+    display: flex;
+    
     margin-bottom: 1vh;
     align-items: flex-end;
 }
 
 .sectionText2{
-    position: absolute;
+    position: relative;
     display: flex;
-    left: 79.5vw;
-    width: 10.2vw;
-    height: 15.6vh;
+    
     margin-bottom: 1vh;
     align-items: flex-end;
 }
 
 .sectionText3{
-    position: absolute;
+    position: relative;
     display: flex;
-    left: 91vw;
-    width: 9.7vw;
-    height: 15.6vh;
+    
     margin-bottom: 1vh;
     align-items: flex-end;
-}
+} */
 
 .sectionText4{
-    position: absolute;
-    left: 18vw;
+    position: relative;
     width: 30vw;
     top: 8vh;
     height: 18vh;

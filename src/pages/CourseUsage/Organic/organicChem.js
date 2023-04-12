@@ -29,22 +29,31 @@ export default function OrganicChemistry() {
     <div className="home">
       <NavBar></NavBar>
       <div className="main-body" ref={mainRef}>
-      <div className="navTitle">Organic Chemistry</div>
+        <div className="navTitle">Organic Chemistry</div>
         {MainBody(content)}
-        <div className="section2">
-
-        <Stack gap={3}>
+        <Stack gap={3} className="section2">
           <Link to="/SpectroscopyUnknownLab">
-            <button>Spectroscopy<br/>Unknown Lab</button>
+            <button>
+              Spectroscopy
+              <br />
+              Unknown Lab
+            </button>
           </Link>
           <Link to="/3-weekLab">
-            <button>3-week lab<br/>synthesis project</button>
+            <button>
+              3-week lab
+              <br />
+              synthesis project
+            </button>
           </Link>
           <Link to="/Stereoselective">
-            <button>Stereoselective<br/>reduction of camphor</button>
+            <button>
+              Stereoselective
+              <br />
+              reduction of camphor
+            </button>
           </Link>
         </Stack>
-        </div>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>
     </div>
