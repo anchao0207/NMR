@@ -2,7 +2,6 @@ import React from "react";
 import "./main.css";
 import axios from "axios"
 
-
 const content = {
   heading: "The\nSample",
   description1:

@@ -1,6 +1,6 @@
 .spectrum-main-title {
     position: absolute;
-    left: 15vw;
+    left: 17vw;
     top: 31.11vh;
     color: #C3FA50;
     font-family: 'Source Sans Pro';
@@ -21,14 +21,13 @@
 }
 
 .spectrum-main-desc {
-    height: 47vh;
-    width: 24.45vw;
+    height: 54vh;
+    width: 24.5vw;
     position: absolute;
-    top: 20vh;
-    left: 60vw;
+    top: 15vh;
+    left: 65vw;
     display: block;
     white-space: pre-wrap;
-    margin-left: 3.5vw;
     color: #FEFEFE;
 }
 
@@ -52,10 +51,10 @@
 }
 
 .spectrum-main-desc2 {
-    position: absolute;
-    max-height: 26vh;
+    position: relative;
+    max-height: 14.5vw;
     padding-right: 2vw;
-    bottom: 0;
+    top: 5vw;
     font-family: 'Domine';
     font-style: normal;
     font-weight: 400;

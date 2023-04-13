@@ -15,7 +15,7 @@
 .section1 {
     position: absolute;
     display: flex;
-    width: 66vw;
+    width: 65vw;
     height: -webkit-fill-available;
     justify-content: center;
     align-items: center;
@@ -24,19 +24,20 @@
 .section2 {
     position: absolute;
     display: flex;
-    width: 34vw;
+    flex-direction: column;
+    width: 35vw;
     height: -webkit-fill-available;
     justify-content: center;
     align-items: center;
-    left: 64vw;
+    left: 65vw;
 }
 
 
 
 button{
-    margin-left: 15%;
+    /* margin-left: 15%; */
     margin-top: 3.3vh;
-    width: 21.354vw;
+    width: 21vw;
     height: 10vh;
     background: #232328;
     box-shadow: 10px 10px #08081D;
@@ -46,6 +47,8 @@ button{
     font-style: normal;
     font-weight: 400;
     color: #FFFFFF;
-    font-size: 1.771vw;
+    font-size: 28px;
+    /* font-size: 1.771vw; */
+    line-height: 34px;
     line-height: 3.519vh;
 }

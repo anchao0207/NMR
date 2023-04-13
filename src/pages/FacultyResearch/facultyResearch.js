@@ -18,22 +18,22 @@ export default function FacultyResearch() {
       <div className="researchHome">
         <NavBar></NavBar>
         <div className="main-body" ref={mainRef}>
-          <div className="leftSection">
+        <div className="navTitle">Faculty Research</div>
+
+          <div className="section1">
             <NuclearMagneticResonance className="NMR" />
           </div>
-          <div className="rightSection">
-            <Stack gap={3}>
-              <Link to="/Faculty1Soil/">
-                <button>Katie Adelsberger</button>
-              </Link>
-              <Link to="/Faculty2Main/">
-                <button>Diana Cermak</button>
-              </Link>
-              <Link to="/Faculty3Green/">
-                <button>Helen Hoyt</button>
-              </Link>
-            </Stack>
-          </div>
+          <Stack className="section2">
+            <Link to="/KaitieAdelberger">
+              <button>Katie Adelsberger, PhD</button>
+            </Link>
+            <Link to="/DianaCermak">
+              <button>Diana Cermak, PhD</button>
+            </Link>
+            <Link to="/HelenHoyt">
+              <button>Helen Hoyt, PhD</button>
+            </Link>
+          </Stack>
         </div>
       </div>
     </>

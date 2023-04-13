@@ -5,28 +5,3 @@
     width: 100vw;
 
 }
-
-/* .bodySection {
-    position: absolute;
-    display: flex;
-    height: -webkit-fill-available;
-} */
-
-.leftSection {
-    position: absolute;
-    display: flex;
-    width: 66vw;
-    height: -webkit-fill-available;
-    justify-content: center;
-    align-items: center;
-}
-
-.rightSection {
-    position: absolute;
-    display: flex;
-    width: 34vw;
-    height: -webkit-fill-available;
-    justify-content: center;
-    align-items: center;
-    left: 66vw;
-}

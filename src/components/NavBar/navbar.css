@@ -1,4 +1,5 @@
 .navBar{
+    display: flex;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -8,10 +9,10 @@
 }
 
 .sectionLogo{
-    position: absolute;
+    position: relative;
     display: flex;
-    width: 12.7vw;
-    height: 16.6vh;
+    width: 13vw;
+    /* height: 16.6vh; */
     justify-content: center;
     align-items: center;
 }
@@ -21,58 +22,27 @@
     height: 7.7vh;
 }
 
+
 .sectionTitle{
-    position: absolute;
+    position: relative;
     display: flex;
-    left: 12.7vw;
-    width: 53.3vw;
-    height: 16.6vh;
+    width: 52vw;
+    /* height: 16.6vh; */
 }
 
-
-.sectionText1{
-    position: absolute;
+.sectionNavigation{
     display: flex;
-    left: 60vw;
-    width: 14.1vw;
-    height: 15.6vh;
-    margin-bottom: 1vh;
-    justify-content: center;
-    align-items: flex-end;
+    position: relative;
+    width: 35vw;
+    justify-content:space-between;
+    align-items: left;
 }
 
-.sectionText2{
-    position: absolute;
+.sectionText{
+    position: relative;
     display: flex;
-    left: 74.5vw;
-    width: 10.2vw;
-    height: 15.6vh;
+    padding-right: 3.5vw;
     margin-bottom: 1vh;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.sectionText3{
-    position: absolute;
-    display: flex;
-    left: 86vw;
-    width: 9.7vw;
-    height: 15.6vh;
-    margin-bottom: 1vh;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.sectionText4{
-    position: absolute;
-    left: 18vw;
-    width: 30vw;
-    top: 8vh;
-    height: 18vh;
-    font-size: 3vw;
-    color:#C3FA50;
-    margin-bottom: 1vh;
-    justify-content: center;
     align-items: flex-end;
 }
 
@@ -92,24 +62,5 @@
 #t1, #t2, #t3, #t4, #t5, #t6{
     color: #C3FA50;
 }
-
-/* .nmrFundamentals{
-    position: absolute;
-    left: 65.99vw;
-    top: 11.11vh;
-} */
-
-/* .courseUsage{
-    position: absolute;
-    left: 80.1vw;
-    top: 11.11vh;
-} */
-
-/* .facultyResearch{
-    position: absolute;
-    left: 90.26vw;
-    top: 11.11vh;
-} */
-
 
 

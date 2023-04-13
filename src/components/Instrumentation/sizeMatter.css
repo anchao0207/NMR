@@ -16,18 +16,16 @@
     width: 24.45vw;
     position: absolute;
     top: 32.11vh;
-    left: 60vw;
+    left: 65vw;
     display: block;
     white-space: pre-wrap;
-    margin-left: 3.5vw;
     color: #FEFEFE;
 }
 
 .sizematter-main-desc2 {
     position: absolute;
-    max-height: 32.41vh;
+    max-height: 14.5vw;
     padding-right: 2vw;
-    /* bottom: 0; */
     font-family: 'Domine';
     font-style: normal;
     font-weight: 400;

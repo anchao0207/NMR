@@ -1,17 +1,20 @@
 import React from "react";
 import "./stillDeveloping.css";
-import { useViewport } from "../../viewportContext";
 import { ReactComponent as NuclearMagneticResonance } from "../Home/NuclearMagneticResonance.svg";
 import NavBar from "../../components/NavBar/navbar";
+import { gsap } from "gsap/all";
+
 
 export default function FacultyResearch() {
-    const { width, height } = useViewport();
-
+  const mainRef = React.useRef(null);
+React.useEffect(() => {
+    gsap.to(mainRef.current, { opacity: 1, duration: 1 });
+  });
     return (
         <>
         <div className="home">
             <NavBar></NavBar>
-            <div className="main-body">
+            <div className="main-body" ref={mainRef}>
                 <div className="section1">
                     <NuclearMagneticResonance className="NMR" />
                 </div>

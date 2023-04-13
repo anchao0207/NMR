@@ -29,11 +29,10 @@ export default function AdvancedSynthesis() {
     <div className="home">
       <NavBar></NavBar>
       <div className="main-body" ref={mainRef}>
-      <div className="navTitle">Advanced Synthesis</div>
+        <div className="navTitle">Advanced Synthesis</div>
         {MainBody(content)}
-        <div className="section2">
 
-        <Stack gap={3}>
+        <Stack gap={3} className="section2">
           <Link to="/LigandSynthesis">
             <button>Ligand Synthesis</button>
           </Link>
@@ -41,7 +40,6 @@ export default function AdvancedSynthesis() {
             <button>Precatalyst Synthesis</button>
           </Link>
         </Stack>
-        </div>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>
     </div>
