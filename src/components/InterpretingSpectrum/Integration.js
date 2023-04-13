@@ -21,7 +21,8 @@ export default function ChemicalShift() {
     link3: "spectrum of Diethyl ether",
     desc5: ". Since this molecule is symmetrical, its area is actually a 4:6 ratio, as seen in its",
     link4: "molecular structure",
-    desc6: ", but it could also be correctly reported as a 2:3 ratio, since these are both the relative proportions. Remember: it’s not absolute, but relative.\n\nhis is where information about the chemical structure of the compound (or at least knowing the formula) becomes extremely handy; but even without knowing the chemical formula, integration is a fundamental piece of information provided in a 1H NMR spectrum."
+    desc6: ", but it could also be correctly reported as a 2:3 ratio, since these are both the relative proportions. Remember: it’s not absolute, but relative.\n\nhis is where information about the chemical structure of the compound (or at least knowing the formula) becomes extremely handy; but even without knowing the chemical formula, integration is a fundamental piece of information provided in a ",
+    desc7: "H NMR spectrum."
   };
 
   const [current, setCurrent] = React.useState();
@@ -172,6 +173,8 @@ export default function ChemicalShift() {
             {content.link4}
           </Link>
           {content.desc6}
+          <sup>1</sup>
+          {content.desc7}
         </div>
       </div>
     </>

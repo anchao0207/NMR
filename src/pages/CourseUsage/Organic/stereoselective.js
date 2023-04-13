@@ -1,5 +1,4 @@
 import React from "react";
-import MainBody from "../../../components/CourseUsage/MainBody";
 import NavBar from "../../../components/NavBar/navbar";
 import { ReactComponent as Back } from "../../../assets/backArrow.svg";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,8 @@ export default function Stereoselective() {
   const content = {
     subheading: "Stereoselective\nreduction\nof camphor",
     description:
-      "1H NMR spectroscopy is used to determine the stereoselectivity of the borohydride reduction of camphor, a chiral ketone, through integration of two particular hydrogens in the 1H NMR spectrum of the product mixture.",
+      "H NMR spectroscopy is used to determine the stereoselectivity of the borohydride reduction of camphor, a chiral ketone, through integration of two particular hydrogens in the ",
+    description2: "H NMR spectrum of the product mixture.",
   };
 
   const mainRef = React.useRef(null);
@@ -19,6 +19,27 @@ export default function Stereoselective() {
   React.useEffect(() => {
     gsap.to(mainRef.current, { opacity: 1, duration: 1 });
   });
+
+  const MainBody = (props) => {
+    return (
+      <div className="container">
+        <div className="header">
+          <div className="head-text">{props.heading}</div>
+        </div>
+        <div className="description">
+          <div className="sub-heading">{props.subheading}</div>
+          <div className="decs-text">
+            <p>
+              <sup>1</sup>
+              {props.description}
+              <sup>1</sup>
+              {props.description2}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const backwardClick = () => {
     let path = "/OrganicChemistry/";

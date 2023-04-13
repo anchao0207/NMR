@@ -37,6 +37,14 @@ import LigandSynthesis from "./pages/CourseUsage/Advanced/LigandSynthesis";
 import PrecatalystSynthesis from "./pages/CourseUsage/Advanced/PrecatalystSynthesis";
 
 export default function App() {
+
+  // document.addEventListener("fullscreenchange", function(event) {
+  //   if (!document.fullscreenElement) {
+  //     event.preventDefault();
+  //     document.documentElement.requestFullscreen();
+  //   }
+  // });
+
   return (
     <ViewportProvider>
       <Router>

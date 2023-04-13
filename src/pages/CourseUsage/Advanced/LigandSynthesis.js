@@ -1,5 +1,4 @@
 import React from "react";
-import MainBody from "../../../components/CourseUsage/MainBody";
 import NavBar from "../../../components/NavBar/navbar";
 import { ReactComponent as Back } from "../../../assets/backArrow.svg";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,10 @@ export default function LigandSynthesis() {
   const content = {
     subheading: "Ligand\nSynthesis",
     description:
-      "Students prepare new compounds to bind to and support transition metal catalysts, using 1D (1H, 13C, DEPT-135), and 2D (HSQC, HMBC) NMR experiments to identify the new products they have formed.",
+      "Students prepare new compounds to bind to and support transition metal catalysts, using 1D (",
+    desc2: "H, ",
+    desc3:
+      "C, DEPT-135), and 2D (HSQC, HMBC) NMR experiments to identify the new products they have formed.",
   };
 
   const mainRef = React.useRef(null);
@@ -19,6 +21,28 @@ export default function LigandSynthesis() {
   React.useEffect(() => {
     gsap.to(mainRef.current, { opacity: 1, duration: 1 });
   });
+
+  const MainBody = (props) => {
+    return (
+      <div className="container">
+        <div className="header">
+          <div className="head-text">{props.heading}</div>
+        </div>
+        <div className="description">
+          <div className="sub-heading">{props.subheading}</div>
+          <div className="decs-text">
+            <p>
+              {props.description}
+              <sup>1</sup>
+              {props.desc2}
+              <sup>13</sup>
+              {props.desc3}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const backwardClick = () => {
     let path = "/AdvancedSynthesis/";

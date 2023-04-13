@@ -1,5 +1,4 @@
 import React from "react";
-import MainBody from "../../../components/CourseUsage/MainBody";
 import NavBar from "../../../components/NavBar/navbar";
 import { ReactComponent as Back } from "../../../assets/backArrow.svg";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,8 @@ export default function RateConstant() {
   const content = {
     subheading: "Determining the Rate\nConstant for Proton\nExchange in Thiamine",
     description:
-      "In this experiment students use 1H NMR to study the rate of proton exchange with deuterium in Thiamine.",
+      "In this experiment students use ",
+      desc2:"H NMR to study the rate of proton exchange with deuterium in Thiamine.",
   };
 
   const mainRef = React.useRef(null);
@@ -19,6 +19,20 @@ export default function RateConstant() {
   React.useEffect(() => {
     gsap.to(mainRef.current, { opacity: 1, duration: 1 });
   });
+
+  const MainBody = (props) => {
+    return (
+      <div className="container">
+        <div className="header">
+          <div className="head-text">{props.heading}</div>
+        </div>
+        <div className="description">
+          <div className="sub-heading">{props.subheading}</div>
+          <div className="decs-text"><p>{props.description}<sup>1</sup>{props.desc2}</p></div>
+        </div>
+      </div>
+    );
+  };
 
   const backwardClick = () => {
     let path = "/BiologicalInstrumentation/";
