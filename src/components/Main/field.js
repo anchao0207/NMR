@@ -1,5 +1,6 @@
 import React from "react";
 import "./main.css";
+import axios from "axios"
 
 const content = {
   heading: "The\nField",
@@ -7,6 +8,14 @@ const content = {
   link: "Shim coils",
   description2: " are small electromagnets that are able to add/subtract a little bit of magnetic field in various directions (the X, Y, and Z planes).  By “shimming”, the magnetic field is made uniform and the spectrum is optimized.",
 };
+
+const onFieldClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/field",
+  })
+  e.preventDefault();
+}
 
 const MainBody = (props) => {
   return (
@@ -17,7 +26,7 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a className="link">{props.link}</a>{props.description2}
+            {props.description1}<a className="link" onClick={onFieldClick}>{props.link}</a>{props.description2}
             </p>
         </div>
       </div>

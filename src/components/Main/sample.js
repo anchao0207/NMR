@@ -1,5 +1,6 @@
 import React from "react";
 import "./main.css";
+import axios from "axios"
 
 const content = {
   heading: "The\nSample",
@@ -11,6 +12,14 @@ const content = {
     " into the hollow center of the magnet where the magnetic field is strongest and most uniform.",
 };
 
+const onSampleClick = (e) => {
+  axios({
+    method: "POST",
+    url: "http://localhost:8080/sample",
+  })
+  e.preventDefault();
+}
+
 const MainBody = (props) => {
   return (
     <div className="container">
@@ -20,7 +29,7 @@ const MainBody = (props) => {
       <div className="description">
         <div className="decs-text">
             <p>
-            {props.description1}<a className="link">{props.link1}</a>{props.description2}
+            {props.description1}<a className="link" onClick={onSampleClick}>{props.link1}</a>{props.description2}
             </p>
         </div>
       </div>
