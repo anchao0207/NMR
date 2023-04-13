@@ -43,6 +43,9 @@
 }
 
 .current-instrument{
+    position: absolute;
+    left:0;
+    top:0;
     max-height: 100%;
 }
 

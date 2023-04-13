@@ -7,7 +7,7 @@
 
 .spectrum-main{
     width: 100%;
-    height: -webkit-fill-available;
+    height: 83.4vh;
     position: absolute;
     opacity: 0;
 }

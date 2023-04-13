@@ -85,8 +85,8 @@ export default function SizeMatter() {
 
   return (
     <>
-      <div className="sizematter-main-title" ref={titleRef}>
-        {content.heading}
+      <div className="header" ref={titleRef}>
+        <div className="head-text">{content.heading}</div>
       </div>
       <div className="arrow-animation" ref={arrowsRef}>
         <Arrow className="invi"></Arrow>
