@@ -9,15 +9,20 @@ import {
 import { ViewportProvider } from "./viewportContext";
 import NMRFundamentals from "./pages/NMRFundamentals/nmrFundamentals";
 import CourseUsage from "./pages/CourseUsage/courseUsage";
+import About from "./pages/About/about";
 import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
+
 import NMRSpectrum from "./pages/NMRSpectrum/nmrSpectrum";
 import NMRInstrumentation from "./pages/NMRInstrumentation/nmrInstrumentation";
+
 import StillDeveloping from "./pages/StillDeveloping/stillDeveloping";
-import Faculty1Soil from "./components/FacultyResearch/faculty1Soil";
-import Faculty2Phospho from "./components/FacultyResearch/faculty2Phospho";
-import Faculty2Asym from "./components/FacultyResearch/faculty2Asym";
-import Faculty2Main from "./components/FacultyResearch/faculty2Main";
-import Faculty3Green from "./components/FacultyResearch/faculty3Green";
+
+import KaitieAdelberger from "./components/FacultyResearch/KaitieAdelberger";
+import DianaCermak from "./components/FacultyResearch/DianaCermak/DianaCermak";
+import AsymmetricSynthesis from "./components/FacultyResearch/DianaCermak/AsymmetricSynthesis"
+import SynthesisPhosphorus from "./components/FacultyResearch/DianaCermak/SynthesisPhosphorus"
+import HelenHoyt from "./components/FacultyResearch/HelenHoyt";
+
 import GeneralChemistry from "./pages/CourseUsage/generalChem";
 import OrganicChemistry from "./pages/CourseUsage/Organic/organicChem";
 import SpectroscopyUnknownLab from "./pages/CourseUsage/Organic/spectroscopyUnknownLab";
@@ -40,14 +45,15 @@ export default function App() {
           <Route exact path={"/NMRFundamentals"} element={<NMRFundamentals />} />
           <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
           <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
+          <Route exact path={"/About"} element={<About />} />
           <Route exact path={"/NMRSpectrum"} element={<NMRSpectrum />} />
           <Route exact path={"/NMRInstrumentation"} element={<NMRInstrumentation />} />
           <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
-          <Route exact path={"/Faculty1Soil"} element={<Faculty1Soil />} />
-          <Route exact path={"/Faculty2Asym"} element={<Faculty2Asym />} />
-          <Route exact path={"/Faculty2Phospho"} element={<Faculty2Phospho />} />
-          <Route exact path={"/Faculty2Main"} element={<Faculty2Main />} />
-          <Route exact path={"/Faculty3Green"} element={<Faculty3Green />} />
+          <Route exact path={"/KaitieAdelberger"} element={<KaitieAdelberger />} />
+          <Route exact path={"/DianaCermak"} element={<DianaCermak />} />
+          <Route exact path={"/DianaCermak/AsymmetricSynthesis"} element={<AsymmetricSynthesis />} />
+          <Route exact path={"/DianaCermak/SynthesisPhosphorus"} element={<SynthesisPhosphorus />} />
+          <Route exact path={"/HelenHoyt"} element={<HelenHoyt />} />
           <Route exact path={"/GeneralChemistry"} element={<GeneralChemistry />} />
           <Route exact path={"/OrganicChemistry"} element={<OrganicChemistry />} />
           <Route exact path={"/SpectroscopyUnknownLab"} element={<SpectroscopyUnknownLab />} />

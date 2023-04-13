@@ -70,6 +70,11 @@
     line-height: 2.43vw;
 }
 
+.flexbox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 sup {
     font-size: 0.8vw;
 }
@@ -78,29 +83,7 @@ sup {
     font-size: 3.5vw;
 }
 
-p {
-    margin-right: 3.426vw;
-}
 
-a {
-    color: #C3FA50;
-}
-
-
-.link {
-    text-decoration: underline;
-}
-
-.link:hover {
-    color: #8fb83b;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.link:active {
-    color: #FFFFFF;
-    text-decoration: underline;
-}
 
 /* width */
 .decs-text::-webkit-scrollbar {

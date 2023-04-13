@@ -41,42 +41,7 @@
 .sectionText{
     position: relative;
     display: flex;
-    padding-right: 4vw;
-    margin-bottom: 1vh;
-    align-items: flex-end;
-}
-
-/* .sectionText1{
-    position: relative;
-    display: flex;
-    
-    margin-bottom: 1vh;
-    align-items: flex-end;
-}
-
-.sectionText2{
-    position: relative;
-    display: flex;
-    
-    margin-bottom: 1vh;
-    align-items: flex-end;
-}
-
-.sectionText3{
-    position: relative;
-    display: flex;
-    
-    margin-bottom: 1vh;
-    align-items: flex-end;
-} */
-
-.sectionText4{
-    position: relative;
-    width: 30vw;
-    top: 8vh;
-    height: 18vh;
-    font-size: 3vw;
-    color:#C3FA50;
+    padding-right: 3.5vw;
     margin-bottom: 1vh;
     align-items: flex-end;
 }

@@ -11,17 +11,17 @@ const content = {
   description1:
     "This part of the process can take some time, depending on what information we need and what kind of sample we have.  Here we collect the NMR data.\n\nAfter we tune the spectrometer to a particular nucleus and shim the magnetic field, the sample is pulsed with radio waves at the resonant frequency to initiate precession.\n\nAll these little magnets precessing together add up to create a bigger oscillating magnetic field. It is measured through magnetic induction (exactly like how the antenna of a radio picks up radio signals).\n\nOnce the pulse has ended, the nuclei initially precess together and this yields an NMR signal that is recorded in a computer.\n\nVery shortly after the pulse, the nuclei stop precessing together (stop being in phase). The nuclei get out of sync for two main reasons:\n\n",
     description2:
-    "1. The nuclei within a molecule\nare in slightly different\nmagnetic environments and so\nprecess at slightly different\nfrequencies.\nFor example, consider the two\ndifferent hydrogen\nenvironments in ",
+    "1. The nuclei within a molecule are in slightly different magnetic environments and so precess at slightly different frequencies.\n\nFor example, consider the two different hydrogen environments in ",
   link1:
     "methanol:",
   link2:
-    "one is attached to oxygen\n",
+    "\none is attached to oxygen\n",
   description3:
-    "and\n",
+    "\nand\n",
   link3:
-    "the others are attached to carbon.\n\n",
+    "\nthe others are attached to carbon.\n\n",
   description4:
-    "2. The nuclei gradually “relax”\nback to equilibrium.\n\n",
+    "2. The nuclei gradually “relax” back to equilibrium.\n\n",
   description5:
     "As the nuclei stop precessing in sync, the strength of the magnetic induction decreases.  One can observe this magnetic induction decay over time.  This is called the Free Induction Decay (FID).\n\nIf an FID signal is weak, the experiment can be repeated and added together in order to improve the signal to noise. The number of scans needed depends on the type of experiment, the amount of sample you have, and the problem you're trying to solve.",
 };

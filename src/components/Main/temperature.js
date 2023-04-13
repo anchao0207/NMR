@@ -6,17 +6,17 @@ const content = {
   description1:
     "In order for our magnet to be superconducting it needs to be at a very cold temperature.\n\nThe superconducting magnet is cooled by ",
   link1:
-    "liquid helium",
+    "liquid helium,",
   description2:
-    ", which provides this low temperature (4K / -452℉/ -269℃).\n\nThe liquid helium will evaporate over time. To slow down this evaporation, the (expensive) liquid helium is kept cold by a separate layer of (cheap) ",
+    " which provides this low temperature (4K / -452℉/ -269℃).\n\nThe liquid helium will evaporate over time. To slow down this evaporation, the (expensive) liquid helium is kept cold by a separate layer of (cheap) ",
   link2:
     "liquid nitrogen",
   description3:
     " (77K, -196℃ / -320℉).\n\nThe outside layer of the can is insulated by a vacuum and with ",
   link3:
-    "Mylar",
+    "Mylar,",
   description4:
-    ", to help keep the magnet cold.\n\nBasically, the entire metal can is like a Yeti - an excellent thermos!"
+    " to help keep the magnet cold.\n\nBasically, the entire metal can is like a Yeti - an excellent thermos!"
 };
 
 const MainBody = (props) => {

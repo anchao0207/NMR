@@ -13,3 +13,28 @@
   align-items: flex-end;
   padding-bottom: 2.871vh;
 }
+
+p {
+  margin:0;
+  margin-right: 3.426vw;
+}
+
+a {
+  color: #C3FA50;
+}
+
+
+.link {
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #8fb83b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:active {
+  color: #FFFFFF;
+  text-decoration: underline;
+}

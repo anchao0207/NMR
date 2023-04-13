@@ -27,7 +27,7 @@ export default function NavBar() {
 
           <div className="sectionText">
             <div className="courseUsage">
-              <Link to="/CourseUsage" className="navLink">
+              <Link to={"/CourseUsage"} className="navLink">
                 <span className="navText">Course</span>
                 <br></br>
                 <span className="navText">Usage</span>
@@ -45,11 +45,11 @@ export default function NavBar() {
             </div>
           </div>
           <div className="sectionText">
-            <div class="facultyResearch">
-              <Link to="/FacultyResearch" className="navLink">
-                <span className="navText">Faculty</span>
+            <div class="about">
+              <Link to="/About" className="navLink">
+                <span className="navText">About</span>
                 <br></br>
-                <span className="navText">Research</span>
+                <span className="navText">this Project</span>
               </Link>
             </div>
           </div>

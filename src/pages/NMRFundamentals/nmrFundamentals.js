@@ -22,6 +22,7 @@ export default function NMRFundamentals() {
       <div className="home">
         <NavBar></NavBar>
         <div className="main-body" ref={mainRef}>
+        <div className="navTitle">NMR Fundamentals</div>
           <div className="section1">
             <NuclearMagneticResonance className="NMR" />
           </div>
