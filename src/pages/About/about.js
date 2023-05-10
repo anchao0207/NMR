@@ -24,15 +24,21 @@ export default function About() {
             <NuclearMagneticResonance className="NMR" />
           </div>
             <Stack gap={3} className="section2">
+                <button>
               <Link to="/StillDeveloping">
-                <button>About</button>
+                  About
               </Link>
+                  </button>
+                <button>
               <Link to="/StillDeveloping">
-                <button>Credit</button>
+                  Credit
               </Link>
+                  </button>
+                <button>
               <Link to="/StillDeveloping">
-                <button>Special Thanks</button>
+                  Special Thanks
               </Link>
+                  </button>
             </Stack>
         </div>
       </div>

@@ -21,10 +21,12 @@ p {
 
 a {
   color: #C3FA50;
+  text-decoration: none;
 }
 
 
 .link {
+  color: #C3FA50 !important;
   text-decoration: underline;
 }
 
@@ -35,6 +37,10 @@ a {
 }
 
 .link:active {
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
   text-decoration: underline;
+}
+
+a:visited{
+  color: #B6ACFF;
 }

@@ -33,19 +33,21 @@ export default function BiologicalInstrumentation() {
         {MainBody(content)}
 
         <Stack gap={3} className="section2">
-          <Link to="/YeastFermentation">
-            <button>Yeast Fermentation</button>
-          </Link>
-          <Link to="/NucleotideProtonation">
-            <button>
+          <button>
+            <Link to="/YeastFermentation">Yeast Fermentation</Link>
+          </button>
+          <button>
+            <Link to="/NucleotideProtonation">
               Nucleotide Protonation
               <br />
               State and Metal Binding
-            </button>
-          </Link>
-          <Link to="/RateConstant">
-            <button>Rate Constant for Proton Exchange in Thiamine</button>
-          </Link>
+            </Link>
+          </button>
+          <button>
+            <Link to="/RateConstant">
+              Rate Constant for Proton Exchange in Thiamine
+            </Link>
+          </button>
         </Stack>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>

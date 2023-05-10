@@ -1,6 +1,7 @@
 import "../NavBar/navbar.css";
 import { ReactComponent as NMRLogo } from "../../components/NavBar/NMR Logo.svg";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -14,43 +15,62 @@ export default function NavBar() {
 
         <div className="sectionTitle"></div>
         <div className="sectionNavigation">
-            
           <div className="sectionText">
             <div class="nmrFundamentals">
-              <Link to="/NMRFundamentals" className="navLink">
+              <NavLink
+                to="/NMRFundamentals"
+                className={({ isActive }) => {
+                  return "navLink " + (isActive ? "selected" : null);
+                }}
+              >
                 <span className="navText">NMR</span>
                 <br></br>
                 <span className="navText">Fundamentals</span>
-              </Link>
+              </NavLink>
             </div>
           </div>
 
           <div className="sectionText">
             <div className="courseUsage">
-              <Link to={"/CourseUsage"} className="navLink">
+              <NavLink
+                to={"/CourseUsage"}
+                className={({ isActive }) => {
+                  return "navLink " + (isActive ? "selected" : null);
+                }}
+              >
                 <span className="navText">Course</span>
                 <br></br>
                 <span className="navText">Usage</span>
-              </Link>
+              </NavLink>
             </div>
           </div>
 
           <div className="sectionText">
             <div class="facultyResearch">
-              <Link to="/FacultyResearch" className="navLink">
+              <NavLink
+                to="/FacultyResearch"
+                className={({ isActive }) => {
+                  return "navLink " + (isActive ? "selected" : null);
+                }}
+              >
                 <span className="navText">Faculty</span>
                 <br></br>
                 <span className="navText">Research</span>
-              </Link>
+              </NavLink>
             </div>
           </div>
           <div className="sectionText">
             <div class="about">
-              <Link to="/About" className="navLink">
+              <NavLink
+                to="/About"
+                className={({ isActive }) => {
+                  return "navLink " + (isActive ? "selected" : null);
+                }}
+              >
                 <span className="navText">About</span>
                 <br></br>
                 <span className="navText">this Project</span>
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>

@@ -186,7 +186,7 @@ export default function ChemicalShift() {
         <div className="spectrum-main-desc2">
           {content.desc2}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink1Click}
           >
             {content.link1}
@@ -194,28 +194,28 @@ export default function ChemicalShift() {
           {content.desc3} <Formula>{content.desc4}</Formula>
           {content.desc5}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink2Click}
           >
             {content.link2}
           </Link>{" "}
           {content.desc6}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink3Click}
           >
             {content.link3}
           </Link>{" "}
           {content.desc7}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink4Click}
           >
             <Formula>{content.link4}</Formula>
           </Link>{" "}
           {content.desc8}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink5Click}
           >
             <Formula>{content.link5}</Formula>

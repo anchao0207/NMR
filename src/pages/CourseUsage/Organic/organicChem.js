@@ -32,27 +32,27 @@ export default function OrganicChemistry() {
         <div className="navTitle">Organic Chemistry</div>
         {MainBody(content)}
         <Stack gap={3} className="section2">
-          <Link to="/SpectroscopyUnknownLab">
             <button>
+          <Link to="/SpectroscopyUnknownLab">
               Spectroscopy
               <br />
               Unknown Lab
-            </button>
           </Link>
-          <Link to="/3-weekLab">
+            </button>
             <button>
+          <Link to="/3-weekLab">
               3-week lab
               <br />
               synthesis project
-            </button>
           </Link>
-          <Link to="/Stereoselective">
+            </button>
             <button>
+          <Link to="/Stereoselective">
               Stereoselective
               <br />
               reduction of camphor
-            </button>
           </Link>
+            </button>
         </Stack>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>

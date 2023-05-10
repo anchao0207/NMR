@@ -140,7 +140,7 @@ export default function BasicAspects() {
           <ol>
             <li className="list">
               <Link
-                className="spectrum-main-link spectrum-main-link-text"
+                className="spectrum-main-link spectrum-main-link-text link"
                 onClick={onSymmetryClick}
               >
                 {content.link1}
@@ -148,7 +148,7 @@ export default function BasicAspects() {
             </li>
             <li className="list">
               <Link
-                className="spectrum-main-link spectrum-main-link-text"
+                className="spectrum-main-link spectrum-main-link-text link"
                 onClick={onChemShiftClick}
               >
                 {content.link2}
@@ -156,14 +156,14 @@ export default function BasicAspects() {
             </li>
             <li className="list">
               <Link
-                className="spectrum-main-link spectrum-main-link-text"
+                className="spectrum-main-link spectrum-main-link-text link"
                 onClick={onIntegrationClick}
               >
                 {content.link3}
               </Link>
             </li>
             <li className="list">
-              <Link className="spectrum-main-link spectrum-main-link-text" onClick={onSplitingClick}>
+              <Link className="spectrum-main-link spectrum-main-link-text link" onClick={onSplitingClick}>
                 {content.link4}
               </Link>
             </li>

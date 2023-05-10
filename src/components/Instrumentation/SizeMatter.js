@@ -105,14 +105,14 @@ export default function SizeMatter() {
         <div className="sizematter-main-desc2">
           {content.desc1}
           <Link
-            className="sizematter-main-link sizematter-main-link-text"
+            className="sizematter-main-link sizematter-main-link-text link"
             onClick={link1Click}
           >
             {content.link1}
           </Link>
           {content.desc2}
           <Link
-            className="sizematter-main-link sizematter-main-link-text"
+            className="sizematter-main-link sizematter-main-link-text link"
             onClick={link2Click}
           >
             {content.link2}

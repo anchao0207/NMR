@@ -63,4 +63,10 @@
     color: #C3FA50;
 }
 
+.selected{
+    text-decoration:underline double;
+}
 
+.selected .navText{
+    color: #B6ACFF;
+}

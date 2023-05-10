@@ -33,12 +33,16 @@ export default function AdvancedSynthesis() {
         {MainBody(content)}
 
         <Stack gap={3} className="section2">
+            <button>
           <Link to="/LigandSynthesis">
-            <button>Ligand Synthesis</button>
+              Ligand Synthesis
           </Link>
+              </button>
+            <button>
           <Link to="/PrecatalystSynthesis">
-            <button>Precatalyst Synthesis</button>
+              Precatalyst Synthesis
           </Link>
+              </button>
         </Stack>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>

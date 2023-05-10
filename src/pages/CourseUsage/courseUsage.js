@@ -25,20 +25,27 @@ export default function NMRFundamentals() {
           </div>
           {/* <div className="section2"> */}
             <Stack gap={3} className="section2">
+                <button>
               <Link to="/GeneralChemistry">
-                <button>General<br/> Chemistry</button>
+                  General<br/> Chemistry
               </Link>
+                  </button>
+                <button>
               <Link to="/OrganicChemistry">
-                <button>Organic<br/> Chemistry</button>
+                  Organic<br/> Chemistry
               </Link>
+                  </button>
+                <button>
               <Link to="/BiologicalInstrumentation">
-                <button>Biological<br/> Instrumentation</button>
+                  Biological<br/> Instrumentation
               </Link>
+                  </button>
+                <button>
               <Link to="/AdvancedSynthesis">
-                <button>Advanced<br/> Synthesis</button>
+                  Advanced<br/> Synthesis
               </Link>
+                  </button>
             </Stack>
-          {/* </div> */}
         </div>
       </div>
     </>

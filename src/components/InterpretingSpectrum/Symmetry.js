@@ -539,68 +539,68 @@ export default function Symmetry() {
         <div className="spectrum-main-desc2">
           {content.desc2}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink1Click}
           >
             {content.link1}
           </Link>{" "}
           {content.desc3}
           <div className="center-space">
-            <Link className="spectrum-main-link padding" onClick={onLink2Click}>
+            <Link className="spectrum-main-link padding link" onClick={onLink2Click}>
               <Formula>{content.link2}</Formula>
             </Link>
-            <Link className="spectrum-main-link padding" onClick={onLink3Click}>
+            <Link className="spectrum-main-link padding link" onClick={onLink3Click}>
               <Formula>{content.link3}</Formula>
             </Link>
-            <Link className="spectrum-main-link padding" onClick={onLink4Click}>
+            <Link className="spectrum-main-link padding link" onClick={onLink4Click}>
               <Formula>{content.link4}</Formula>
             </Link>
           </div>
           {content.desc4}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink5Click}
           >
             {content.link5}
           </Link>{" "}
           {content.desc5}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink6Click}
           >
             <Formula>{content.link6}</Formula>
           </Link>{" "}
           {content.desc6}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink7Click}
           >
             <Formula>{content.link7}</Formula>
           </Link>{" "}
           {content.desc7}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink8Click}
           >
             <Formula>{content.link8}</Formula>
           </Link>{" "}
           {content.desc8}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink9Click}
           >
             <Formula>{content.link9}</Formula>
           </Link>{" "}
           {content.desc9}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink1Click}
           >
             {content.link10}
           </Link>{" "}
           <Formula>{content.desc10}</Formula>
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink11Click}
           >
             {content.link11}
@@ -608,18 +608,18 @@ export default function Symmetry() {
           {content.desc11} <sup>1</sup>
           {content.desc12}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink12Click}
           >
             {content.link12}
           </Link>{" "}
           {content.desc13}
           <div className="center">
-            <Link className="spectrum-main-link" onClick={onLink13Click}>
+            <Link className="spectrum-main-link link" onClick={onLink13Click}>
               <Formula>{content.link13}</Formula>
             </Link>
             {content.desc14}{" "}
-            <Link className="spectrum-main-link" onClick={onLink14Click}>
+            <Link className="spectrum-main-link link" onClick={onLink14Click}>
               <Formula>{content.link14}</Formula>
             </Link>
           </div>

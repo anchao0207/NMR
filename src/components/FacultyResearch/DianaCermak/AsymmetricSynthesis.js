@@ -34,7 +34,7 @@ export default function AsymmetricSynthesis() {
       <NavBar></NavBar>
       <div className="navTitle">Dr. Diana Cermak</div>
       <div className="main-body" ref={mainRef}>
-        <img className="image" src={require("../../../assets/asymmetricsynthesis.png")} alt="" />
+        <img className="image" src={require("../../../assets/Cermak-Diana-Chemistry-Lab-and-Students-0020.jpg")} alt="" />
         {MainBody(content)}
         <Back
           className="spectrum-back"

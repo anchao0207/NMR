@@ -22,7 +22,7 @@ export default function NMRFundamentals() {
       <div className="home">
         <NavBar></NavBar>
         <div className="main-body" ref={mainRef}>
-        <div className="navTitle">NMR Fundamentals</div>
+          <div className="navTitle">NMR Fundamentals</div>
           <div className="section1">
             <NuclearMagneticResonance className="NMR" />
           </div>
@@ -30,20 +30,20 @@ export default function NMRFundamentals() {
             {content.map((o) => {
               if (o === "How it Works")
                 return (
-                  <Link to="/">
-                    <button>{o}</button>
-                  </Link>
+                  <button>
+                    <Link to="/">{o}</Link>
+                  </button>
                 );
               if (o === "Intepreting\nNMR Spectrum")
                 return (
-                  <Link to="/NMRSpectrum">
-                    <button>{o}</button>
-                  </Link>
+                  <button>
+                    <Link to="/NMRSpectrum">{o}</Link>
+                  </button>
                 );
               return (
-                <Link to="/NMRInstrumentation/">
-                  <button>{o}</button>
-                </Link>
+                <button>
+                  <Link to="/NMRInstrumentation/">{o}</Link>
+                </button>
               );
             })}
           </Stack>

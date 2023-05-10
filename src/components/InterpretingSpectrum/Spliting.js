@@ -43,7 +43,7 @@ export default function ChemicalShift() {
       .map((token, idx) => (idx % 2 ? <sub key={idx}>{token}</sub> : token));
 
   const Formula = ({ children }) => (
-    <code className="spectrum-main-link-text">{tokenize(children)}</code>
+    <code className="spectrum-main-link-text link">{tokenize(children)}</code>
   );
 
   const [current, setCurrent] = React.useState();
@@ -240,56 +240,56 @@ export default function ChemicalShift() {
         <div className="spectrum-main-desc2">
           {content.desc2}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink1Click}
           >
             {content.link1}
           </Link>
           {content.desc3}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink2Click}
           >
             {content.link2}
           </Link>
           {content.desc4}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink3Click}
           >
             <Formula>{content.link3}</Formula>
           </Link>
           {content.desc5}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink4Click}
           >
             <Formula>{content.link4}</Formula>
           </Link>{" "}
           {content.desc6}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink5Click}
           >
             <Formula>{content.link5}</Formula>
           </Link>{" "}
           {content.desc7}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink6Click}
           >
             <Formula>{content.link6}</Formula>
           </Link>{" "}
           {content.desc8}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink7Click}
           >
             {content.link7}
           </Link>{" "}
           {content.desc9}{" "}
           <Link
-            className="spectrum-main-link spectrum-main-link-text"
+            className="spectrum-main-link spectrum-main-link-text link"
             onClick={onLink8Click}
           >
             {content.link8}
