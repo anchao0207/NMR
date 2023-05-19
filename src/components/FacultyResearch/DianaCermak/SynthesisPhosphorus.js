@@ -34,7 +34,7 @@ export default function SynthesisPhosphorus() {
       <NavBar></NavBar>
       <div className="navTitle">Dr. Diana Cermak</div>
       <div className="main-body" ref={mainRef}>
-        <img className="image" src={require("../../../assets/Cermak-Diana-Chemistry-Lab-and-Students-0011.jpg")} alt="" />
+        <img className="image" src={require("../../../assets/Student_2.png")} alt="" />
         {MainBody(content)}
         <Back
           className="spectrum-back"
