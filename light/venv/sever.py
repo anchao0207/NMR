@@ -20,7 +20,7 @@ num_pixels = 294
 app = Flask(__name__)
 CORS(app)
 
-pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.5, auto_write=False)
+pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.8, auto_write=False)
 
 @app.route("/")
 def hello_world():
