@@ -21,7 +21,7 @@ export default function AdvancedSynthesis() {
   });
 
   const backwardClick = () => {
-    let path = "/CourseUsage/";
+    let path = "/CourseUsage";
     navigate(path);
   };
 

@@ -45,7 +45,7 @@ export default function LigandSynthesis() {
   };
 
   const backwardClick = () => {
-    let path = "/AdvancedSynthesis/";
+    let path = "/CourseUsage/AdvancedSynthesis";
     navigate(path);
   };
 

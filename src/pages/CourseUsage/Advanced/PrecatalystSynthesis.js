@@ -35,7 +35,7 @@ export default function PrecatalystSynthesis() {
   };
 
   const backwardClick = () => {
-    let path = "/AdvancedSynthesis/";
+    let path = "/CourseUsage/AdvancedSynthesis";
     navigate(path);
   };
 
