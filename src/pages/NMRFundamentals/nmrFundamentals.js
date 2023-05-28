@@ -30,20 +30,20 @@ export default function NMRFundamentals() {
             {content.map((o) => {
               if (o === "How it Works")
                 return (
-                  <button>
-                    <Link to="/">{o}</Link>
-                  </button>
+                  <Link to="/">
+                    <button>{o}</button>
+                  </Link>
                 );
               if (o === "Intepreting\nNMR Spectrum")
                 return (
-                  <button>
-                    <Link to="/NMRSpectrum">{o}</Link>
-                  </button>
+                  <Link to="/NMRSpectrum">
+                    <button>{o}</button>
+                  </Link>
                 );
               return (
-                <button>
-                  <Link to="/NMRInstrumentation/">{o}</Link>
-                </button>
+                <Link to="/NMRInstrumentation/">
+                  <button>{o}</button>
+                </Link>
               );
             })}
           </Stack>

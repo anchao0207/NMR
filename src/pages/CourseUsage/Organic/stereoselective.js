@@ -42,7 +42,7 @@ export default function Stereoselective() {
   };
 
   const backwardClick = () => {
-    let path = "/OrganicChemistry/";
+    let path = "/CourseUsage/OrganicChemistry";
     navigate(path);
   };
 

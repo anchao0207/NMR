@@ -23,23 +23,17 @@ export default function About() {
           <div className="section1">
             <NuclearMagneticResonance className="NMR" />
           </div>
-            <Stack gap={3} className="section2">
-                <button>
-              <Link to="/StillDeveloping">
-                  About
-              </Link>
-                  </button>
-                <button>
-              <Link to="/StillDeveloping">
-                  Credit
-              </Link>
-                  </button>
-                <button>
-              <Link to="/StillDeveloping">
-                  Special Thanks
-              </Link>
-                  </button>
-            </Stack>
+          <Stack gap={3} className="section2">
+            <Link to="/StillDeveloping">
+              <button>About</button>
+            </Link>
+            <Link to="/StillDeveloping">
+              <button>Credit</button>
+            </Link>
+            <Link to="/StillDeveloping">
+              <button>Special Thanks</button>
+            </Link>
+          </Stack>
         </div>
       </div>
     </>

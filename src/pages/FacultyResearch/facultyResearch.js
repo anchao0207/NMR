@@ -24,15 +24,15 @@ export default function FacultyResearch() {
             <NuclearMagneticResonance className="NMR" />
           </div>
           <Stack className="section2">
-            <button>
-              <Link to="/KaitieAdelberger">Katie Adelsberger, PhD</Link>
-            </button>
-            <button>
-              <Link to="/DianaCermak">Diana Cermak, PhD</Link>
-            </button>
-            <button>
-              <Link to="/HelenHoyt">Helen Hoyt, PhD</Link>
-            </button>
+            <Link to="./KaitieAdelberger">
+              <button>Katie Adelsberger, PhD</button>
+            </Link>
+            <Link to="./DianaCermak">
+              <button>Diana Cermak, PhD</button>
+            </Link>
+            <Link to="./HelenHoyt">
+              <button>Helen Hoyt, PhD</button>
+            </Link>
           </Stack>
         </div>
       </div>

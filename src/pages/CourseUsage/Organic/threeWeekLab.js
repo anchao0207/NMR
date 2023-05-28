@@ -10,7 +10,7 @@ export default function ThreeWeekLab() {
     description:
       "H and ",
       description2:"C NMR spectroscopy are used to characterize three reaction products during a 3-week synthesis project which culminates in the synthesis of 5, 5-diphenyl-4-penten-2-one.",
-  };
+    };
 
   const mainRef = React.useRef(null);
 
@@ -42,7 +42,7 @@ export default function ThreeWeekLab() {
   };
 
   const backwardClick = () => {
-    let path = "/OrganicChemistry/";
+    let path = "/CourseUsage/OrganicChemistry";
     navigate(path);
   };
 

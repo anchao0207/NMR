@@ -24,7 +24,7 @@ export default function SynthesisPhosphorus() {
   });
 
     const backwardClick = () => {
-      let path = "/DianaCermak/";
+      let path = "/FacultyResearch/DianaCermak/";
       navigate(path);
     };
 

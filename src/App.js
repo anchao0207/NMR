@@ -49,31 +49,34 @@ export default function App() {
     <ViewportProvider>
       <Router>
         <Routes>
-          <Route exact path={"/"} element={<Home />} />
           <Route exact path={"/NMRFundamentals"} element={<NMRFundamentals />} />
-          <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
-          <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
-          <Route exact path={"/About"} element={<About />} />
-          <Route exact path={"/NMRSpectrum"} element={<NMRSpectrum />} />
+          <Route exact path={"/"} element={<Home />} />
           <Route exact path={"/NMRInstrumentation"} element={<NMRInstrumentation />} />
-          <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
-          <Route exact path={"/KaitieAdelberger"} element={<KaitieAdelberger />} />
-          <Route exact path={"/DianaCermak"} element={<DianaCermak />} />
-          <Route exact path={"/DianaCermak/AsymmetricSynthesis"} element={<AsymmetricSynthesis />} />
-          <Route exact path={"/DianaCermak/SynthesisPhosphorus"} element={<SynthesisPhosphorus />} />
-          <Route exact path={"/HelenHoyt"} element={<HelenHoyt />} />
-          <Route exact path={"/GeneralChemistry"} element={<GeneralChemistry />} />
-          <Route exact path={"/OrganicChemistry"} element={<OrganicChemistry />} />
-          <Route exact path={"/SpectroscopyUnknownLab"} element={<SpectroscopyUnknownLab />} />
-          <Route exact path={"/3-weekLab"} element={<ThreeWeekLab />} />
-          <Route exact path={"/Stereoselective"} element={<Stereoselective />} />
-          <Route exact path={"/BiologicalInstrumentation"} element={<BiologicalInstrumentation />} />
+          <Route exact path={"/NMRSpectrum"} element={<NMRSpectrum />} />
+
+          <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
+          <Route exact path={"/CourseUsage/GeneralChemistry"} element={<GeneralChemistry />} />
+          <Route exact path={"/CourseUsage/OrganicChemistry"} element={<OrganicChemistry />} />
+          <Route exact path={"/CourseUsage/OrganicChemistry/SpectroscopyUnknownLab"} element={<SpectroscopyUnknownLab />} />
+          <Route exact path={"/CourseUsage/OrganicChemistry/3-weekLab"} element={<ThreeWeekLab />} />
+          <Route exact path={"/CourseUsage/OrganicChemistry/Stereoselective"} element={<Stereoselective />} />
+          <Route exact path={"/CourseUsage/BiologicalInstrumentation"} element={<BiologicalInstrumentation />} />
           <Route exact path={"/YeastFermentation"} element={<YeastFermentation />} />
           <Route exact path={"/NucleotideProtonation"} element={<NucleotideProtonation />} />
           <Route exact path={"/RateConstant"} element={<RateConstant />} />
-          <Route exact path={"/AdvancedSynthesis"} element={<AdvancedSynthesis />} />
+          <Route exact path={"/CourseUsage/AdvancedSynthesis"} element={<AdvancedSynthesis />} />
           <Route exact path={"/LigandSynthesis"} element={<LigandSynthesis />} />
           <Route exact path={"/PrecatalystSynthesis"} element={<PrecatalystSynthesis />} />
+
+          <Route exact path={"/FacultyResearch"} element={<FacultyResearch />} />
+          <Route exact path={"/FacultyResearch/KaitieAdelberger"} element={<KaitieAdelberger />} />
+          <Route exact path={"/FacultyResearch/DianaCermak"} element={<DianaCermak />} />
+          <Route exact path={"/FacultyResearch/DianaCermak/AsymmetricSynthesis"} element={<AsymmetricSynthesis />} />
+          <Route exact path={"/FacultyResearch/DianaCermak/SynthesisPhosphorus"} element={<SynthesisPhosphorus />} />
+          <Route exact path={"/FacultyResearch/HelenHoyt"} element={<HelenHoyt />} />
+
+          <Route exact path={"/About"} element={<About />} />
+          <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Routes>
       </Router>
