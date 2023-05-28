@@ -9,7 +9,7 @@ const content = {
   link1: "H {270 MHz}\n\n",
   link2: "C {68 MHz}\n\n",
   link3: "F {254 MHz}\n\n",
-  link4: "P {109 MHz}",
+  link4: "Ph {109 MHz}",
 };
 
 const onHClick = (e) => {
@@ -67,7 +67,7 @@ const MainBody = (props) => {
               </a>
               <a className="link" onClick={onPClick}>
                 <sup>31</sup>
-                {props.link2}
+                {props.link4}
               </a>
             </p>
           </div>
