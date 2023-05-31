@@ -32,14 +32,12 @@ export default function DianaCermak() {
         <div className="navTitle">Faculty Research</div>
         {MainBody(content)}
         <Stack gap={3} className="section2">
-          <button>
-            <Link to="./AsymmetricSynthesis">Asymmetric Synthesis</Link>
-          </button>
-          <button>
-            <Link to="./SynthesisPhosphorus">
-              Synthesis of phosphorus derivatives
-            </Link>
-          </button>
+          <Link to="./AsymmetricSynthesis">
+            <button>Asymmetric Synthesis</button>
+          </Link>
+          <Link to="./SynthesisPhosphorus">
+            <button>Synthesis of phosphorus derivatives</button>
+          </Link>
         </Stack>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>

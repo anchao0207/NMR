@@ -37,7 +37,7 @@ export default function YeastFermentation() {
   };
 
   const backwardClick = () => {
-    let path = "/BiologicalInstrumentation/";
+    let path = "/CourseUsage/BiologicalInstrumentation/";
     navigate(path);
   };
 

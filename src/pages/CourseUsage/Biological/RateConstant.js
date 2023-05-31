@@ -35,7 +35,7 @@ export default function RateConstant() {
   };
 
   const backwardClick = () => {
-    let path = "/BiologicalInstrumentation/";
+    let path = "/CourseUsage/BiologicalInstrumentation";
     navigate(path);
   };
 

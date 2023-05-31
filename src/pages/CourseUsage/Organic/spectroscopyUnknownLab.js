@@ -34,7 +34,7 @@ export default function SpectroscopyUnknownLab() {
   };
 
   const backwardClick = () => {
-    let path = "/OrganicChemistry/";
+    let path = "/CourseUsage/OrganicChemistry";
     navigate(path);
   };
 
@@ -45,7 +45,7 @@ export default function SpectroscopyUnknownLab() {
         <div className="navTitle">Organic Chemistry</div>
         <img
           className="image"
-          src={require("../../../assets/chemistry-lab.png")}
+          src={require("../../../assets/Spectroscopy Unknown Lab.jpg")}
           alt=""
         />
         {MainBody(content)}

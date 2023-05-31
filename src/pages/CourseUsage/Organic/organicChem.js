@@ -21,7 +21,7 @@ export default function OrganicChemistry() {
   });
 
   const backwardClick = () => {
-    let path = "/CourseUsage/";
+    let path = "/CourseUsage";
     navigate(path);
   };
 
@@ -32,27 +32,27 @@ export default function OrganicChemistry() {
         <div className="navTitle">Organic Chemistry</div>
         {MainBody(content)}
         <Stack gap={3} className="section2">
+          <Link to="./SpectroscopyUnknownLab">
             <button>
-          <Link to="/SpectroscopyUnknownLab">
               Spectroscopy
               <br />
               Unknown Lab
-          </Link>
             </button>
+          </Link>
+          <Link to="./3-weekLab">
             <button>
-          <Link to="/3-weekLab">
               3-week lab
               <br />
               synthesis project
-          </Link>
             </button>
+          </Link>
+          <Link to="./Stereoselective">
             <button>
-          <Link to="/Stereoselective">
               Stereoselective
               <br />
               reduction of camphor
-          </Link>
             </button>
+          </Link>
         </Stack>
         <Back className="spectrum-back" onClick={backwardClick}></Back>
       </div>

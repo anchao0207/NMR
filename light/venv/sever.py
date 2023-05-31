@@ -16,11 +16,14 @@ import math
 
 num_pixels = 294
 
+running = False
+
 
 app = Flask(__name__)
 CORS(app)
 
-pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.5, auto_write=False)
+pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.8, auto_write=False)
+# time = 20
 
 @app.route("/")
 def hello_world():
@@ -32,12 +35,20 @@ def off():
     pixels.show()
     return jsonify("Off")
 
+def stop():
+    global running
+    running= False
+
 @app.route('/magnet', methods=['POST'])
 def magnet():
-    off()
+    if running:
+        stop()
     def RunningLights():
+        running = True
         Position=0
         for j in range (20):
+            if not running:
+                break
             Position+=1
             for i in range (178,190):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
