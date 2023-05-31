@@ -99,9 +99,9 @@ def temperatureMylar():
 @app.route('/sample', methods=['POST'])
 def sample():
     def RunningLights():
-        Position=0
+        Position=19
         for j in range (20):
-            Position+=1
+            Position-=1
             for i in range (190,228):
                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128))
             pixels.show()
