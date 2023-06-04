@@ -13,10 +13,12 @@ import subprocess
 import time
 import sys
 import math
+import threading
 
 num_pixels = 294
 
 running = False
+running_lock = threading.Lock()
 
 
 app = Flask(__name__)
@@ -37,14 +39,29 @@ def off():
 
 def stop():
     global running
-    running= False
+    with running_lock:
+        running = False
+
+def RunningLights(effect_func):
+    global running
+    with running_lock:
+        if running:
+            return
+        running = True
+
+    def effect_thread():
+        effect_func()
+        with running_lock:
+            running = False
+
+    effect_thread = threading.Thread(target=effect_thread)
+    effect_thread.start()
 
 @app.route('/magnet', methods=['POST'])
 def magnet():
-    if running:
-        stop()
-    def RunningLights():
-        running = True
+    stop()
+
+    def MagnetLights():
         Position=0
         for j in range (20):
             if not running:
@@ -53,7 +70,19 @@ def magnet():
             for i in range (178,190):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
             pixels.show()
-    RunningLights()
+
+    # def RunningLights():
+    #     running = True
+    #     Position=0
+    #     for j in range (20):
+    #         if not running:
+    #             break
+    #         Position+=1
+    #         for i in range (178,190):
+    #             pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
+    #         pixels.show()
+    # RunningLights()
+    RunningLights(MagnetLights)
     pixels.fill((0,0,0))
     pixels.show()
     return jsonify("magnet")
