@@ -1,12 +1,12 @@
-from cmath import sin
-from math import fabs
-from turtle import delay
-from flask import Flask
+# from cmath import sin
+# from math import fabs
+# from turtle import delay
+from flask import Flask, request
 from flask import url_for, jsonify, render_template
-from flask_cors import CORS
-from rpi_ws281x import Color
-import board
-import neopixel
+# from flask_cors import CORS
+# from rpi_ws281x import Color
+# import board
+# import neopixel
 import os
 import signal
 import subprocess
@@ -14,6 +14,22 @@ import time
 import sys
 import math
 import threading
+import redis
+from rq import Queue
+import time
+
+r=redis.Redis()
+q = Queue(connection = r)
+
+def background_task(n):
+    delay=2
+    print("task running")
+    print(f"simulating {delay} second delay")
+    time.sleep(delay)
+    print(len(n))
+    print("Task complete")
+    return len(n)
+
 
 num_pixels = 294
 
@@ -22,204 +38,212 @@ running_lock = threading.Lock()
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
-pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.8, auto_write=False)
+# pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.8, auto_write=False)
 # time = 20
+
+@app.route("/task")
+def add_task():
+    if(request.args.get("n")):
+        job = q.enqueue(background_task, request.args.get("n"))
+        q_len=len(q)
+        return f"Task {job.id} added to queue at {job.enqueue_at}. {q_len} tasks in queue"
+    return "No n"
 
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route('/off', methods=['POST'])
-def off():
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("Off")
+# @app.route('/off', methods=['POST'])
+# def off():
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("Off")
 
-def stop():
-    global running
-    with running_lock:
-        running = False
+# def stop():
+#     global running
+#     with running_lock:
+#         running = False
 
-def RunningLights(effect_func):
-    global running
-    with running_lock:
-        if running:
-            return
-        running = True
+# def RunningLights(effect_func):
+#     global running
+#     with running_lock:
+#         if running:
+#             return
+#         running = True
 
-    def effect_thread():
-        effect_func()
-        with running_lock:
-            running = False
+#     def effect_thread():
+#         effect_func()
+#         with running_lock:
+#             running = False
 
-    effect_thread = threading.Thread(target=effect_thread)
-    effect_thread.start()
+#     effect_thread = threading.Thread(target=effect_thread)
+#     effect_thread.start()
 
-@app.route('/magnet', methods=['POST'])
-def magnet():
-    stop()
+# @app.route('/magnet', methods=['POST'])
+# def magnet():
+#     stop()
 
-    def MagnetLights():
-        Position=0
-        for j in range (20):
-            if not running:
-                break
-            Position+=1
-            for i in range (178,190):
-                pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
-            pixels.show()
+#     def MagnetLights():
+#         Position=0
+#         for j in range (20):
+#             if not running:
+#                 break
+#             Position+=1
+#             for i in range (178,190):
+#                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
+#             pixels.show()
 
-    # def RunningLights():
-    #     running = True
-    #     Position=0
-    #     for j in range (20):
-    #         if not running:
-    #             break
-    #         Position+=1
-    #         for i in range (178,190):
-    #             pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
-    #         pixels.show()
-    # RunningLights()
-    RunningLights(MagnetLights)
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("magnet")
+#     # def RunningLights():
+#     #     running = True
+#     #     Position=0
+#     #     for j in range (20):
+#     #         if not running:
+#     #             break
+#     #         Position+=1
+#     #         for i in range (178,190):
+#     #             pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
+#     #         pixels.show()
+#     # RunningLights()
+#     RunningLights(MagnetLights)
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("magnet")
 
-@app.route('/temperature-heli', methods=['POST'])
-def temperatureHeli():
-    off()
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (117,157):
-                pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),0)
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("temperature-heli")
+# @app.route('/temperature-heli', methods=['POST'])
+# def temperatureHeli():
+#     off()
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (117,157):
+#                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),0)
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("temperature-heli")
 
-@app.route('/temperature-nitro', methods=['POST'])
-def temperatureNitro():
-    off()
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (60,117):
-                pixels[i] = (0,0,int((math.sin(i+Position)) * 127 +128))
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("temperature-nitro")
+# @app.route('/temperature-nitro', methods=['POST'])
+# def temperatureNitro():
+#     off()
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (60,117):
+#                 pixels[i] = (0,0,int((math.sin(i+Position)) * 127 +128))
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("temperature-nitro")
 
-@app.route('/temperature-mylar', methods=['POST'])
-def temperatureMylar():
-    off()
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (30):
-                pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
-            for i in range (30,60):
-                pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("temperature-mylar")
-
-
-
-@app.route('/sample', methods=['POST'])
-def sample():
-    def RunningLights():
-        Position=19
-        for j in range (20):
-            Position-=1
-            for i in range (190,228):
-                pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128))
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("sample")
-
-@app.route('/field', methods=['POST'])
-def field():
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (158,178):
-                pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 64 +64),0)
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("field")
-
-@app.route('/pulseH', methods=['POST'])
-def pulseH():
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (228,294):
-                pixels[i] = (int((math.sin(i+Position)) * 63 +64),0,int((math.sin(i+Position)) * 127 +128))
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+# @app.route('/temperature-mylar', methods=['POST'])
+# def temperatureMylar():
+#     off()
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (30):
+#                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
+#             for i in range (30,60):
+#                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("temperature-mylar")
 
 
-@app.route('/pulseC', methods=['POST'])
-def pulseC():
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (228,294):
-                pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 64 +64))
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
 
-@app.route('/pulseF', methods=['POST'])
-def pulseF():
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (228,294):
-                pixels[i] = (int((math.sin(i+Position)) * 102 +102),0,int((math.sin(i+Position)) * 102 +102))
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+# @app.route('/sample', methods=['POST'])
+# def sample():
+#     def RunningLights():
+#         Position=19
+#         for j in range (20):
+#             Position-=1
+#             for i in range (190,228):
+#                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128))
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("sample")
 
-@app.route('/pulseP', methods=['POST'])
-def pulseP():
-    def RunningLights():
-        Position=0
-        for j in range (20):
-            Position+=1
-            for i in range (228,294):
-                pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 25 +26))
-            pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+# @app.route('/field', methods=['POST'])
+# def field():
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (158,178):
+#                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 64 +64),0)
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("field")
+
+# @app.route('/pulseH', methods=['POST'])
+# def pulseH():
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (228,294):
+#                 pixels[i] = (int((math.sin(i+Position)) * 63 +64),0,int((math.sin(i+Position)) * 127 +128))
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("pulse")
+
+
+# @app.route('/pulseC', methods=['POST'])
+# def pulseC():
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (228,294):
+#                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 64 +64))
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("pulse")
+
+# @app.route('/pulseF', methods=['POST'])
+# def pulseF():
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (228,294):
+#                 pixels[i] = (int((math.sin(i+Position)) * 102 +102),0,int((math.sin(i+Position)) * 102 +102))
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("pulse")
+
+# @app.route('/pulseP', methods=['POST'])
+# def pulseP():
+#     def RunningLights():
+#         Position=0
+#         for j in range (20):
+#             Position+=1
+#             for i in range (228,294):
+#                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 25 +26))
+#             pixels.show()
+#     RunningLights()
+#     pixels.fill((0,0,0))
+#     pixels.show()
+#     return jsonify("pulse")
 
 
 # proc = ''
