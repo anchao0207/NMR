@@ -1,7 +1,7 @@
 from cmath import sin
 from math import fabs
 from turtle import delay
-from flask import Flask
+from flask import Flask, request
 from flask import url_for, jsonify, render_template
 from flask_cors import CORS
 from rpi_ws281x import Color
@@ -10,276 +10,348 @@ import neopixel
 import os
 import signal
 import subprocess
-import time
 import sys
 import math
 import threading
+import time
+
+
 
 num_pixels = 294
 
-running = False
+# running = False
+# running_lock = threading.Lock()
+
 
 app = Flask(__name__)
 CORS(app)
 
 pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.8, auto_write=False)
-# time = 20
+time = 20
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+# @app.route("/")
+# def hello_world():
+#     return "<p>Hello, World!</p>"
+
+task_running = False
+stop_flag = threading.Event()
+
+# def background_task():
+#     global task_running
+#     task_running = True
+#     while not stop_flag.is_set():
+#         for i in range(7):
+#             print("Task is running..."+str(i))
+#             time.sleep(1)
+#         break
+#     task_running = False
+
+# @app.route('/')
+# def home():
+#     global task_running
+#     return f'Task is {"Running" if task_running else "Not Running"}'
+
+# @app.route('/start')
+# def start_task():
+#     global task_running
+#     global stop_flag
+#     if not task_running:
+#         # Start the background task
+#         stop_flag.clear()
+#         background_thread = threading.Thread(target=background_task)
+#         background_thread.start()
+#         return 'Task started'
+#     else:
+#         return 'Task is already running'
+
+# @app.route('/stop')
+# def stop_task():
+#     global task_running
+#     global stop_flag
+#     if task_running:
+#         # Stop the background task
+#         stop_flag.set()
+#         return 'Task stopped'
+#     else:
+#         return 'Task is not running'
+
+
 
 @app.route('/off', methods=['POST'])
 def off():
-    running = False
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("Off")
+    global task_running
+    global stop_flag
+    if task_running:
+        # Stop the background task
+        stop_flag.set()
+        pixels.fill((0,0,0))
+        pixels.show()
+        return jsonify('Light stopped')
+    else:
+        return jsonify('Light is not running')
 
-
-
-@app.route('/magnet', methods=['POST'])
-def magnet():
-    off()
-    def RunningLights():
-        running = True
+def MagnetLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
-            if not running:
-                break
+        for j in range (time):
             Position+=1
             for i in range (178,190):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
             pixels.show()
-    RunningLights()
-    # pixels.fill((0,0,0))
-    # pixels.show()
     off()
-    return jsonify("magnet")
+    task_running=False
 
-@app.route('/temperature-heli', methods=['POST'])
-def temperatureHeli():
-    off()
-    def RunningLights():
+@app.route('/magnet', methods=['POST'])
+def magnet():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=MagnetLights)
+        background_thread.start()
+        return jsonify('Magnet Light started')
+    else:
+        return jsonify('Magnet Light is already running')
+
+def HeliLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (117,157):
                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),0)
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("temperature-heli")
-
-@app.route('/temperature-nitro', methods=['POST'])
-def temperatureNitro():
     off()
-    def RunningLights():
+    task_running=False
+
+@app.route('/temperature-heli', methods=['POST'])
+def temperatureHeli():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=HeliLights)
+        background_thread.start()
+        return jsonify('Heli Light started')
+    else:
+        return jsonify('Heli Light is already running')
+
+def NitroLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (60,117):
                 pixels[i] = (0,0,int((math.sin(i+Position)) * 127 +128))
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("temperature-nitro")
-
-@app.route('/temperature-mylar', methods=['POST'])
-def temperatureMylar():
     off()
-    def RunningLights():
+    task_running=False
+
+@app.route('/temperature-nitro', methods=['POST'])
+def temperatureNitro():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=NitroLights)
+        background_thread.start()
+        return jsonify('Nitro Light started')
+    else:
+        return jsonify('Nitro Light is already running')
+
+def MylarLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (30):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
             for i in range (30,60):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("temperature-mylar")
+    off()
+    task_running=False
 
+@app.route('/temperature-mylar', methods=['POST'])
+def temperatureMylar():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=MylarLights)
+        background_thread.start()
+        return jsonify('Mylar Light started')
+    else:
+        return jsonify('Mylar Light is already running')
 
-
-@app.route('/sample', methods=['POST'])
-def sample():
-    def RunningLights():
+def SampleLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=19
-        for j in range (20):
+        for j in range (time):
             Position-=1
             for i in range (190,228):
                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128))
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("sample")
+    off()
+    task_running=False
 
-@app.route('/field', methods=['POST'])
-def field():
-    def RunningLights():
+@app.route('/sample', methods=['POST'])
+def sample():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=SampleLights)
+        background_thread.start()
+        return jsonify('Sample Light started')
+    else:
+        return jsonify('Sample Light is already running')
+
+def FieldLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (158,178):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 64 +64),0)
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("field")
+    off()
+    task_running=False
 
-@app.route('/pulseH', methods=['POST'])
-def pulseH():
-    def RunningLights():
+@app.route('/field', methods=['POST'])
+def field():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=FieldLights)
+        background_thread.start()
+        return jsonify('Field Light started')
+    else:
+        return jsonify('Field Light is already running')
+
+def PulseHLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (228,294):
                 pixels[i] = (int((math.sin(i+Position)) * 63 +64),0,int((math.sin(i+Position)) * 127 +128))
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+    off()
+    task_running=False
 
+@app.route('/pulseH', methods=['POST'])
+def pulseH():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=PulseHLights)
+        background_thread.start()
+        return jsonify('Pulse H Light started')
+    else:
+        return jsonify('Pulse H Light is already running')
 
-@app.route('/pulseC', methods=['POST'])
-def pulseC():
-    def RunningLights():
+def PulseCLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (228,294):
                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 64 +64))
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+    off()
+    task_running=False
 
-@app.route('/pulseF', methods=['POST'])
-def pulseF():
-    def RunningLights():
+@app.route('/pulseC', methods=['POST'])
+def pulseC():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=PulseCLights)
+        background_thread.start()
+        return jsonify('Pulse C Light started')
+    else:
+        return jsonify('Pulse C Light is already running')
+
+def PulseFLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (228,294):
                 pixels[i] = (int((math.sin(i+Position)) * 102 +102),0,int((math.sin(i+Position)) * 102 +102))
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+    off()
+    task_running=False
 
-@app.route('/pulseP', methods=['POST'])
-def pulseP():
-    def RunningLights():
+@app.route('/pulseF', methods=['POST'])
+def pulseF():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=PulseFLights)
+        background_thread.start()
+        return jsonify('Pulse F Light started')
+    else:
+        return jsonify('Pulse F Light is already running')
+
+def PulsePLights():
+    global task_running
+    task_running = True
+    while not stop_flag.is_set():
         Position=0
-        for j in range (20):
+        for j in range (time):
             Position+=1
             for i in range (228,294):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 25 +26))
             pixels.show()
-    RunningLights()
-    pixels.fill((0,0,0))
-    pixels.show()
-    return jsonify("pulse")
+    off()
+    task_running=False
 
+@app.route('/pulseP', methods=['POST'])
+def pulseP():
+    global task_running
+    global stop_flag
+    if not task_running:
+        # Start the background task
+        stop_flag.clear()
+        background_thread = threading.Thread(target=PulsePLights)
+        background_thread.start()
+        return jsonify('Pulse P Light started')
+    else:
+        return jsonify('Pulse P Light is already running')
 
-# proc = ''
-
-
-# def dir_last_updated(folder):
-#     return str(max(os.path.getmtime(os.path.join(root_path, f))
-#                    for root_path, dirs, files in os.walk(folder)
-#                    for f in files))
-
-# def procOff():
-#     global proc
-#     if not (proc==''):
-#         print('PARENT      : Signaling child')
-#         sys.stdout.flush()
-#         os.kill(proc.pid, signal.SIGUSR1)
-#         time.sleep(0.05)
-#         proc=''
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html', 
-#                             last_updated=dir_last_updated('static'))
-
-
-	
-# @app.route('/magnet', methods=['POST'])
-# def magnet():
-#     procOff()
-#     print("Magnet lights on!")
-#     pixels.fill((255,0,0))
-#     return "Magnet"
-	
-# @app.route('/n2', methods=['POST'])
-# def n2():
-#     procOff()
-#     print("n2tank lights on!")
-#     #pixels.fill((0,200,200))
-#     return "n2tank"
-	
-# @app.route('/he', methods=['POST'])
-# def he():
-#     procOff()
-#     print("hetank lights on!")
-#     pixels.fill((200,100,200))
-#     return "hetank"
-	
-# @app.route('/electronics', methods=['POST'])
-# def electronics():
-#     procOff()
-#     print("electronics lights on!")
-#     pixels.fill((0,200,0))
-#     return "electronics"
-    
-# @app.route('/party', methods=['POST'])
-# def party():
-#     procOff()
-#     print("Party lights on!")
-#     #simpleRainbow()
-#     rainbowCycle(pixels)
-#     return "party"
-    
-# def wheel(pos):
-#     """Generate rainbow colors across 0-255 positions."""
-    
-#     if pos < 85:
-#         return Color(pos * 3, 255 - pos * 3, 0)
-#     elif pos < 170:
-#         pos -= 85
-#         return Color(255 - pos * 3, 0, pos * 3)
-#     else:
-#         pos -= 170
-#         return Color(0, pos * 3, 255 - pos * 3)
-        
-# def simpleRainbow() :
-#     for i in range(255):
-#         pixels.fill((i,0,0))
-#         time.sleep(0.01)
-#     pixels.fill((0,0,0))
-        
-# def rainbowCycle(strip, wait_ms=0.1, iterations=1):
-#     """Draw rainbow that uniformly distributes itself across all pixels."""
-#     for j in range(255 * iterations):
-#         for i in range(2):
-#             pixel_index = (i * 256 // num_pixels) + j
-#             strip[i] = wheel(pixel_index & 255)
-#         strip.show()
-#         #if received:
-#          #   break
-#         #time.sleep(wait_ms / 1000.0)
 
 if __name__ == "__main__":
     app.run(port=8080, debug=True)
