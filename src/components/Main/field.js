@@ -1,21 +1,31 @@
 import React from "react";
 import "./main.css";
-import axios from "axios"
+import axios from "axios";
 
 const content = {
   heading: "The\nField",
-  description1: "An optimum spectrum is collected in a uniform magnetic field. Though quite good, a magnetic field might not be uniform due to imperfections in the magnet and changes caused by the sample itself.\n\n",
+  description1:
+    "An optimum spectrum is collected in a uniform magnetic field. Though quite good, a magnetic field might not be uniform due to imperfections in the magnet and changes caused by the sample itself.\n\n",
   link: "Shim coils",
-  description2: " are small electromagnets that are able to add/subtract a little bit of magnetic field in various directions (the X, Y, and Z planes).  By “shimming”, the magnetic field is made uniform and the spectrum is optimized.",
+  description2:
+    " are small electromagnets that are able to add/subtract a little bit of magnetic field in various directions (the X, Y, and Z planes).  By “shimming”, the magnetic field is made uniform and the spectrum is optimized.",
 };
 
-const onFieldClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/field",
-  })
+const onFieldClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/field",
+    });
+  } catch (err) {
+    console.log(err);
+  }
   e.preventDefault();
-}
+};
 
 const MainBody = (props) => {
   return (
@@ -25,9 +35,13 @@ const MainBody = (props) => {
       </div>
       <div className="description">
         <div className="decs-text">
-            <p>
-            {props.description1}<a className="link" onClick={onFieldClick}>{props.link}</a>{props.description2}
-            </p>
+          <p>
+            {props.description1}
+            <a href="/#" className="link" onClick={onFieldClick}>
+              {props.link}
+            </a>
+            {props.description2}
+          </p>
         </div>
       </div>
     </div>

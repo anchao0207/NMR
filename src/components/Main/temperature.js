@@ -17,25 +17,49 @@ const content = {
     " to help keep the magnet cold.\n\nBasically, the entire metal can is like a Yeti - an excellent thermos!",
 };
 
-const onHeliClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/temperature-heli",
-  });
+const onHeliClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/temperature-heli",
+    });
+  } catch (err) {
+    console.log(err);
+  }
   e.preventDefault();
 };
-const onNitroClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/temperature-nitro",
-  });
+const onNitroClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/temperature-nitro",
+    });
+  } catch (err) {
+    console.log(err);
+  }
   e.preventDefault();
 };
-const onMylarClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/temperature-mylar",
-  });
+const onMylarClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/temperature-mylar",
+    });
+  } catch (err) {
+    console.log(err);
+  }
   e.preventDefault();
 };
 
@@ -49,15 +73,15 @@ const MainBody = (props) => {
         <div className="decs-text">
           <p>
             {props.description1}
-            <a className="link" onClick={onHeliClick}>
+            <a href="/#" className="link" onClick={onHeliClick}>
               {props.link1}
             </a>
             {props.description2}
-            <a className="link" onClick={onNitroClick}>
+            <a href="/#" className="link" onClick={onNitroClick}>
               {props.link2}
             </a>
             {props.description3}
-            <a className="link" onClick={onMylarClick}>
+            <a href="/#" className="link" onClick={onMylarClick}>
               {props.link3}
             </a>
             {props.description4}

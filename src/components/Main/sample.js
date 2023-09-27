@@ -1,24 +1,31 @@
 import React from "react";
 import "./main.css";
-import axios from "axios"
+import axios from "axios";
 
 const content = {
   heading: "The\nSample",
   description1:
     "If you’ve ever had an MRI, you were the sample.\n\nWith NMR, a sample is made of your compound of interest and a deuterated NMR solvent. Then, ",
-  link1:
-    "the sample is lowered",
+  link1: "the sample is lowered",
   description2:
     " into the hollow center of the magnet where the magnetic field is strongest and most uniform.",
 };
 
-const onSampleClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/sample",
-  })
+const onSampleClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/sample",
+    });
+  } catch (err) {
+    console.log(err);
+  }
   e.preventDefault();
-}
+};
 
 const MainBody = (props) => {
   return (
@@ -28,9 +35,13 @@ const MainBody = (props) => {
       </div>
       <div className="description">
         <div className="decs-text">
-            <p>
-            {props.description1}<a className="link" onClick={onSampleClick}>{props.link1}</a>{props.description2}
-            </p>
+          <p>
+            {props.description1}
+            <a href="/#" className="link" onClick={onSampleClick}>
+              {props.link1}
+            </a>
+            {props.description2}
+          </p>
         </div>
       </div>
     </div>

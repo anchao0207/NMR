@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios"
+import axios from "axios";
 import "./main.css";
 
 const content = {
@@ -12,35 +12,67 @@ const content = {
   link4: "Ph {109 MHz}",
 };
 
-const onHClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/pulseH",
-  });
-  e.preventDefault();
-};
-const onCClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/pulseC",
-  });
-  e.preventDefault();
-};
-const onFClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/pulseF",
-  });
-  e.preventDefault();
-};
-const onPClick = (e) => {
-  axios({
-    method: "POST",
-    url: "http://localhost:8080/pulseP",
-  });
-  e.preventDefault();
-};
+const onHClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/pulseH",
+    });
+  } catch (err) {
+    console.log(err);
+  }
 
+  e.preventDefault();
+};
+const onCClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/pulseC",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+  e.preventDefault();
+};
+const onFClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/pulseF",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+  e.preventDefault();
+};
+const onPClick = async (e) => {
+  try {
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/off",
+    });
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/pulseP",
+    });
+  } catch (err) {
+    console.log(err);
+  }
+  e.preventDefault();
+};
 
 const MainBody = (props) => {
   return (
@@ -53,19 +85,19 @@ const MainBody = (props) => {
           <p>{props.description1}</p>
           <div className="center">
             <p>
-              <a className="link" onClick={onHClick}>
+              <a href="/#" className="link" onClick={onHClick}>
                 <sup>1</sup>
                 {props.link1}
               </a>
-              <a className="link" onClick={onCClick}>
+              <a href="/#" className="link" onClick={onCClick}>
                 <sup>13</sup>
                 {props.link2}
               </a>
-              <a className="link" onClick={onFClick}>
+              <a href="/#" className="link" onClick={onFClick}>
                 <sup>19</sup>
                 {props.link3}
               </a>
-              <a className="link" onClick={onPClick}>
+              <a href="/#" className="link" onClick={onPClick}>
                 <sup>31</sup>
                 {props.link4}
               </a>
