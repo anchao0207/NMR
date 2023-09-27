@@ -27,7 +27,7 @@ app = Flask(__name__)
 CORS(app)
 
 pixels = neopixel.NeoPixel(board.D18, num_pixels, brightness = 0.8, auto_write=False)
-time = 20
+time = 100
 
 # @app.route("/")
 # def hello_world():
@@ -84,22 +84,25 @@ def off():
     if task_running:
         # Stop the background task
         stop_flag.set()
+        task_running=False
         pixels.fill((0,0,0))
         pixels.show()
-        return jsonify('Light stopped')
+        return 'Light stopped'
     else:
-        return jsonify('Light is not running')
+        return 'Light is not running'
 
 def MagnetLights():
     global task_running
     task_running = True
-    while not stop_flag.is_set():
-        Position=0
-        for j in range (time):
+    # while not stop_flag.is_set():
+    Position=0
+    for j in range (time):
+        if not stop_flag.is_set():
             Position+=1
             for i in range (178,190):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),int((math.sin(i+Position)) * 127 +128),0)
             pixels.show()
+        else: return 'stop'
     off()
     task_running=False
 
@@ -119,13 +122,15 @@ def magnet():
 def HeliLights():
     global task_running
     task_running = True
-    while not stop_flag.is_set():
-        Position=0
-        for j in range (time):
+    # while not stop_flag.is_set():
+    Position=0
+    for j in range (time):
+        if not stop_flag.is_set():
             Position+=1
             for i in range (117,157):
                 pixels[i] = (0,int((math.sin(i+Position)) * 127 +128),0)
             pixels.show()
+        else: return 'stopped'
     off()
     task_running=False
 
@@ -145,13 +150,15 @@ def temperatureHeli():
 def NitroLights():
     global task_running
     task_running = True
-    while not stop_flag.is_set():
-        Position=0
-        for j in range (time):
+    # while not stop_flag.is_set():
+    Position=0
+    for j in range (time):
+        if not stop_flag.is_set():
             Position+=1
             for i in range (60,117):
                 pixels[i] = (0,0,int((math.sin(i+Position)) * 127 +128))
             pixels.show()
+        else: return 'stopped'
     off()
     task_running=False
 
@@ -171,15 +178,17 @@ def temperatureNitro():
 def MylarLights():
     global task_running
     task_running = True
-    while not stop_flag.is_set():
-        Position=0
-        for j in range (time):
+    # while not stop_flag.is_set():
+    Position=0
+    for j in range (time):
+        if not stop_flag.is_set():
             Position+=1
             for i in range (30):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
             for i in range (30,60):
                 pixels[i] = (int((math.sin(i+Position)) * 127 +128),0,0)
             pixels.show()
+        else: return 'stoped'
     off()
     task_running=False
 
