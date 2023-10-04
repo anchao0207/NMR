@@ -30,8 +30,9 @@
     position: absolute;
     display: flex;
     left: 65vw;
+    right: 3.5vw;
     flex-direction: column;
-    width: 35vw;
+    /* width: 35vw; */
     height: -webkit-fill-available;
     justify-content: center;
     white-space: pre-wrap;
@@ -39,7 +40,7 @@
 
 .decs-text {
     height: 18.3vw;
-    width: 24.5vw;
+    /* width: 24.5vw; */
     position: relative;
     top: 3vh;
     display: block;

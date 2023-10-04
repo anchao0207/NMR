@@ -22,10 +22,11 @@
 
 .spectrum-main-desc {
     height: 54vh;
-    width: 24.5vw;
+    /* width: 24.5vw; */
     position: absolute;
     top: 15vh;
     left: 65vw;
+    right: 3.5vw;
     display: block;
     white-space: pre-wrap;
     color: #FEFEFE;

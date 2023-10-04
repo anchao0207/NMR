@@ -15,7 +15,7 @@ import { ReactComponent as Pascal } from "../../assets/PT35.svg";
 
 export default function ChemicalShift() {
   const content = {
-    heading: "Spliting",
+    heading: "Splitting",
     desc1: "How Many\nNeighboring\nHydrogrens",
     desc2: "A very cool thing about 1H NMR spectroscopy is that hydrogens on neighboring carbons have an impact on each other.\n\nThis is a feature called splitting (or coupling) and will turn a peak in a 1H NMR spectrum into a set of peaks that often has predictable patterns.\n\nHow a peak splits, where one peak (a singlet) becomes two (a doublet) or three (a triplet) or more, is a direct outcome of how many neighboring hydrogens are present.\n\nFor example, in this",
     link1: "spectrum of Ethanol",

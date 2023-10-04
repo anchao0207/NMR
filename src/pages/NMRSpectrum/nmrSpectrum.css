@@ -24,7 +24,8 @@
 .spectrum-forward {
     width: 2.5vw;
     position: absolute;
-    left: 85vw;
+    /* left: 85vw; */
+    right: 3.5vw;
     bottom: 40px;
     /* opacity: 0;
     visibility: hidden; */

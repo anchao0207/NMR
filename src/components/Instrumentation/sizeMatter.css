@@ -13,10 +13,11 @@
 
 .sizematter-main-desc {
     height: 47vh;
-    width: 24.45vw;
+    /* width: 24.45vw; */
     position: absolute;
     top: 32.11vh;
     left: 65vw;
+    right: 3.5vw;
     display: block;
     white-space: pre-wrap;
     color: #FEFEFE;

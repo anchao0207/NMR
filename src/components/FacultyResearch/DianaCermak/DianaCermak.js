@@ -36,7 +36,7 @@ export default function DianaCermak() {
             <button>Asymmetric Synthesis</button>
           </Link>
           <Link to="./SynthesisPhosphorus">
-            <button>Synthesis of phosphorus derivatives</button>
+            <button>Synthesis of Phosphorus Derivatives</button>
           </Link>
         </Stack>
         <Back className="spectrum-back" onClick={backwardClick}></Back>

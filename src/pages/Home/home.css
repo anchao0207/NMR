@@ -78,7 +78,7 @@
 
 .page {
     position: absolute;
-    left: 75vw;
+    left: 79vw;
     bottom: 40px;
     opacity: 0;
     visibility: hidden;
@@ -95,7 +95,7 @@
 .forward {
     width: 2.5vw;
     position: absolute;
-    left: 85vw;
+    right: 3.5vw;
     bottom: 40px;
     opacity: 0;
     visibility: hidden;

@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import "./interpretingSpectrum.css";
+import gsap from "gsap";
 import Symmetry from "./Symmetry";
 import ChemicalShift from "./ChemicalShift";
 import Integration from "./Integration";
-import Spliting from "./Spliting";
-import gsap from "gsap";
+import Splitting from "./Splitting";
+import "./interpretingSpectrum.css";
 
 export default function BasicAspects() {
-  const basicRef = React.useRef();
-  const aspectsRef = React.useRef();
-  const symmetryRef = React.useRef();
-  const chemShiftRef = React.useRef();
-  const integrationRef = React.useRef();
-  const splitingRef = React.useRef();
+  const basicRef = useRef(null);
+  const aspectsRef = useRef(null);
+  const symmetryRef = useRef(null);
+  const chemShiftRef = useRef(null);
+  const integrationRef = useRef(null);
+  const splittingRef = useRef(null);
 
   const content = {
     heading: "4 Basic\nAspects",
@@ -23,100 +23,27 @@ export default function BasicAspects() {
     link4: "SPLITTING",
   };
 
-  const onSymmetryClick = (e) => {
-    e.preventDefault();
-    gsap.to(chemShiftRef.current, { visibility: "hidden", opacity: 0 });
-    gsap.to(integrationRef.current, { visibility: "hidden", opacity: 0 });
-    gsap.to(splitingRef.current, { visibility: "hidden", opacity: 0 });
-    var tl = gsap.timeline();
-    tl.to(aspectsRef.current, { opacity: 0, duration: 0.25 })
-      .to(aspectsRef.current, { visibility: "hidden" })
-      .to(basicRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(symmetryRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(".back4", { visibility: "visible", opacity: 1 })
-      .to(".back3", { visibility: "hidden" });
-  };
-
-  const onChemShiftClick = (e) => {
-    e.preventDefault();
-    gsap.to(symmetryRef.current, { visibility: "hidden", opacity: 0 });
-    gsap.to(integrationRef.current, { visibility: "hidden", opacity: 0 });
-    gsap.to(splitingRef.current, { visibility: "hidden", opacity: 0 });
-    var tl = gsap.timeline();
-    tl.to(aspectsRef.current, { opacity: 0, duration: 0.25 })
-      .to(aspectsRef.current, { visibility: "hidden" })
-      .to(basicRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(chemShiftRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(".back4", { visibility: "visible", opacity: 1 })
-      .to(".back3", { visibility: "hidden" });
-  };
-
-  const onIntegrationClick = (e) => {
-    e.preventDefault();
-    gsap.to(symmetryRef.current, { visibility: "hidden", opacity: 0 });
-    gsap.to(chemShiftRef.current, { visibility: "hidden", opacity: 0 });
-    gsap.to(splitingRef.current, { visibility: "hidden", opacity: 0 });
-    var tl = gsap.timeline();
-    tl.to(aspectsRef.current, { opacity: 0, duration: 0.25 })
-      .to(aspectsRef.current, { visibility: "hidden" })
-      .to(basicRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(integrationRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(".back4", { visibility: "visible", opacity: 1 })
-      .to(".back3", { visibility: "hidden" });
-  };
-
-  const onSplitingClick = (e) => {
-    e.preventDefault();
+  const onLinkClick = (ref) => {
     gsap.to(symmetryRef.current, { visibility: "hidden", opacity: 0 });
     gsap.to(chemShiftRef.current, { visibility: "hidden", opacity: 0 });
     gsap.to(integrationRef.current, { visibility: "hidden", opacity: 0 });
-    var tl = gsap.timeline();
+    gsap.to(splittingRef.current, { visibility: "hidden", opacity: 0 });
+
+    const tl = gsap.timeline();
     tl.to(aspectsRef.current, { opacity: 0, duration: 0.25 })
       .to(aspectsRef.current, { visibility: "hidden" })
-      .to(basicRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
-      .to(splitingRef.current, {
-        visibility: "visible",
-        opacity: 1,
-        duration: 0.25,
-      })
+      .to(basicRef.current, { visibility: "visible", opacity: 1, duration: 0.25 })
+      .to(ref.current, { visibility: "visible", opacity: 1, duration: 0.25 })
       .to(".back4", { visibility: "visible", opacity: 1 })
       .to(".back3", { visibility: "hidden" });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     gsap.from(basicRef.current, { opacity: 0, visibility: "hidden" });
     gsap.from(symmetryRef.current, { opacity: 0, visibility: "hidden" });
     gsap.from(chemShiftRef.current, { opacity: 0, visibility: "hidden" });
-    gsap.from(splitingRef.current, { opacity: 0, visibility: "hidden" });
-  });
+    gsap.from(splittingRef.current, { opacity: 0, visibility: "hidden" });
+  }, []);
 
   return (
     <>
@@ -130,8 +57,8 @@ export default function BasicAspects() {
         <div className="integration" ref={integrationRef}>
           <Integration />
         </div>
-        <div className="spliting" ref={splitingRef}>
-          <Spliting />
+        <div className="splitting" ref={splittingRef}>
+          <Splitting />
         </div>
       </div>
       <div className="aspect" ref={aspectsRef}>
@@ -141,7 +68,7 @@ export default function BasicAspects() {
             <li className="list">
               <Link
                 className="spectrum-main-link spectrum-main-link-text link"
-                onClick={onSymmetryClick}
+                onClick={() => onLinkClick(symmetryRef)}
               >
                 {content.link1}
               </Link>
@@ -149,7 +76,7 @@ export default function BasicAspects() {
             <li className="list">
               <Link
                 className="spectrum-main-link spectrum-main-link-text link"
-                onClick={onChemShiftClick}
+                onClick={() => onLinkClick(chemShiftRef)}
               >
                 {content.link2}
               </Link>
@@ -157,13 +84,16 @@ export default function BasicAspects() {
             <li className="list">
               <Link
                 className="spectrum-main-link spectrum-main-link-text link"
-                onClick={onIntegrationClick}
+                onClick={() => onLinkClick(integrationRef)}
               >
                 {content.link3}
               </Link>
             </li>
             <li className="list">
-              <Link className="spectrum-main-link spectrum-main-link-text link" onClick={onSplitingClick}>
+              <Link
+                className="spectrum-main-link spectrum-main-link-text link"
+                onClick={() => onLinkClick(splittingRef)}
+              >
                 {content.link4}
               </Link>
             </li>

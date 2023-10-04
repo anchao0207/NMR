@@ -1,3 +1,4 @@
+/* Styling for the NavBar */
 .navBar{
     display: flex;
     position: fixed;
@@ -8,6 +9,7 @@
     height: 16.6vh;
 }
 
+/* Styling for the sectionLogo */
 .sectionLogo{
     position: relative;
     display: flex;
@@ -17,12 +19,13 @@
     align-items: center;
 }
 
+/* Styling for the logo */
 .logo{
     width: 6.9vw;
     height: 7.7vh;
 }
 
-
+/* Styling for the sectionTitle */
 .sectionTitle{
     position: relative;
     display: flex;
@@ -30,14 +33,16 @@
     /* height: 16.6vh; */
 }
 
+/* Styling for the sectionNavigation */
 .sectionNavigation{
     display: flex;
     position: relative;
     width: 35vw;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: left;
 }
 
+/* Styling for the sectionText */
 .sectionText{
     position: relative;
     display: flex;
@@ -46,6 +51,7 @@
     align-items: flex-end;
 }
 
+/* Styling for the navText */
 .navText{
     font-family: 'Source Sans Pro';
     font-style: normal;
@@ -55,18 +61,22 @@
     color: #FFFFFF;
 }
 
+/* Styling for the navLink */
 .navLink{
     text-decoration: none;
 }
 
-#t1, #t2, #t3, #t4, #t5, #t6{
-    color: #C3FA50;
-}
-
+/* Styling for the selected navLink */
 .selected{
-    text-decoration:underline double;
+    text-decoration: underline;
 }
 
+/* Styling for the selected navText */
 .selected .navText{
     color: #B6ACFF;
+}
+
+/* Styling for specific IDs */
+#t1, #t2, #t3, #t4, #t5, #t6{
+    color: #C3FA50;
 }

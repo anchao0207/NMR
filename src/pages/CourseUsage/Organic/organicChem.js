@@ -43,14 +43,14 @@ export default function OrganicChemistry() {
             <button>
               3-week lab
               <br />
-              synthesis project
+              Synthesis Project
             </button>
           </Link>
           <Link to="./Stereoselective">
             <button>
               Stereoselective
               <br />
-              reduction of camphor
+              Reduction of Camphor
             </button>
           </Link>
         </Stack>
