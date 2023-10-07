@@ -14,6 +14,7 @@ import FacultyResearch from "./pages/FacultyResearch/facultyResearch";
 
 import NMRSpectrum from "./pages/NMRSpectrum/nmrSpectrum";
 import NMRInstrumentation from "./pages/NMRInstrumentation/nmrInstrumentation";
+import NMRDiagram from "./pages/NMRDiagram/nmrDiagram";
 
 import StillDeveloping from "./pages/StillDeveloping/stillDeveloping";
 
@@ -53,6 +54,7 @@ export default function App() {
           <Route exact path={"/"} element={<Home />} />
           <Route exact path={"/NMRInstrumentation"} element={<NMRInstrumentation />} />
           <Route exact path={"/NMRSpectrum"} element={<NMRSpectrum />} />
+          <Route exact path={"/NMRDiagram"} element={<NMRDiagram />} />
 
           <Route exact path={"/CourseUsage"} element={<CourseUsage />} />
           <Route exact path={"/CourseUsage/GeneralChemistry"} element={<GeneralChemistry />} />

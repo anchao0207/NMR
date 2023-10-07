@@ -11,6 +11,7 @@ export default function NMRFundamentals() {
     "How it Works",
     "NMR\nInstrumentation",
     "Intepreting\nNMR Spectrum",
+    "Diagram of Components"
   ];
   const mainRef = React.useRef(null);
   React.useEffect(() => {
@@ -40,6 +41,12 @@ export default function NMRFundamentals() {
                     <button>{o}</button>
                   </Link>
                 );
+              if (o === "Diagram of Components")
+                return (
+                    <Link to="/NMRDiagram">
+                      <button>{o}</button>
+                    </Link>
+                )
               return (
                 <Link to="/NMRInstrumentation/">
                   <button>{o}</button>
