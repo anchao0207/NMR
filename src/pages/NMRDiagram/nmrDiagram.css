@@ -1,0 +1,17 @@
+.button-list {
+    height: -webkit-fill-available;
+    overflow-y: auto;
+}
+
+.button-list button{
+    width: 18vw;
+    height: 7vh;
+    font-size: 24px;
+    margin: 20px;
+}
+
+.diagram{
+    width: 65vw;
+    display: flex;
+    justify-content: center;
+}
