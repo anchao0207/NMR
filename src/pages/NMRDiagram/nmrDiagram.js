@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../../components/NavBar/navbar";
+import { gsap } from "gsap/all";
 import "./nmrDiagram.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -9,15 +10,18 @@ import axios from "axios";
 
 export default function NMRDiagram() {
   const titleRef = React.useRef(null);
+  const mainRef = React.useRef();
+
+  React.useEffect(()=>{
+    gsap.to(mainRef.current, {opacity: 1, duration: 1});
+  },[mainRef])
 
   let navigate = useNavigate();
 
   const backwardClick = () => {
     let path = "/NMRFundamentals/";
     navigate(path);
-  }
-
-  const mainRef = React.useRef(null);
+  };
 
   const onMagnetClick = async (e) => {
     try {
@@ -128,7 +132,7 @@ export default function NMRDiagram() {
     } catch (err) {
       console.log(err);
     }
-  
+
     e.preventDefault();
   };
 
@@ -136,25 +140,43 @@ export default function NMRDiagram() {
     <>
       <div className="home">
         <NavBar></NavBar>
-        <div className="navTitle" ref={titleRef}>
-          <span>Diagram of Components</span>
-        </div>
-        <div className="diagram">
-          
-        <img className="image" src={require("../../assets/NMRDiagramPlaceholder.png")} alt="" />
-        </div>
-  
-        <Stack className="section2 button-list">
-            <Link to="/NMRDiagram"><button onClick={onMagnetClick}>The Magnet</button></Link>
-            <Link to="/NMRDiagram"><button onClick={onHeliClick}>Liquid Helium</button></Link>
-            <Link to="/NMRDiagram"><button onClick={onNitroClick}>Liquid Nitrogen</button></Link>
-            <Link to="/NMRDiagram"><button onClick={onMylarClick}>Mylar</button></Link>
-            <Link to="/NMRDiagram"><button onClick={onSampleClick}>The Sample</button></Link>
-            <Link to="/NMRDiagram"><button onClick={onFieldClick}>Shim Coils</button></Link>
-            <Link to="/NMRDiagram"><button onClick={onHClick}>The Pulse</button></Link>
-        </Stack>
+        <div className="main-body" ref={mainRef}>
+          <div className="navTitle" ref={titleRef}>
+            <span>Diagram of Components</span>
+          </div>
+          <div className="diagram">
+            <img
+              className="image"
+              src={require("../../assets/NMRDiagramPlaceholder.png")}
+              alt=""
+            />
+          </div>
 
+          <Stack className="section2 button-list">
+            <Link to="/NMRDiagram">
+              <button onClick={onMagnetClick}>The Magnet</button>
+            </Link>
+            <Link to="/NMRDiagram">
+              <button onClick={onHeliClick}>Liquid Helium</button>
+            </Link>
+            <Link to="/NMRDiagram">
+              <button onClick={onNitroClick}>Liquid Nitrogen</button>
+            </Link>
+            <Link to="/NMRDiagram">
+              <button onClick={onMylarClick}>Mylar</button>
+            </Link>
+            <Link to="/NMRDiagram">
+              <button onClick={onSampleClick}>The Sample</button>
+            </Link>
+            <Link to="/NMRDiagram">
+              <button onClick={onFieldClick}>Shim Coils</button>
+            </Link>
+            <Link to="/NMRDiagram">
+              <button onClick={onHClick}>The Pulse</button>
+            </Link>
+          </Stack>
+        </div>
       </div>
     </>
-  )
+  );
 }

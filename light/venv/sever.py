@@ -332,7 +332,7 @@ def PulseCLights():
     Position = 0
     for j in range(time):
         if not stop_flag.is_set():
-            Position += 1
+            Position += 2
             for i in range(228, 294):
                 pixels[i] = (
                     0,
@@ -367,7 +367,7 @@ def PulseFLights():
     Position = 0
     for j in range(time):
         if not stop_flag.is_set():
-            Position += 1
+            Position += 3
             for i in range(228, 294):
                 pixels[i] = (
                     int((math.sin(i + Position)) * 102 + 102),
@@ -402,7 +402,7 @@ def PulsePLights():
     Position = 0
     for j in range(time):
         if not stop_flag.is_set():
-            Position += 1
+            Position += 4
             for i in range(228, 294):
                 pixels[i] = (
                     int((math.sin(i + Position)) * 127 + 128),
