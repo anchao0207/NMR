@@ -15,7 +15,7 @@
 }
 
 p {
-  margin:0;
+  margin: 0;
   margin-right: 3.426vw;
 }
 
@@ -41,6 +41,27 @@ a {
   text-decoration: underline;
 }
 
-a:visited{
+a:visited {
   color: #B6ACFF;
 }
+
+.big-logo {
+  top: 15vh !important;
+}
+
+.about-img-container {
+  position: fixed;
+  display: flex;
+  background-color: #0C0C31;
+  top: 16.6vh;
+  height: 83.4vh;
+  width: 65vw;
+  left: 0;
+  justify-content: center;
+  opacity: 0;
+}
+
+.about-img{
+  top: 15vh;
+}
+

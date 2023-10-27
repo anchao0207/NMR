@@ -66,7 +66,7 @@ export default function ChemicalShift() {
             "spectrum-main-link spectrum-main-link-text"
         )
       ) {
-        console.log(event.target.className);
+        // console.log(event.target.className);
         var tl = gsap.timeline();
         tl.to(current, { opacity: 0, duration: 0.25 }).to(
           chemShiftRef.current,

@@ -37,6 +37,10 @@ import AdvancedSynthesis from "./pages/CourseUsage/Advanced/AdvancedSynthesis";
 import LigandSynthesis from "./pages/CourseUsage/Advanced/LigandSynthesis";
 import PrecatalystSynthesis from "./pages/CourseUsage/Advanced/PrecatalystSynthesis";
 
+import Ab from "./pages/About/ab";
+import Thanks from "./pages/About/thanks";
+import Credit from "./pages/About/credit";
+
 export default function App() {
 
   // document.addEventListener("fullscreenchange", function(event) {
@@ -78,6 +82,9 @@ export default function App() {
           <Route exact path={"/FacultyResearch/HelenHoyt"} element={<HelenHoyt />} />
 
           <Route exact path={"/About"} element={<About />} />
+          <Route exact path={"/About/Ab"} element={<Ab />} />
+          <Route exact path={"/About/Thanks"} element={<Thanks />} />
+          <Route exact path={"/About/Credit"} element={<Credit />} />
           <Route exact path={"/StillDeveloping"} element={<StillDeveloping />} />
           <Route path="*" element={<h1>Error 404</h1>} />
         </Routes>
