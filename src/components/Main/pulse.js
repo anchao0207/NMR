@@ -9,7 +9,7 @@ const content = {
   link1: "H {270 MHz}\n\n",
   link2: "C {68 MHz}\n\n",
   link3: "F {254 MHz}\n\n",
-  link4: "Ph {109 MHz}",
+  link4: "P {109 MHz}",
 };
 
 const onHClick = async (e) => {
