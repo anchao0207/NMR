@@ -8,7 +8,11 @@ export default function SpectroscopyUnknownLab() {
   const content = {
     subheading: "Spectroscopy\nUnknown Lab",
     description:
-      "C NMR spectroscopy is used to distinguish the number of types of carbon atoms among a set of isomer compounds with the same molecular formula but different structures.",
+      "In this experiment, students determine the structure of two unknown organic compounds (one solid, one liquid) using physical properties—melting point or boiling point, molecular weight, and atom information—and spectroscopic methods—Infrared Spectroscopy and",
+      description2: 
+        "H and", 
+        description3: 
+            "C NMR Spectroscopy.",
   };
 
   const mainRef = React.useRef(null);
@@ -27,7 +31,12 @@ export default function SpectroscopyUnknownLab() {
         </div>
         <div className="description">
           <div className="sub-heading">{props.subheading}</div>
-          <div className="decs-text"><p><sup>13</sup>{props.description}</p></div>
+          <div className="decs-text">
+            <p>{props.description}&nbsp;
+                <sup>1</sup>{props.description2}&nbsp;
+                <sup>13</sup>{props.description3}
+            </p>
+          </div>
         </div>
       </div>
     );
