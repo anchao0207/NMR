@@ -24,7 +24,7 @@ Bradley McKinney, Lead Interactive Technology Instructional Designer at The Chil
 Levi Morgan - for securely mounting the Raspberry Pi.\n\n\
 Matt Reed - for audio/visual support.\n\n\
 Donna Robinson - for administrative support.\n\n\
-Dr. Michael Schneider, Provost and Dean of Knox College - for financial support of the student programming team.\n\n\
+Dr. Mike Schneider, Provost and Dean of Knox College - for financial support of the student programming team.\n\n\
 Dr. Mark Shroyer, Professor of Physics - for content editing and contributions.\n\n\
 Tim Stedman, Associate Professor of Art - for design mentorship and supervision of Kelly Fisk’s capstone project.\n\n\
 Dr. Karl Vermillion, USDA-ARS - for inspiration and content editing.\n\n\
