@@ -66,6 +66,12 @@
     overflow-y: auto;
 }
 
+/* Added by Adam for thanks.js */
+.thanks-desc {
+    font-size: 1.4vw;
+    padding-right: 3vw;
+}
+
 .credit-main-desc2 {
     position: relative;
     /* max-height: 14.5vw; */

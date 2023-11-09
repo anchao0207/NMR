@@ -58,10 +58,8 @@ Carla Wehmeyer - for in-class and field research photography of students and fac
       <div className="header" ref={titleRef}>
         <div className="head-text">{content.heading}</div>
       </div>
-      <div className="sizematter-main-desc">
-        <div className="sizematter-main-desc2">
+      <div className="spectrum-main-desc credit-desc thanks-desc">
           {content.desc1}
-        </div>
       </div>
     </>
         <Back
